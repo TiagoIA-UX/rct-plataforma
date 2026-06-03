@@ -1,0 +1,14 @@
+# Não enviar ao build da Vercel
+.env
+.env.local
+.env.*.local
+**/.venv
+**/venv
+**/__pycache__
+*.pdf
+CCMEI-*.pdf
+.supabase
+node_modules
+apps/web/.next
+.pytest_cache
+.mypy_cache

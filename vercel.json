@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "experimentalServices": {
+    "web": {
+      "root": "apps/web",
+      "routePrefix": "/",
+      "framework": "nextjs"
+    },
+    "agents": {
+      "root": "services/agents",
+      "routePrefix": "/_/agents",
+      "framework": "fastapi"
+    }
+  }
+}

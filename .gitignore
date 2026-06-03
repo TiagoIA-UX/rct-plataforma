@@ -1,0 +1,51 @@
+# Scripts / OS
+*.log
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+.next/
+out/
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+!.env.*.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentos pessoais / MEI (não versionar)
+*.pdf
+CCMEI-*.pdf
+
+# Logs & coverage
+*.log
+npm-debug.log*
+coverage/
+.pytest_cache/
+.mypy_cache/
+
+# Docker
+.docker/
+
+# Supabase
+.supabase/

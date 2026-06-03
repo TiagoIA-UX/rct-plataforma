@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  /* Identidade: confiança, serenidade, esperança */
+  --color-background: #faf9f7;
+  --color-foreground: #1c1917;
+  --color-muted: #78716c;
+  --color-muted-bg: #f5f4f1;
+  --color-primary: #1e4d3a;
+  --color-primary-foreground: #f0fdf4;
+  --color-accent: #b8860b;
+  --color-accent-foreground: #1c1917;
+  --color-border: #e7e5e4;
+  --color-card: #ffffff;
+  --color-ring: #1e4d3a;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius-lg: 0.75rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-foreground)] antialiased;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

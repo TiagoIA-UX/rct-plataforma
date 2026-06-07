@@ -1,4 +1,5 @@
 import type { AnaliseIA, DiagnosticoData } from "@/types/diagnostico";
+import { loadPrivateMjs } from "@/lib/load-private";
 
 export interface TriagemInterna {
   ahimsa_principiologico: boolean;
@@ -20,6 +21,10 @@ const FALLBACK: TriagemInterna = {
   notas_admin: "Triagem pendente de análise completa.",
 };
 
+type TriagemPromptsPrivate = {
+  montarPromptTriagemInterna: (data: DiagnosticoData) => string;
+};
+
 export function extrairTriagemInterna(
   analiseIA: AnaliseIA & { triagem_interna?: TriagemInterna }
 ): TriagemInterna {
@@ -27,31 +32,9 @@ export function extrairTriagemInterna(
 }
 
 export function montarPromptTriagemInterna(data: DiagnosticoData): string {
-  return `Analise INTERNAMENTE (nunca expor ao candidato) os textos abaixo.
-Retorne APENAS JSON:
-{
-  "score_missao": 0-20,
-  "indicadores_positivos": ["..."],
-  "territorio_confirmado": "saude|educacao|ciencia_tecnologia|arte_comunicacao|lideranca|familia_comunidade",
-  "frase_reconhecimento": "frase pública sem julgamento",
-  "triagem_interna": {
-    "ahimsa_principiologico": boolean,
-    "consumo_carne_inferido": "nao_por_principio|reduzi|sim|null",
-    "coerencia_textual": 0-100,
-    "indicadores_vida": ["indicadores de postura pró-vida nas escolhas diárias"],
-    "apto_treinamento": boolean,
-    "fase_sugerida": "divya_manas|fase_i|aguardar",
-    "notas_admin": "observações para o administrador"
+  const mod = loadPrivateMjs<TriagemPromptsPrivate>("triagem-prompts");
+  if (!mod?.montarPromptTriagemInterna) {
+    return `Analise os textos do candidato e retorne JSON com score_missao, territorio_confirmado, frase_reconhecimento e triagem_interna.\nAplicação: ${data.aplicacao_diaria}\nQuestão: ${data.maior_questao}`;
   }
-}
-
-Critérios INTERNOS apto_treinamento (não públicos):
-- Ahimsa como identidade (não violência, postura pró-vida)
-- Coerência entre palavras e práticas descritas
-- Ausência de contradições graves (detecção de incoerência/mentira)
-
-Aplicação diária: "${data.aplicacao_diaria}"
-Maior questão: "${data.maior_questao}"
-Postura violência: ${data.postura_violencia}
-Ahimsa prática: ${data.ahimsa_pratica}`;
+  return mod.montarPromptTriagemInterna(data);
 }

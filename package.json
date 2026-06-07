@@ -18,6 +18,8 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
+    "init": "node private/scripts/init-sistema.mjs",
+    "init:dev": "node private/scripts/init-sistema.mjs --dev",
     "check:node": "node private/scripts/check-node-version.mjs",
     "dev": "next dev",
     "build": "next build",

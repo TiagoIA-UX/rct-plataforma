@@ -12,7 +12,7 @@ As variáveis foram **preservadas do Evangelho Digital** (`apps/web/.env.example
 
 1. O `.env.local` já deve existir na raiz (gerado a partir do legado Evangelho Digital).
 2. Se precisar recriar: copie `.env.example` → `.env.local` e preencha conforme abaixo.
-3. **Nunca** commite `.env.local` ou arquivos com secrets reais.
+3. **Nunca** commite `.env.local`, `private/scripts/` ou arquivos com secrets reais.
 
 ---
 

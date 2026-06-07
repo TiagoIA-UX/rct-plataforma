@@ -53,6 +53,8 @@ coverage/
 # --- IP Tiago Aureliano da Rocha (auto) ---
 private/
 private/**
+scripts/
+scripts/**
 
 # RCT — Materiais confidenciais de treinamento (não versionar)
 RCT_Fase*_*.docx

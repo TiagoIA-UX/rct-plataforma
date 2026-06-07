@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --deep-blue: #1a2744;
+  --sacred-gold: #c8a951;
+  --dark-gold: #8b6914;
+  --life-green: #1a5c2a;
+  --pure-white: #f8f6f0;
+  --cosmic-dark: #0d1520;
+  --accent-gold: #c8a951;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --gradient-cosmos: linear-gradient(135deg, #0d1520 0%, #1a2744 50%, #2a3d6b 100%);
+  --gradient-gold: linear-gradient(135deg, #8b6914 0%, #c8a951 50%, #e8c97a 100%);
+  --gradient-life: linear-gradient(135deg, #1a2744 0%, #1a5c2a 100%);
+}
+
+@theme inline {
+  --color-deep-blue: var(--deep-blue);
+  --color-sacred-gold: var(--sacred-gold);
+  --color-dark-gold: var(--dark-gold);
+  --color-life-green: var(--life-green);
+  --color-pure-white: var(--pure-white);
+  --color-cosmic-dark: var(--cosmic-dark);
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-source-serif);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cosmic-dark);
+  color: var(--pure-white);
+  font-family: var(--font-source-serif), Georgia, serif;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--sacred-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e8c97a;
+}
+
+::selection {
+  background: rgba(200, 169, 81, 0.35);
+  color: var(--pure-white);
+}
+
+.gradient-cosmos {
+  background: var(--gradient-cosmos);
+}
+
+.gradient-gold {
+  background: var(--gradient-gold);
+}
+
+.gradient-life {
+  background: var(--gradient-life);
+}
+
+.text-gold {
+  color: var(--sacred-gold);
+}
+
+.border-gold {
+  border-color: rgba(200, 169, 81, 0.35);
+}
+
+.card-sacred {
+  background: rgba(26, 39, 68, 0.6);
+  border: 1px solid rgba(200, 169, 81, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: var(--gradient-gold);
+  color: var(--cosmic-dark);
+  font-family: var(--font-source-serif), serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 169, 81, 0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--sacred-gold);
+  font-family: var(--font-source-serif), serif;
+  font-weight: 600;
+  border: 1px solid rgba(200, 169, 81, 0.5);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(200, 169, 81, 0.08);
+  border-color: var(--sacred-gold);
+}
+
+.input-sacred {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(13, 21, 32, 0.8);
+  border: 1px solid rgba(200, 169, 81, 0.25);
+  border-radius: 2px;
+  color: var(--pure-white);
+  font-family: var(--font-source-serif), serif;
+  transition: border-color 0.3s ease;
+}
+
+.input-sacred:focus {
+  outline: none;
+  border-color: var(--sacred-gold);
+}
+
+.label-sacred {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sacred-gold);
+}
+
+.prose-rct {
+  max-width: 72ch;
+}
+
+.prose-rct p {
+  margin-bottom: 1.25rem;
+  color: rgba(248, 246, 240, 0.88);
+}
+
+.prose-rct h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--sacred-gold);
+  font-size: 1.75rem;
+}
+
+.prose-rct h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--pure-white);
+  font-size: 1.35rem;
+}

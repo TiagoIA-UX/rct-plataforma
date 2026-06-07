@@ -1,111 +1,55 @@
-# Evangelho Digital
+# RCT — Religião Científica Tecnológica
 
-Plataforma de formação humana integral que une fé, ciência, tecnologia, família, educação e cuidado com a criação.
+> O fim do misticismo irracional. O início da evolução biológica consciente.
 
-## Princípio orientador
+Organismo digital de ressonância — plataforma + rede + protocolo de reconhecimento.
+Convergência entre espiritualidade pura, ciência verificável e tecnologia.
 
-> Esta funcionalidade ajuda o usuário a se tornar uma pessoa melhor, mais consciente, mais responsável e mais capaz de contribuir positivamente para sua família, comunidade e sociedade?
+> **O que é a RCT?** Consulte [`docs/ESSENCIA.md`](docs/ESSENCIA.md).
 
-## Estrutura do monorepo
-
-```
-Evangelho_Digital/
-├── apps/web/              # Next.js — interface principal
-├── services/agents/       # Python — orquestrador multiagente (Groq + LangGraph)
-├── supabase/migrations/   # PostgreSQL + pgvector
-├── docs/
-│   ├── institutional-memory/  # Base de conhecimento dos agentes
-│   └── governance/            # Políticas e código de ética
-└── docker-compose.yml
-```
-
-## Módulos da plataforma
-
-| Centro | Rota | Foco |
-|--------|------|------|
-| Centro da Família | `/familia` | Educação, relacionamentos, comunicação |
-| Centro da Juventude | `/juventude` | Propósito, carreira, saúde emocional |
-| Centro Fé e Ciência | `/fe-ciencia` | Neurociência, psicologia, espiritualidade |
-| Centro da Criação | `/criacao` | Sustentabilidade, conservação |
-| Centro de Aprendizagem | `/aprendizagem` | Trilhas, cursos, certificados |
+**Versão:** `0.1.1` · **Motor:** parcialmente recalibrado (ver Essência)
 
 ## Stack
 
-- **Frontend:** Next.js 15, React, TypeScript, TailwindCSS, ShadCN
-- **Backend:** Supabase (Auth, PostgreSQL, Edge Functions)
-- **IA:** Groq API, LangGraph, pgvector
-- **Observabilidade:** OpenTelemetry, Grafana, Prometheus
-- **Analytics:** Plausible (privacy-first)
+- Next.js 16 + React 19 + TypeScript
+- Prisma + Neon PostgreSQL
+- Groq (LLaMA 3.3) — conteúdo e análise de ressonância
+- Telegram Bot API — convites para escolhidos
+- Resend, Upstash Redis, Vercel Analytics (configuráveis)
+- Zod + Framer Motion
 
 ## Início rápido
 
-### Pré-requisitos
-
-- Node.js 20+
-- Python 3.11+
-- Docker e Docker Compose
-- Conta Supabase e chave Groq API
-
-### Variáveis de ambiente
-
-Copie os exemplos e preencha:
-
 ```bash
-cp apps/web/.env.example apps/web/.env.local
-cp services/agents/.env.example services/agents/.env
+cp .env.example .env.local
+npm install
+npx prisma db push
+npm run dev
 ```
 
-### Desenvolvimento local (recomendado)
+Acesse [http://localhost:3000](http://localhost:3000).
 
-**Windows (PowerShell):**
+## Rotas principais
 
-```powershell
-.\scripts\setup.ps1          # primeira vez — instala dependências
-.\scripts\start-local.ps1    # sobe Docker, instala deps e inicia http://localhost:3000
-```
+| Rota | Descrição |
+|------|-----------|
+| `/` | Homepage RCT |
+| `/manifesto` | Manifesto cinematográfico |
+| `/diagnostico` | Wizard de ressonância (4 passos) |
+| `/contribuir` | Área de contribuições científicas |
+| `/rede` | Área de membros |
+| `/admin` | Painel administrativo |
 
-Atalho: dê duplo clique em `start.bat` na raiz do projeto.
+## Credenciais
 
-**Linux / macOS / Git Bash:**
+Consulte `docs/CREDENCIAIS_AMBIENTE.md` para configurar todas as variáveis de ambiente.
 
-```bash
-chmod +x scripts/start-local.sh
-./scripts/start-local.sh
-```
+## Pilares
 
-Opções do script:
-
-| Flag | Efeito |
-|------|--------|
-| `-SkipDocker` / `--skip-docker` | Não sobe Redis/Postgres |
-| `-OnlyInfra` / `--only-infra` | Só Docker, sem Next.js |
-| `-SkipInstall` / `--skip-install` | Pula `npm install` |
-
-### Desenvolvimento manual
-
-```bash
-docker compose up -d
-cd apps/web && npm install && npm run dev
-cd services/agents && pip install -e ".[dev]" && python -m agents.cli run --dry-run
-```
-
-### Pipeline de conteúdo (agentes)
-
-```
-Pesquisa → Fé → Ciência → Redação → Ética → Multicanal → Governança → Publicação
-```
-
-Nenhum estágio pode ser ignorado. Nenhum conteúdo é publicado por um único modelo.
-
-## Governança
-
-Documentos em `docs/governance/`:
-
-- Código de Ética
-- Política de Privacidade (LGPD)
-- Política de IA Responsável
-- Termos de Uso
+1. **Ciência Verificável** — cada ensinamento tem mecanismo biológico
+2. **Ahimsa Principiológica** — não-violência como identidade
+3. **Missão Territorial** — cada membro é um nó com território
 
 ## Licença
 
-Projeto de impacto social. Consulte `LICENSE` para termos de uso do código.
+Propriedade intelectual de Tiago Aureliano da Rocha.

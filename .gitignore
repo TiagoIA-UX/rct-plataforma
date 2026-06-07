@@ -52,6 +52,15 @@ coverage/
 
 # --- IP Tiago Aureliano da Rocha (auto) ---
 private/
+private/**
+
+# RCT — Materiais confidenciais de treinamento (não versionar)
+RCT_Fase*_*.docx
+**/RCT_Fase*_*.docx
+RCT_*_Confidencial.docx
+**/RCT_*_Confidencial.docx
+private/treinamento/
+private/treinamento/**
 .cursorrules
 .cursor/
 CURSOR_PROMPT*.md
@@ -64,3 +73,5 @@ RESUMO_*.md
 **/config/**/keywords.yaml
 **/config/**/prompts.yaml
 !**/*.example
+.vercel
+.env*.local

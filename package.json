@@ -1,0 +1,67 @@
+{
+  "name": "rct-plataforma",
+  "version": "0.2.0",
+  "description": "RCT — Religião Científica Tecnológica. Organismo digital de ressonância.",
+  "private": true,
+  "author": "Tiago Aureliano da Rocha",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TiagoIA-UX/rct-plataforma.git"
+  },
+  "homepage": "https://github.com/TiagoIA-UX/rct-plataforma#readme",
+  "bugs": {
+    "url": "https://github.com/TiagoIA-UX/rct-plataforma/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "check:node": "node scripts/check-node-version.mjs",
+    "predev": "npm run check:node",
+    "dev": "next dev",
+    "prebuild": "npm run check:node",
+    "build": "next build",
+    "build:strict": "npm run env:check:prod && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "env:check:prod": "node scripts/check-prod-env.mjs",
+    "db:push": "prisma db push",
+    "db:generate": "prisma generate",
+    "generate:posts": "node scripts/generate-daily-posts.mjs",
+    "postinstall": "prisma generate",
+    "release:patch": "npm version patch --no-git-tag-version && node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version + '\\n')\"",
+    "release:minor": "npm version minor --no-git-tag-version && node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version + '\\n')\"",
+    "release:major": "npm version major --no-git-tag-version && node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version + '\\n')\""
+  },
+  "dependencies": {
+    "@neondatabase/auth": "^0.2.0-beta.1",
+    "@prisma/client": "^6.8.2",
+    "@upstash/redis": "^1.34.9",
+    "@vercel/analytics": "^1.5.0",
+    "framer-motion": "^12.12.0",
+    "groq-sdk": "^0.21.0",
+    "mercadopago": "^2.0.15",
+    "next": "16.1.6",
+    "node-telegram-bot-api": "^0.66.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "resend": "^4.5.1",
+    "zod": "^3.25.28"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "^22.15.21",
+    "@types/node-telegram-bot-api": "^0.64.8",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "eslint": "^9.27.0",
+    "eslint-config-next": "16.1.6",
+    "prisma": "^6.8.2",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3"
+  }
+}

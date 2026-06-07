@@ -1,12 +1,12 @@
-# Propriedade intelectual — evangelho-digital
+# Propriedade intelectual — RCT Plataforma
 
-**Titular:** Tiago Aureliano da Rocha · CNPJ 61.699.939/0001-80
+**Titular:** Tiago Aureliano da Rocha
 
 ## Não versionar
 
-- `private/`, `.cursorrules`, `.cursor/`
-- `CURSOR_PROMPT*.md`, `docs/` estratégicos internos
-- `**/dorks.yaml`, `**/keywords.yaml`, `**/prompts.yaml` (usar `*.example`)
+- `private/` e todo seu conteúdo (incl. `private/treinamento/*.docx`)
 - `.env`, `.env.local`, `*.bak_*`
+- `CURSOR_PROMPT*.md`, `*_PROMPT*.md`
+- Materiais `RCT_Fase*_*.docx` e `RCT_*_Confidencial.docx`
 
-Copie arquivos `*.example` e preencha localmente.
+Copie `.env.example` e preencha localmente.

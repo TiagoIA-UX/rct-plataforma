@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Artigo {
+  id              String   @id @default(cuid())
+  titulo          String
+  subtitulo       String?
+  slug            String   @unique
+  categoria       String
+  tags            String[]
+  meta_descricao  String?
+  tempo_leitura   String?
+  conteudo_html   String   @db.Text
+  publicado       Boolean  @default(true)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  @@index([categoria])
+  @@index([created_at])
+}
+
+model Diagnostico {
+  id                    String   @id @default(cuid())
+  nome                  String
+  email                 String
+  telegram_username     String?
+  territorio_primario   String
+  score                 Int
+  nivel                 String
+  consumo_carne         String
+  postura_violencia     String
+  ahimsa_conhece        Boolean
+  ahimsa_pratica        String
+  perspectiva           String
+  postura_dogma         String
+  aplicacao_diaria      String   @db.Text
+  maior_questao         String   @db.Text
+  analise_ia            Json
+  convite_enviado       Boolean  @default(false)
+  consentimento_lgpd    Boolean
+  consentimento_contato Boolean
+  created_at            DateTime @default(now())
+
+  @@index([nivel])
+  @@index([score])
+  @@index([created_at])
+}
+
+model Contribuicao {
+  id                    String   @id @default(cuid())
+  autor_email           String
+  autor_nome            String?
+  tipo                  String
+  titulo                String
+  conteudo              String   @db.Text
+  referencia_cientifica String?
+  modulo_relacionado    String?
+  status                String   @default("pendente")
+  votos_positivos       Int      @default(0)
+  created_at            DateTime @default(now())
+  updated_at            DateTime @updatedAt
+  votos                 VotoContribuicao[]
+
+  @@index([status])
+  @@index([created_at])
+}
+
+model VotoContribuicao {
+  id              String   @id @default(cuid())
+  contribuicao_id String
+  autor_email     String
+  created_at      DateTime @default(now())
+  contribuicao    Contribuicao @relation(fields: [contribuicao_id], references: [id], onDelete: Cascade)
+
+  @@unique([contribuicao_id, autor_email])
+}
+
+model Membro {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  nome              String?
+  neon_auth_id      String?  @unique
+  plano             String   @default("free")
+  status            String   @default("pendente")
+  nivel_ressonancia String?
+  territorio        String?
+  diagnostico_id    String?
+  mp_payment_id     String?
+  fase_atual        String   @default("divya_manas")
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+  provas            ProvaTreinamento[]
+
+  @@index([status])
+  @@index([plano])
+  @@index([fase_atual])
+}
+
+model ProvaTreinamento {
+  id                  String   @id @default(cuid())
+  membro_email        String
+  fase                String
+  resposta            String   @db.Text
+  score_coerencia     Int?
+  score_mentira       Int?
+  indicadores         Json?
+  status              String   @default("pendente")
+  notas_admin         String?  @db.Text
+  aprovado_por_admin  Boolean  @default(false)
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+  membro              Membro   @relation(fields: [membro_email], references: [email], onDelete: Cascade)
+
+  @@index([membro_email])
+  @@index([fase])
+  @@index([status])
+}

@@ -1,4 +1,4 @@
-# RCT — Religião Científica Tecnológica
+# RCT — Ressonância Científica Tecnológica
 
 > O fim do misticismo irracional. O início da evolução biológica consciente.
 

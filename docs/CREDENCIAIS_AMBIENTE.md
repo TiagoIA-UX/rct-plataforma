@@ -1,6 +1,6 @@
 # Credenciais de Ambiente — RCT Plataforma
 
-Documento centralizado para adaptação das credenciais da plataforma RCT — Religião Científica Tecnológica.
+Documento centralizado para adaptação das credenciais da plataforma RCT — Ressonância Científica Tecnológica.
 
 ## Origem das credenciais
 
@@ -91,9 +91,11 @@ curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook" \
 |----------|-----------|
 | `NEXT_PUBLIC_SITE_URL` | URL de produção (ex: `https://rct.com.br`) |
 | `NEXT_PUBLIC_APP_URL` | Alias da URL (mesmo valor) |
-| `NEXT_PUBLIC_CONTATO_EMAIL` | E-mail exibido no rodapé |
+| `NEXT_PUBLIC_CONTATO_EMAIL` | E-mail exibido no rodapé (`zairyx.ai@gmail.com`) |
+| `NEXT_PUBLIC_PIX_CHAVE` | Chave PIX — CNPJ (`61699939000180`) |
+| `NEXT_PUBLIC_PAYPAL_EMAIL` | E-mail PayPal (`tiagorocha1777@gmail.com`) |
 | `NEXT_PUBLIC_MEI_RAZAO_SOCIAL` | Razão social no rodapé |
-| `NEXT_PUBLIC_MEI_CNPJ` | CNPJ no rodapé |
+| `NEXT_PUBLIC_MEI_CNPJ` | CNPJ formatado no rodapé (`61.699.939/0001-80`) |
 
 ---
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/layout/Logo";
+import { RCT_NOME_COMPLETO } from "@/lib/identidade";
 import { TransparenciaRessonancia } from "@/components/shared/TransparenciaRessonancia";
 
 export function Footer() {
@@ -10,7 +11,7 @@ export function Footer() {
           <div>
             <Logo variant="footer" />
             <p className="mt-3 font-[family-name:var(--font-cormorant)] text-sm text-[var(--sacred-gold)]">
-              Religião Científica Tecnológica
+              {RCT_NOME_COMPLETO}
             </p>
             <p className="mt-2 text-sm text-[rgba(248,246,240,0.6)]">
               Tradição cristã e neurociência comportamental — memória, emoção, hábitos e
@@ -40,7 +41,7 @@ export function Footer() {
               <li><Link href="/seguranca">Segurança</Link></li>
             </ul>
             <p className="mt-4 text-sm text-[rgba(248,246,240,0.6)]">
-              {process.env.NEXT_PUBLIC_CONTATO_EMAIL ?? "contato@rct.com.br"}
+              {process.env.NEXT_PUBLIC_CONTATO_EMAIL ?? "zairyx.ai@gmail.com"}
             </p>
           </div>
         </div>

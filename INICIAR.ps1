@@ -5,7 +5,7 @@ $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
 Write-Host ""
-Write-Host "  RCT — Religiao Cientifica Tecnologica" -ForegroundColor DarkYellow
+Write-Host "  RCT — Ressonancia Cientifica Tecnologica" -ForegroundColor DarkYellow
 Write-Host "  Iniciando ambiente local..." -ForegroundColor Gray
 Write-Host ""
 

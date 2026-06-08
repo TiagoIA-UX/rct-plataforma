@@ -30,9 +30,12 @@ export function PixDoacao() {
       {temChave ? (
         <div className="mt-8">
           <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-            Chave PIX
+            Chave PIX (CNPJ)
           </p>
-          <p className="mt-2 break-all font-[family-name:var(--font-jetbrains)] text-lg text-[var(--pure-white)]">
+          <p className="mt-2 font-[family-name:var(--font-jetbrains)] text-lg text-[var(--pure-white)]">
+            {DOACAO.cnpjFormatado}
+          </p>
+          <p className="mt-1 break-all font-[family-name:var(--font-jetbrains)] text-xs text-[rgba(248,246,240,0.5)]">
             {DOACAO.chavePix}
           </p>
           {DOACAO.titular && (

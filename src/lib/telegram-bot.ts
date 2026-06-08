@@ -110,7 +110,7 @@ export async function handleWebhook(body: TelegramUpdate): Promise<void> {
       messages: [
         {
           role: "system",
-          content: `Você é o assistente da RCT — Ressonância Consciência Transformação.
+          content: `Você é o assistente da RCT — Ressonância Científica Tecnológica.
 Responda com precisão científica e tom sóbrio. Nunca use linguagem mística vaga.
 Priorize neurociência comportamental com referências publicadas. Tom respeitoso.
 Seja conciso: máximo 3 parágrafos. Sempre convide para o diagnóstico em /diagnostico.

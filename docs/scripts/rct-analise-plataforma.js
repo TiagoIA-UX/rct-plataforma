@@ -139,7 +139,7 @@ const doc = new Document({
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 80 },
       children: [new TextRun({ text: "R C T", font: "Arial", size: 52, bold: true, color: DEEP_BLUE })] }),
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 40, after: 80 },
-      children: [new TextRun({ text: "Religião Científica Tecnológica", font: "Arial", size: 24, italics: true, color: DARK_GOLD })] }),
+      children: [new TextRun({ text: "Ressonância Científica Tecnológica", font: "Arial", size: 24, italics: true, color: DARK_GOLD })] }),
     space(80),
     hr(ACCENT),
     space(80),

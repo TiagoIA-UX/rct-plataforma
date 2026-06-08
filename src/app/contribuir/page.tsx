@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PayPalDoacao } from "@/components/contribuicao/PayPalDoacao";
 import { PixDoacao } from "@/components/contribuicao/PixDoacao";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { DECLARACAO_CONTRIBUIDOR } from "@/lib/salvaguardas";
@@ -10,7 +11,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Contribuir",
-  description: "Apoie a RCT via PIX — alcance, manutenção, expansão e espaço físico.",
+  description: "Apoie a RCT via PIX ou PayPal — alcance, manutenção, expansão e espaço físico.",
 };
 
 export default function ContribuirPage() {
@@ -27,8 +28,8 @@ export default function ContribuirPage() {
           Contribuir
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.8)]">
-          Sua doação via PIX ajuda a levar esta mensagem a mais pessoas e a sustentar a
-          plataforma com seriedade.
+          Sua doação via PIX ou PayPal ajuda a levar esta mensagem a mais pessoas e a
+          sustentar a plataforma com seriedade.
         </p>
 
         <ul className="mt-8 space-y-4">
@@ -49,8 +50,9 @@ export default function ContribuirPage() {
           <p className="mt-3 italic">&ldquo;{DECLARACAO_CONTRIBUIDOR}&rdquo;</p>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 space-y-8">
           <PixDoacao />
+          <PayPalDoacao />
         </div>
       </div>
     </div>

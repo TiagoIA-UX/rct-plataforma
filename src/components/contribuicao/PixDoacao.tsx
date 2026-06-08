@@ -38,11 +38,6 @@ export function PixDoacao() {
           <p className="mt-1 break-all font-[family-name:var(--font-jetbrains)] text-xs text-[rgba(248,246,240,0.5)]">
             {DOACAO.chavePix}
           </p>
-          {DOACAO.titular && (
-            <p className="mt-2 text-sm text-[rgba(248,246,240,0.6)]">
-              Titular: {DOACAO.titular}
-            </p>
-          )}
           <button type="button" onClick={copiarChave} className="btn-primary mt-6">
             {copiado ? "Chave copiada" : "Copiar chave PIX"}
           </button>

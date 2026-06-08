@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
+import { VivekaProtocolo } from "@/components/shared/VivekaProtocolo";
 import { ESSENCIA_PLATAFORMA, SECOES_CAMINHO } from "@/lib/essencia";
 import { IMAGENS } from "@/lib/imagens";
 
@@ -61,7 +62,13 @@ export default function CaminhoPage() {
         </section>
       ))}
 
-      <section className="px-6 py-20 text-center">
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-3xl">
+          <VivekaProtocolo />
+        </div>
+      </section>
+
+      <section className="px-6 pb-20 text-center">
         <Link href="/blog" className="btn-primary">
           Explorar o Blog
         </Link>

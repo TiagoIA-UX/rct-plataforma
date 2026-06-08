@@ -1,20 +1,17 @@
 import TelegramBot from "node-telegram-bot-api";
 import Groq from "groq-sdk";
+import { montarTextoConviteProtocolo } from "@/lib/convites";
+import { CONVITE_SCORE_MINIMO, incluiTermosEpigeneticos } from "@/lib/ressonancia-pesos";
 import type { TerritorioPrimario } from "@/types/diagnostico";
 
 interface ConviteParams {
   username: string;
-  nome: string;
-  territorio: TerritorioPrimario;
-  frase_reconhecimento: string;
 }
 
-interface DiagnosticoEscolhido {
-  id: string;
-  nome: string;
-  territorio_primario: string;
+interface AlertaRessonanciaParams {
   score: number;
-  frase_reconhecimento: string;
+  territorio_primario: TerritorioPrimario | string;
+  textosAnalise?: string[];
 }
 
 interface TelegramMessage {
@@ -32,30 +29,19 @@ function getBot(): TelegramBot | null {
   return new TelegramBot(token, { polling: false });
 }
 
-export async function enviarConviteTelegram({
-  username,
-  frase_reconhecimento,
-}: ConviteParams): Promise<boolean> {
+/** Convite protocolo imutável — Etapa 5.2; disparo somente score >= 60 */
+export async function enviarConviteTelegram({ username }: ConviteParams): Promise<boolean> {
   const bot = getBot();
   if (!bot || process.env.ENABLE_TELEGRAM_CONVITES !== "true") return false;
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? "";
-  const mensagem = `
-${frase_reconhecimento}
-
-A *RCT — Religião Científica Tecnológica* agradece seu interesse. Oferecemos conteúdo que comprova cientificamente o caminho da fé — para ser vivida em paz, com referências verificáveis.
-
-Se você foi acolhido pela equipe, a formação reservada fica disponível em:
-
-🔗 [Formação reservada](${siteUrl}/formacao)
-
-_Contato enviado porque você autorizou na plataforma._
-  `.trim();
+  const linkMembros = `${siteUrl}/formacao`;
+  const mensagem = montarTextoConviteProtocolo(linkMembros);
 
   try {
     const cleanUsername = username.replace(/^@/, "");
     const chat = await bot.getChat(`@${cleanUsername}`);
-    await bot.sendMessage(chat.id, mensagem, { parse_mode: "Markdown" });
+    await bot.sendMessage(chat.id, mensagem);
     return true;
   } catch (error) {
     console.error("[telegram] Falha ao enviar convite:", error);
@@ -63,35 +49,35 @@ _Contato enviado porque você autorizou na plataforma._
   }
 }
 
-interface TriagemAlerta {
-  ahimsa_principiologico: boolean;
-  coerencia_textual: number;
-  apto_treinamento: boolean;
-  fase_sugerida: string;
-  notas_admin: string;
-}
-
-export async function alertarAdminTriagem(
-  dados: DiagnosticoEscolhido & { triagem: TriagemAlerta }
-): Promise<void> {
+/**
+ * Alerta admin — Protocolo Etapa 6
+ * Apenas score, categoria de interesse e timestamp. Sem dados pessoais identificáveis.
+ */
+export async function alertarAltaRessonancia({
+  score,
+  territorio_primario,
+  textosAnalise = [],
+}: AlertaRessonanciaParams): Promise<void> {
   const bot = getBot();
-  const chatId = process.env.TELEGRAM_ADMIN_CHAT_ID;
+  const chatId = process.env.TELEGRAM_ADMIN_CHAT_ID ?? process.env.TELEGRAM_CHAT_ID;
   if (!bot || !chatId || process.env.ENABLE_ADMIN_ALERTS !== "true") return;
+  if (score < CONVITE_SCORE_MINIMO) return;
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? "";
+  const alertaViveka = incluiTermosEpigeneticos(...textosAnalise)
+    ? `
+
+🔔 *ALERTA VIVEKA ATIVADO*
+
+Esta ressonância inclui termos de alto peso epigenético.
+Verifique: o conteúdo que atraiu esta pessoa aplica a Salvaguarda 0.1?`
+    : "";
+
   const msg = `
-🔬 *TRIAGEM INTERNA — APTO TREINAMENTO*
+🔬 *Alta ressonância detectada*
 
-Nome: ${dados.nome}
-Território: ${dados.territorio_primario}
-Score público: ${dados.score}/100
-Coerência textual: ${dados.triagem.coerencia_textual}%
-Fase sugerida: ${dados.triagem.fase_sugerida}
-
-Frase IA: _"${dados.frase_reconhecimento}"_
-Notas: _${dados.triagem.notas_admin}_
-
-📋 [Revisar no admin](${siteUrl}/admin?tab=triagem)
+Score: ${score}/100
+Categoria de interesse: ${territorio_primario}
+Timestamp: ${new Date().toISOString()}${alertaViveka}
   `.trim();
 
   try {
@@ -124,9 +110,9 @@ export async function handleWebhook(body: TelegramUpdate): Promise<void> {
       messages: [
         {
           role: "system",
-          content: `Você é o assistente da RCT — Religião Científica Tecnológica.
+          content: `Você é o assistente da RCT — Ressonância Consciência Transformação.
 Responda com precisão científica e tom sóbrio. Nunca use linguagem mística vaga.
-Priorize neurociência comportamental com referências publicadas (ver protocolo-ciencia.txt). Tom respeitoso; tradição espiritual e ciência em parágrafos distintos.
+Priorize neurociência comportamental com referências publicadas. Tom respeitoso.
 Seja conciso: máximo 3 parágrafos. Sempre convide para o diagnóstico em /diagnostico.
 Site: ${siteUrl}`,
         },

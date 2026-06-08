@@ -1,9 +1,10 @@
-import { RESPOSTAS_RESSONANCIA } from "@/lib/convites";
+import { RESPOSTAS_RESSONANCIA, elegivelConviteRessonancia } from "@/lib/convites";
 import { salvarDiagnostico } from "@/lib/db/diagnostico";
 import { analisarTextosMissao } from "@/lib/groq-analise";
+import { calcularScoreTermos } from "@/lib/ressonancia-pesos";
 import { calcularRessonanciaPublica, recalcularNivelPublico } from "@/lib/ressonancia-score";
 import { extrairTriagemInterna } from "@/lib/triagem-interna";
-import { alertarAdminTriagem, enviarConviteTelegram } from "@/lib/telegram-bot";
+import { alertarAltaRessonancia, enviarConviteTelegram } from "@/lib/telegram-bot";
 import { diagnosticoSchema } from "@/lib/validations/diagnostico";
 
 export async function POST(req: Request) {
@@ -22,23 +23,34 @@ export async function POST(req: Request) {
     const analiseIA = await analisarTextosMissao(data);
     const resultado = calcularRessonanciaPublica(data);
 
+    const scoreTermos = calcularScoreTermos(data.aplicacao_diaria, data.maior_questao);
+    const bonusTermos = Math.round(scoreTermos * 0.3);
+    resultado.dimensoes.ahimsa += bonusTermos;
+    resultado.score += bonusTermos;
+
     resultado.dimensoes.missao = analiseIA.score_missao;
     resultado.score += analiseIA.score_missao;
 
+    resultado.score = Math.min(100, resultado.score);
     const nivelPublico = recalcularNivelPublico(resultado.score);
     resultado.nivel = nivelPublico;
-    resultado.convite_rede = nivelPublico === "alto";
+    resultado.convite_rede = elegivelConviteRessonancia(resultado.score);
 
     const triagem = extrairTriagemInterna(analiseIA);
     const nivelInterno = triagem.apto_treinamento ? "escolhido" : nivelPublico;
 
     let conviteEnviado = false;
-    if (triagem.apto_treinamento && data.telegram_username) {
+    if (resultado.convite_rede && data.telegram_username) {
       conviteEnviado = await enviarConviteTelegram({
         username: data.telegram_username,
-        nome: data.nome,
-        territorio: data.territorio_primario,
-        frase_reconhecimento: analiseIA.frase_reconhecimento,
+      });
+    }
+
+    if (resultado.convite_rede) {
+      await alertarAltaRessonancia({
+        score: resultado.score,
+        territorio_primario: data.territorio_primario,
+        textosAnalise: [data.aplicacao_diaria, data.maior_questao],
       });
     }
 
@@ -50,17 +62,6 @@ export async function POST(req: Request) {
       convite_enviado: conviteEnviado,
     });
 
-    if (triagem.apto_treinamento) {
-      await alertarAdminTriagem({
-        id: registro.id,
-        nome: data.nome,
-        territorio_primario: data.territorio_primario,
-        score: resultado.score,
-        frase_reconhecimento: analiseIA.frase_reconhecimento,
-        triagem,
-      });
-    }
-
     return Response.json({
       nivel: nivelPublico,
       score: resultado.score,
@@ -69,6 +70,7 @@ export async function POST(req: Request) {
       resposta: RESPOSTAS_RESSONANCIA[nivelPublico],
       diagnostico_id: registro.id,
       acesso_formacao: triagem.apto_treinamento,
+      convite_rede: resultado.convite_rede,
     });
   } catch (error) {
     console.error("[api/diagnostico] Erro:", error);

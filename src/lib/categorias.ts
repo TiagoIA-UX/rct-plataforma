@@ -1,15 +1,33 @@
-/** Rótulos do blog — linguagem acessível; só termos com lastro científico entre parênteses */
+/** 7 categorias obrigatórias — Protocolo Mestre Divino v1.0, Etapa 4.1 */
 
 export const CATEGORIA_LABELS: Record<string, string> = {
-  mandamentos: "Mandamentos (código-fonte da vida)",
-  epigenetica: "Vida e família",
-  neurociencia: "Mente e corpo (neurociência)",
-  ahimsa: "Paz e não-violência",
-  "milagres-decodificados": "Evangelho e vida",
-  "virus-do-dna": "Hábitos e bem-estar (neuroplasticidade)",
-  "rede-dos-escolhidos": "Comunidade",
+  "jesus-grande-yogue": "Jesus: O Grande Yogue",
+  "prompts-do-mestre": "Prompts do Grande Mestre",
+  "epigenetica-sagrada": "Epigenética Sagrada",
+  "virus-do-dna": "Vírus do DNA",
+  "misticismo-decodificado": "Misticismo Decodificado",
+  "ahimsa-aplicada": "Ahimsa na Prática",
+  "linhagem-do-conhecimento": "Linhagem do Conhecimento",
+};
+
+export const CATEGORIAS_BLOG = Object.keys(CATEGORIA_LABELS);
+
+/** Migra slugs legados para as 7 categorias do protocolo */
+export const CATEGORIA_LEGACY_MAP: Record<string, string> = {
+  mandamentos: "misticismo-decodificado",
+  epigenetica: "epigenetica-sagrada",
+  neurociencia: "epigenetica-sagrada",
+  ahimsa: "ahimsa-aplicada",
+  "milagres-decodificados": "jesus-grande-yogue",
+  "virus-do-dna": "virus-do-dna",
+  "rede-dos-escolhidos": "linhagem-do-conhecimento",
 };
 
 export function labelCategoria(slug: string): string {
-  return CATEGORIA_LABELS[slug] ?? slug;
+  const normalizado = CATEGORIA_LEGACY_MAP[slug] ?? slug;
+  return CATEGORIA_LABELS[normalizado] ?? slug;
+}
+
+export function normalizarCategoria(slug: string): string {
+  return CATEGORIA_LEGACY_MAP[slug] ?? slug;
 }

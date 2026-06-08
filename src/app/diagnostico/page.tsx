@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DiagnosticoWizard } from "@/components/diagnostico/DiagnosticoWizard";
+import { TransparenciaRessonancia } from "@/components/shared/TransparenciaRessonancia";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { IMAGENS } from "@/lib/imagens";
 
@@ -28,6 +29,7 @@ export default function DiagnosticoPage() {
         </p>
       </div>
       <div className="mx-auto mt-12 max-w-3xl">
+        <TransparenciaRessonancia className="mb-8 text-center" />
         <DiagnosticoWizard />
       </div>
     </div>

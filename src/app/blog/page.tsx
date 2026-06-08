@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { BannerArtigo } from "@/components/blog/BannerArtigo";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
-import { CATEGORIA_LABELS } from "@/lib/categorias";
+import { CATEGORIA_LABELS, CATEGORIAS_BLOG } from "@/lib/categorias";
 import { listarArtigosPublicados } from "@/lib/db/artigos";
 import { IMAGENS } from "@/lib/imagens";
 
@@ -45,18 +46,15 @@ export default async function BlogPage({ searchParams }: Props) {
           >
             Todos
           </Link>
-          <Link href="/blog?categoria=mandamentos" className="btn-secondary text-xs px-3 py-1">
-            Mandamentos
-          </Link>
-          <Link href="/blog?categoria=milagres-decodificados" className="btn-secondary text-xs px-3 py-1">
-            Evangelho e vida
-          </Link>
-          <Link href="/blog?categoria=ahimsa" className="btn-secondary text-xs px-3 py-1">
-            Paz
-          </Link>
-          <Link href="/blog?categoria=neurociencia" className="btn-secondary text-xs px-3 py-1">
-            Mente e corpo
-          </Link>
+          {CATEGORIAS_BLOG.map((slug) => (
+            <Link
+              key={slug}
+              href={`/blog?categoria=${slug}`}
+              className={`btn-secondary text-xs px-3 py-1 ${categoria === slug ? "opacity-100" : "opacity-60"}`}
+            >
+              {CATEGORIA_LABELS[slug]}
+            </Link>
+          ))}
         </div>
 
         <div className="mt-12 space-y-6">
@@ -66,14 +64,23 @@ export default async function BlogPage({ searchParams }: Props) {
             </p>
           ) : (
             artigos.map((a) => (
-              <article key={a.id} className="card-sacred rounded-sm p-6">
-                <span className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-                  {CATEGORIA_LABELS[a.categoria] ?? a.categoria}
-                </span>
-                <h2 className="mt-2 text-2xl">
-                  <Link href={`/blog/${a.slug}`}>{a.titulo}</Link>
-                </h2>
-                {a.subtitulo && <p className="mt-2 text-sm opacity-75">{a.subtitulo}</p>}
+              <article key={a.id} className="card-sacred overflow-hidden rounded-sm">
+                <Link href={`/blog/${a.slug}`} className="block">
+                  <BannerArtigo
+                    categoria={a.categoria}
+                    titulo={a.titulo}
+                    variant="compact"
+                  />
+                </Link>
+                <div className="p-6">
+                  <span className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
+                    {CATEGORIA_LABELS[a.categoria] ?? a.categoria}
+                  </span>
+                  <h2 className="mt-2 text-2xl">
+                    <Link href={`/blog/${a.slug}`}>{a.titulo}</Link>
+                  </h2>
+                  {a.subtitulo && <p className="mt-2 text-sm opacity-75">{a.subtitulo}</p>}
+                </div>
               </article>
             ))
           )}

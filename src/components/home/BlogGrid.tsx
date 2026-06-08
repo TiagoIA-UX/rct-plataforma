@@ -1,17 +1,7 @@
 import Link from "next/link";
+import { BannerArtigo } from "@/components/blog/BannerArtigo";
 import { CATEGORIA_LABELS } from "@/lib/categorias";
 import { listarArtigosRecentes } from "@/lib/db/artigos";
-import { IMAGENS } from "@/lib/imagens";
-
-const CATEGORIA_IMAGENS: Record<string, string> = {
-  mandamentos: IMAGENS.milagres.src,
-  epigenetica: IMAGENS.epigenetica.src,
-  neurociencia: IMAGENS.neurociencia.src,
-  ahimsa: IMAGENS.ahimsa.src,
-  "milagres-decodificados": IMAGENS.milagres.src,
-  "virus-do-dna": IMAGENS.habitos.src,
-  "rede-dos-escolhidos": IMAGENS.comunidade.src,
-};
 
 export async function BlogGrid() {
   let artigos: Awaited<ReturnType<typeof listarArtigosRecentes>> = [];
@@ -39,40 +29,32 @@ export async function BlogGrid() {
           </p>
         ) : (
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {artigos.map((artigo) => {
-              const img =
-                CATEGORIA_IMAGENS[artigo.categoria] ?? IMAGENS.blog.src;
-              return (
-                <article key={artigo.id} className="card-sacred overflow-hidden rounded-sm">
-                  <div className="relative aspect-[16/9] w-full bg-[rgba(26,39,68,0.5)]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={img}
-                      alt={artigo.titulo}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <span className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-                      {CATEGORIA_LABELS[artigo.categoria] ?? artigo.categoria}
-                    </span>
-                    <h3 className="mt-3 text-xl text-[var(--pure-white)]">{artigo.titulo}</h3>
-                    {artigo.subtitulo && (
-                      <p className="mt-2 text-sm text-[rgba(248,246,240,0.65)]">{artigo.subtitulo}</p>
-                    )}
-                    <Link
-                      href={`/blog/${artigo.slug}`}
-                      className="mt-4 inline-block text-sm font-semibold"
-                    >
-                      Ler artigo →
-                    </Link>
-                  </div>
-                </article>
-              );
-            })}
+            {artigos.map((artigo) => (
+              <article key={artigo.id} className="card-sacred overflow-hidden rounded-sm">
+                <Link href={`/blog/${artigo.slug}`} className="block">
+                  <BannerArtigo
+                    categoria={artigo.categoria}
+                    titulo={artigo.titulo}
+                    variant="compact"
+                  />
+                </Link>
+                <div className="p-6">
+                  <span className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
+                    {CATEGORIA_LABELS[artigo.categoria] ?? artigo.categoria}
+                  </span>
+                  <h3 className="mt-3 text-xl text-[var(--pure-white)]">{artigo.titulo}</h3>
+                  {artigo.subtitulo && (
+                    <p className="mt-2 text-sm text-[rgba(248,246,240,0.65)]">{artigo.subtitulo}</p>
+                  )}
+                  <Link
+                    href={`/blog/${artigo.slug}`}
+                    className="mt-4 inline-block text-sm font-semibold"
+                  >
+                    Ler artigo →
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         )}
       </div>

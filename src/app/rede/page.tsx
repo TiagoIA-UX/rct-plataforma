@@ -47,9 +47,8 @@ export default function RedePage() {
             Comunidade RCT
           </h1>
           <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-            Esta área reúne participantes que completaram o questionário e demonstraram
-            interesse em caminhar de forma mais próxima. O blog e o caminho permanecem
-            abertos a todos.
+            Esta área reúne quem ressoa com os princípios da RCT — sem gradiente de mérito
+            julgado por humanos. O blog e o caminho permanecem abertos a todos.
           </p>
           <Link href="/diagnostico" className="btn-primary mt-8 inline-flex">
             Questionário (opcional)

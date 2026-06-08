@@ -1,11 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --deep-blue: #1a2744;
-  --sacred-gold: #c8a951;
+  /* Protocolo Mestre v1.0 — paleta RCT */
+  --rct-ouro: #c9a84c;
+  --rct-azul-profundo: #1a2744;
+  --rct-branco-luz: #f8f6f0;
+  --rct-verde-ahimsa: #4a7c59;
+  --rct-cinza-ciencia: #6b7280;
+
+  --deep-blue: var(--rct-azul-profundo);
+  --sacred-gold: var(--rct-ouro);
   --dark-gold: #8b6914;
-  --life-green: #1a5c2a;
-  --pure-white: #f8f6f0;
+  --life-green: var(--rct-verde-ahimsa);
+  --pure-white: var(--rct-branco-luz);
   --cosmic-dark: #0d1520;
   --accent-gold: #c8a951;
   --text-primary: #1a1a1a;
@@ -23,7 +30,7 @@
   --color-pure-white: var(--pure-white);
   --color-cosmic-dark: var(--cosmic-dark);
   --font-display: var(--font-cormorant);
-  --font-body: var(--font-source-serif);
+  --font-body: var(--font-inter);
   --font-mono: var(--font-jetbrains);
 }
 
@@ -38,7 +45,7 @@ html {
 body {
   background: var(--cosmic-dark);
   color: var(--pure-white);
-  font-family: var(--font-source-serif), Georgia, serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -100,7 +107,7 @@ a:hover {
   padding: 0.875rem 2rem;
   background: var(--gradient-gold);
   color: var(--cosmic-dark);
-  font-family: var(--font-source-serif), serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-weight: 600;
   border: none;
   border-radius: 2px;
@@ -120,7 +127,7 @@ a:hover {
   padding: 0.875rem 2rem;
   background: transparent;
   color: var(--sacred-gold);
-  font-family: var(--font-source-serif), serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-weight: 600;
   border: 1px solid rgba(200, 169, 81, 0.5);
   border-radius: 2px;
@@ -140,7 +147,7 @@ a:hover {
   border: 1px solid rgba(200, 169, 81, 0.25);
   border-radius: 2px;
   color: var(--pure-white);
-  font-family: var(--font-source-serif), serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   transition: border-color 0.3s ease;
 }
 
@@ -180,4 +187,39 @@ a:hover {
   margin-bottom: 0.75rem;
   color: var(--pure-white);
   font-size: 1.35rem;
+}
+
+.prose-rct .rct-clausula-epigenetica {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  border-left: 3px solid var(--rct-verde-ahimsa);
+  background: rgba(74, 124, 89, 0.12);
+  font-size: 0.95rem;
+}
+
+.prose-rct .rct-bencao-maldicao {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(200, 169, 81, 0.25);
+}
+
+.prose-rct .rct-bloco {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 2px;
+  background: rgba(26, 39, 68, 0.45);
+}
+
+.prose-rct .rct-maldicao {
+  border-left: 3px solid rgba(200, 100, 80, 0.6);
+}
+
+.prose-rct .rct-bencao {
+  border-left: 3px solid var(--rct-verde-ahimsa);
+}
+
+.prose-rct .rct-autonomia {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(248, 246, 240, 0.55);
 }

@@ -1,35 +1,51 @@
 import type { NivelPublico } from "@/types/diagnostico";
+import { CONVITE_SCORE_MINIMO } from "@/lib/ressonancia-pesos";
 
-/** Respostas públicas — linguagem acolhedora, sem julgamento */
+/**
+ * TEXTO PROTOCOLO IMUTÁVEL — Etapa 5.2
+ * Qualquer alteração requer aprovação explícita do humano.
+ */
+export function montarTextoConviteProtocolo(linkMembros: string): string {
+  return `Você chegou até aqui por ressonância, não por acaso.
+
+O que você leu não é doutrina — é reconhecimento.
+A ciência que confirma o que você já sente.
+
+Há um espaço onde mentes assim se encontram para construir juntas.
+Sem hierarquia. Sem dogma. Apenas profundidade real.
+
+Se isso ressoa: ${linkMembros}`;
+}
+
+export function elegivelConviteRessonancia(score: number): boolean {
+  return score >= CONVITE_SCORE_MINIMO;
+}
+
+/** Respostas públicas do questionário */
 export const RESPOSTAS_RESSONANCIA: Record<
   NivelPublico,
   { titulo: string; paragrafo: string; cta: string; acao: string }
 > = {
   alto: {
     titulo: "Obrigado por compartilhar sua jornada.",
-    paragrafo: `Suas respostas mostram uma busca sincera por sentido. Aqui você encontra textos
-que unem tradição cristã e neurociência comportamental — neuroplasticidade, regulação emocional,
-hábitos e vínculos sociais — com referência ao autor em cada ensinamento.
-Explore o blog; comece pelos relatos dos evangelhos em linguagem acessível.
-A formação reservada é oferecida depois de inscrição e acolhimento — não aparece no menu público.`,
+    paragrafo: `Suas respostas mostram ressonância com Ahimsa e com o caminho de Jesus o Grande Yogue.
+Explore o blog — comece pela série sobre Samadhi em ação.
+Quem atinge o limiar de reconhecimento pode receber o convite ao espaço de membros.`,
     cta: "Explorar o Blog",
-    acao: "BLOG_MILAGRES + CAMINHO",
+    acao: "BLOG_JESUS_YOGUE",
   },
   medio: {
     titulo: "Seu caminho continua em construção.",
     paragrafo: `Cada pessoa amadurece no seu ritmo. Este espaço apoia essa descoberta com linguagem
-clara e estudos publicados sobre memória e regulação emocional — sem pressa e sem julgamento.
-Leia no seu tempo o que fizer sentido para você hoje.`,
+luminosa e estudos publicados — sem pressa e sem julgamento.`,
     cta: "Explorar o Blog",
     acao: "BLOG_PUBLICO",
   },
   baixo: {
     titulo: "Bem-vindo.",
-    paragrafo: `Ficamos felizes com sua visita. A RCT oferece conteúdo aberto sobre fé, paz e
-neurociência comportamental — com fontes da tradição cristã e referências científicas
-publicadas, em tom respeitoso.
-Comece pelo tema que mais tocar você neste momento.`,
-    cta: "Conhecer a Plataforma",
-    acao: "BLOG_PUBLICO",
+    paragrafo: `Ficamos felizes com sua visita. A RCT oferece conteúdo aberto sobre fé, paz,
+neurociência e o Mestre do Samadhi em ação — com referências verificáveis.`,
+    cta: "Conhecer o Caminho",
+    acao: "CAMINHO",
   },
 };

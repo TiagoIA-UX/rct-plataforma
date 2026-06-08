@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { IMAGENS } from "@/lib/imagens";
-import { citacao } from "@/lib/referencias";
 
 export function Hero() {
   return (
@@ -26,7 +25,7 @@ export function Hero() {
           transition={{ duration: 1.5 }}
           className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-[0.3em] text-[var(--sacred-gold)]"
         >
-          Religião Científica Tecnológica
+          O Mestre que viveu Samadhi em ação desde os 12 anos
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -34,9 +33,7 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="mt-6 font-[family-name:var(--font-cormorant)] text-5xl leading-tight text-[var(--pure-white)] md:text-7xl"
         >
-          Quando a fé encontra
-          <br />
-          a neurociência comportamental.
+          Jesus — O Grande Yogue
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -44,17 +41,7 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.6 }}
           className="mt-8 max-w-2xl text-xl text-[var(--sacred-gold)] md:text-[22px]"
         >
-          Cada texto une tradição cristã e estudos publicados sobre memória, emoção, hábitos e
-          vínculos sociais — dimensões que a neurociência comportamental já descreve com rigor —
-          para sustentar uma fé que se encarna no cotidiano.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.75 }}
-          className="mt-4 max-w-2xl font-[family-name:var(--font-jetbrains)] text-xs text-[rgba(248,246,240,0.45)]"
-        >
-          {citacao("neuroplasticidade")}
+          Ciência, consciência e não-violência como caminho de transformação real.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,11 +49,11 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.9 }}
           className="mt-12 flex flex-wrap gap-4"
         >
-          <Link href="/blog" className="btn-primary">
-            Explorar o Blog
+          <Link href="/diagnostico" className="btn-primary">
+            Entrar na Ressonância
           </Link>
-          <Link href="/caminho" className="btn-secondary">
-            Conhecer o Caminho
+          <Link href="/blog" className="btn-secondary">
+            Explorar o Blog
           </Link>
         </motion.div>
         <p className="mt-6 font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(248,246,240,0.35)]">

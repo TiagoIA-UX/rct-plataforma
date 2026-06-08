@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { IMAGENS } from "@/lib/imagens";
+import { FRASE_AUTONOMIA_PLATAFORMA } from "@/lib/salvaguardas";
 import { citacao } from "@/lib/referencias";
 
 const FASES = [
@@ -92,8 +93,8 @@ export default function FormacaoPage() {
               Formação reservada
             </h1>
             <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-              Este espaço é para quem se inscreveu pelo questionário, foi acolhido pela equipe e
-              permanece fiel por um tempo. Não aparece no menu público de propósito.
+              Este espaço é para quem ressoa com os princípios da RCT — critério verificável pela
+              prática, não por autodeclaração. Nenhum participante tem autoridade sobre outro.
             </p>
             <p className="mt-4 text-sm text-[rgba(248,246,240,0.55)]">
               Enquanto isso, o blog e o caminho estão abertos a todos.
@@ -123,7 +124,10 @@ export default function FormacaoPage() {
           Formação reservada
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-          Você foi acolhido após o questionário. O ritmo é seu — sem pressa, sem exclusão.
+          Você ressoa com este caminho. O ritmo é seu — sem pressa, sem hierarquia entre pares.
+        </p>
+        <p className="mt-4 text-sm italic text-[rgba(248,246,240,0.55)]">
+          {FRASE_AUTONOMIA_PLATAFORMA}
         </p>
 
         <div className="mt-10 grid gap-4">
@@ -176,7 +180,7 @@ export default function FormacaoPage() {
         )}
 
         <div className="mt-10">
-          <Link href="/blog?categoria=milagres-decodificados" className="btn-secondary">
+          <Link href="/blog?categoria=jesus-grande-yogue" className="btn-secondary">
             Começar pelo Blog →
           </Link>
         </div>

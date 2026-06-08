@@ -152,7 +152,7 @@ const artigo = {
   titulo: "Os 10 Mandamentos do Oriente Médio: o código de sobrevivência que atravessou 3.500 anos",
   subtitulo: "Epigenética · Neurociência · Biofísica · Etimologia",
   slug: "10-mandamentos-oriente-medio-ciencia-epigenetica",
-  categoria: "mandamentos",
+  categoria: "misticismo-decodificado",
   tags: [
     "epigenética",
     "neurociência",

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { BannerArtigo } from "@/components/blog/BannerArtigo";
+import { BlocoBencaoMaldicaoFallback } from "@/components/blog/BlocoBencaoMaldicao";
+import { CitacaoParalela } from "@/components/blog/CitacaoParalela";
 import { buscarArtigoPorSlug, listarSlugsPublicados } from "@/lib/db/artigos";
 
 /** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
@@ -38,13 +41,17 @@ export default async function ArtigoPage({ params }: Props) {
   return (
     <article className="px-6 pt-32 pb-24">
       <div className="mx-auto max-w-3xl">
-        <Link href="/" className="text-sm">
-          ← Voltar
+        <Link href="/blog" className="text-sm">
+          ← Blog
         </Link>
-        <p className="mt-6 font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-          {artigo.categoria}
-        </p>
-        <h1 className="mt-4 font-[family-name:var(--font-cormorant)] text-4xl text-[var(--pure-white)] md:text-5xl">
+        <BannerArtigo
+          categoria={artigo.categoria}
+          titulo={artigo.titulo}
+          variant="hero"
+          priority
+          className="mt-6"
+        />
+        <h1 className="mt-8 font-[family-name:var(--font-cormorant)] text-4xl text-[var(--pure-white)] md:text-5xl">
           {artigo.titulo}
         </h1>
         {artigo.subtitulo && (
@@ -57,6 +64,11 @@ export default async function ArtigoPage({ params }: Props) {
           className="prose-rct mt-12"
           dangerouslySetInnerHTML={{ __html: artigo.conteudo_html }}
         />
+        <BlocoBencaoMaldicaoFallback
+          categoria={artigo.categoria}
+          conteudoHtml={artigo.conteudo_html}
+        />
+        <CitacaoParalela slug={slug} />
       </div>
     </article>
   );

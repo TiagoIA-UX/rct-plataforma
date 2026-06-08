@@ -18,7 +18,10 @@ export function CitacaoSagrada() {
 
   return (
     <section className="px-6 py-24">
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="mx-auto max-w-5xl text-center">
+        <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
+          Jesus e Patanjali — a mesma convergência
+        </p>
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -26,13 +29,32 @@ export function CitacaoSagrada() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="mt-8"
           >
-            <blockquote className="font-[family-name:var(--font-cormorant)] text-3xl leading-snug text-[var(--pure-white)] md:text-4xl">
-              &ldquo;{atual.texto}&rdquo;
-            </blockquote>
-            <p className="mt-4 font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-              {atual.referencia}
-            </p>
+            <div className="grid gap-6 md:grid-cols-2 md:text-left">
+              <blockquote className="card-sacred rounded-sm p-6">
+                <p className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[var(--sacred-gold)]">
+                  Jesus
+                </p>
+                <p className="mt-3 font-[family-name:var(--font-cormorant)] text-2xl leading-snug text-[var(--pure-white)] md:text-3xl">
+                  &ldquo;{atual.texto}&rdquo;
+                </p>
+                <p className="mt-3 font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[rgba(248,246,240,0.5)]">
+                  {atual.referencia}
+                </p>
+              </blockquote>
+              <blockquote className="card-sacred rounded-sm p-6">
+                <p className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[var(--sacred-gold)]">
+                  Patanjali
+                </p>
+                <p className="mt-3 font-[family-name:var(--font-cormorant)] text-2xl leading-snug text-[var(--pure-white)] md:text-3xl">
+                  &ldquo;{atual.textoParalelo}&rdquo;
+                </p>
+                <p className="mt-3 font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[rgba(248,246,240,0.5)]">
+                  {atual.referenciaParalela}
+                </p>
+              </blockquote>
+            </div>
             <p className="mx-auto mt-8 max-w-2xl text-lg text-[rgba(248,246,240,0.75)]">
               {atual.decodificacao}
             </p>

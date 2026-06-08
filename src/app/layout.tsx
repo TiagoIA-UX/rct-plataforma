@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
+import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
 import { ConsentAwareAnalytics } from "@/components/legal/ConsentAwareAnalytics";
 import { CookieConsent } from "@/components/legal/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
@@ -12,10 +12,10 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const sourceSerif = Source_Serif_4({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-source-serif",
-  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+  weight: ["400", "500"],
 });
 
 const jetbrains = JetBrains_Mono({
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="pt-BR"
-      className={`${cormorant.variable} ${sourceSerif.variable} ${jetbrains.variable}`}
+      className={`${cormorant.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
         <Header />

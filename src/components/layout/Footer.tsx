@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/layout/Logo";
+import { TransparenciaRessonancia } from "@/components/shared/TransparenciaRessonancia";
 
 export function Footer() {
   return (
@@ -43,7 +44,8 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <p className="mt-10 border-t border-gold pt-6 text-center text-xs text-[rgba(248,246,240,0.4)]">
+        <TransparenciaRessonancia className="mt-10 max-w-3xl mx-auto text-center" />
+        <p className="mt-6 border-t border-gold pt-6 text-center text-xs text-[rgba(248,246,240,0.4)]">
           © {new Date().getFullYear()} RCT — Transparência, consentimento e respeito ao visitante.
         </p>
       </div>

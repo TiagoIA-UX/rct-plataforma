@@ -7,14 +7,24 @@ export type BlogTopic = {
   slug: string;
 };
 
-/** Artigo 01 é inserido manualmente (seed). A partir do 02, o cron gera via IA. */
+/** Artigo 01 (mandamentos) é inserido manualmente (seed). */
+export const SERIE_JESUS_GRANDE_YOGUE: BlogTopic[] = [
+  {
+    slug: "jesus-12-anos-templo-dharana-dhyana-samadhi",
+    tema:
+      "Jesus aos 12 anos no Templo: Dharana, Dhyana e o Samadhi de uma criança que já era yogue",
+    referencia: "Lucas 2:46-47",
+    categoria: "jesus-grande-yogue",
+  },
+];
+
 export const SERIE_MANDAMENTOS_AUTO: BlogTopic[] = [
   {
     slug: "anjos-neuroplasticidade-agentes-codigo-fonte",
     tema:
-      "Os anjos que serviam a Jesus: neuroplasticidade como agente divino e neurônios como mensageiros do código-fonte",
+      "Os anjos que serviam a Jesus: neuroplasticidade e mensageiros do código-fonte",
     referencia: "Evangelhos — ministério de Jesus",
-    categoria: "mandamentos",
+    categoria: "jesus-grande-yogue",
   },
 ];
 
@@ -75,7 +85,11 @@ const POOL_EXTRA = [
   "Autofagia e descanso: biologia do sábado e regeneração celular",
 ];
 
-const FILA_SERIES = [...SERIE_MANDAMENTOS_AUTO, ...SERIE_MILAGRES_AUTO];
+const FILA_SERIES = [
+  ...SERIE_JESUS_GRANDE_YOGUE,
+  ...SERIE_MANDAMENTOS_AUTO,
+  ...SERIE_MILAGRES_AUTO,
+];
 
 export async function pickNextBlogTopic(): Promise<BlogTopic> {
   const existentes = await prisma.artigo.findMany({ select: { slug: true } });

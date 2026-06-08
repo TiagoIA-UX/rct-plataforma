@@ -53,8 +53,10 @@ coverage/
 # --- IP Tiago Aureliano da Rocha (auto) ---
 private/
 private/**
-scripts/
-scripts/**
+scripts/*
+!scripts/seed-artigo01.mjs
+!scripts/content/
+!scripts/content/**
 private/prompts/
 private/prompts/**
 

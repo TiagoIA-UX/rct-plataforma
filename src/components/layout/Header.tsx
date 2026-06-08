@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Logo } from "@/components/layout/Logo";
 
 const links = [
-  { href: "/manifesto", label: "Manifesto" },
+  { href: "/caminho", label: "O Caminho" },
   { href: "/blog", label: "Blog" },
-  { href: "/diagnostico", label: "Calibragem" },
-  { href: "/treinamento", label: "Treinamento" },
+  { href: "/diagnostico", label: "Questionário" },
   { href: "/contribuir", label: "Contribuir" },
+  { href: "/rede", label: "Comunidade" },
 ];
 
 export function Header() {
@@ -17,9 +18,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gold bg-[rgba(13,21,32,0.92)] backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--pure-white)]">
-          RCT
-        </Link>
+        <Logo variant="header" />
         <nav className="hidden gap-8 md:flex">
           {links.map((link) => (
             <Link
@@ -33,8 +32,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/diagnostico" className="btn-primary text-sm px-4 py-2">
-          Calibragem
+        <Link href="/blog" className="btn-primary text-sm px-4 py-2">
+          Blog
         </Link>
       </div>
     </header>

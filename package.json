@@ -1,6 +1,6 @@
 {
   "name": "rct-plataforma",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "RCT — Religião Científica Tecnológica. Organismo digital de ressonância.",
   "private": true,
   "author": "Tiago Aureliano da Rocha",
@@ -31,6 +31,7 @@
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
     "generate:posts": "node private/scripts/generate-daily-posts.mjs",
+    "seed:artigo01": "node scripts/seed-artigo01.mjs",
     "postinstall": "prisma generate",
     "release:patch": "npm version patch --no-git-tag-version && node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version + '\\n')\"",
     "release:minor": "npm version minor --no-git-tag-version && node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version + '\\n')\"",

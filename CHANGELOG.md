@@ -3,6 +3,14 @@
 Todas as mudanças notáveis seguem [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.3.0] - 2026-06-08
+
+### Blog cron recalibrado + seed do Artigo 01
+- Inserção do Artigo 01 no blog via `scripts/seed-artigo01.mjs` (com categoria `mandamentos`).
+- Agendamento automático para 03:00 (horário de São Paulo) e pulando o sábado (dia sagrado).
+- Motor de geração: prompts/agent passam a rodar pelo caminho de `src/lib/` (reduz dependência de `private/` em deploy).
+- Ajuste de UI do blog para exibir a categoria de mandamentos.
+
 ## [0.2.0] - 2026-06-07
 
 ### Evangelização pública + treinamento privado

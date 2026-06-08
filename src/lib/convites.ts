@@ -1,35 +1,35 @@
 import type { NivelPublico } from "@/types/diagnostico";
 
-/** Respostas públicas de evangelização — todos são bem-vindos ao conteúdo */
+/** Respostas públicas — linguagem acolhedora, sem julgamento */
 export const RESPOSTAS_RESSONANCIA: Record<
   NivelPublico,
   { titulo: string; paragrafo: string; cta: string; acao: string }
 > = {
   alto: {
-    titulo: "Sua frequência ressoa com esta missão.",
-    paragrafo: `Sua busca é genuína e sua consciência está em calibragem.
-Este espaço foi construído para quem já recusou o misticismo vazio
-e busca a ciência que confirma a espiritualidade pura.
-Explore o blog — comece pelos milagres decodificados.
-O treinamento avançado é para poucos, mas o caminho é para todos.`,
-    cta: "Explorar os Milagres Decodificados",
-    acao: "BLOG_MILAGRES + MANIFESTO",
+    titulo: "Obrigado por compartilhar sua jornada.",
+    paragrafo: `Suas respostas mostram uma busca sincera por sentido. Aqui você encontra textos
+que unem tradição cristã e neurociência comportamental — neuroplasticidade, regulação emocional,
+hábitos e vínculos sociais — com referência ao autor em cada ensinamento.
+Explore o blog; comece pelos relatos dos evangelhos em linguagem acessível.
+A formação reservada é oferecida depois de inscrição e acolhimento — não aparece no menu público.`,
+    cta: "Explorar o Blog",
+    acao: "BLOG_MILAGRES + CAMINHO",
   },
   medio: {
-    titulo: "O processo está em curso.",
-    paragrafo: `Toda argila passa pelo forno do oleiro antes de se tornar vaso.
-O conteúdo público desta plataforma existe para este momento —
-quando a busca pela verdade ainda está encontrando sua linguagem.
-Explore os artigos. A frequência se clarifica com o tempo.`,
+    titulo: "Seu caminho continua em construção.",
+    paragrafo: `Cada pessoa amadurece no seu ritmo. Este espaço apoia essa descoberta com linguagem
+clara e estudos publicados sobre memória e regulação emocional — sem pressa e sem julgamento.
+Leia no seu tempo o que fizer sentido para você hoje.`,
     cta: "Explorar o Blog",
     acao: "BLOG_PUBLICO",
   },
   baixo: {
-    titulo: "Bem-vindo ao início do caminho.",
-    paragrafo: `Cada ser tem seu tempo. Este espaço oferece evangelização científica —
-a convergência entre Bíblia, Patanjali e neurociência verificável.
-Sem dogma, sem fábula. Comece pelo que ressoar em você.`,
-    cta: "Conhecer a RCT",
+    titulo: "Bem-vindo.",
+    paragrafo: `Ficamos felizes com sua visita. A RCT oferece conteúdo aberto sobre fé, paz e
+neurociência comportamental — com fontes da tradição cristã e referências científicas
+publicadas, em tom respeitoso.
+Comece pelo tema que mais tocar você neste momento.`,
+    cta: "Conhecer a Plataforma",
     acao: "BLOG_PUBLICO",
   },
 };

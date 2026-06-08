@@ -15,7 +15,7 @@ Este projeto segue [Semantic Versioning 2.0.0](https://semver.org/lang/pt-BR/).
 Enquanto `MAJOR = 0`, a API e o schema podem evoluir com mais liberdade.
 Trate `MINOR` como features e `PATCH` como correções.
 
-**Versão atual:** `0.1.1` — Gênesis + transplante de motor do blog-terapia.
+**Versão atual:** `0.3.0` — Gênesis + transplante do motor + seed e cron recalibrado do blog.
 
 Arquivos de versão sincronizados: `package.json`, `VERSION`, `CHANGELOG.md`.
 

@@ -41,7 +41,7 @@ export function DiagnosticoWizard() {
 
       const json = await res.json();
       if (!res.ok) {
-        setErro(json.error ?? "Erro ao processar calibragem.");
+        setErro(json.error ?? "Não foi possível enviar suas respostas. Tente novamente.");
         return;
       }
 
@@ -82,13 +82,14 @@ export function DiagnosticoWizard() {
 
       {passo === 1 && (
         <div className="card-sacred rounded-sm p-8">
-          <h2 className="text-2xl text-[var(--sacred-gold)]">Consciência e Ressonância</h2>
+          <h2 className="text-2xl text-[var(--sacred-gold)]">Sobre você</h2>
           <p className="mt-2 text-sm text-[rgba(248,246,240,0.6)]">
-            Um espelho — não um julgamento. Suas respostas revelam a frequência do seu ambiente.
+            Responda com tranquilidade. Não há resposta certa ou errada — apenas o que é verdadeiro
+            para você neste momento.
           </p>
           <div className="mt-6 space-y-6">
             <div>
-              <label className="label-sacred">Perspectiva sobre espiritualidade</label>
+              <label className="label-sacred">Como você se relaciona com espiritualidade hoje?</label>
               <select
                 className="input-sacred"
                 value={data.perspectiva_espiritualidade ?? ""}
@@ -97,14 +98,14 @@ export function DiagnosticoWizard() {
                 }
               >
                 <option value="">Selecione...</option>
-                <option value="misticismo_puro">Misticismo puro</option>
-                <option value="ciencia_pura">Ciência pura</option>
-                <option value="convergencia">Convergência ciência + espiritualidade</option>
-                <option value="ainda_descobrindo">Ainda descobrindo</option>
+                <option value="misticismo_puro">Experiência e intuição me guiam</option>
+                <option value="ciencia_pura">Prefiro explicações baseadas em evidências</option>
+                <option value="convergencia">Busco diálogo entre fé e ciência</option>
+                <option value="ainda_descobrindo">Ainda estou descobrindo</option>
               </select>
             </div>
             <div>
-              <label className="label-sacred">Postura diante de dogmas</label>
+              <label className="label-sacred">Como você lida com dogmas e tradições?</label>
               <select
                 className="input-sacred"
                 value={data.postura_dogma ?? ""}
@@ -113,14 +114,14 @@ export function DiagnosticoWizard() {
                 }
               >
                 <option value="">Selecione...</option>
-                <option value="aceita">Aceita</option>
-                <option value="questiona">Questiona</option>
-                <option value="rejeita_com_logica">Rejeita com lógica</option>
-                <option value="indiferente">Indiferente</option>
+                <option value="aceita">Acolho com confiança</option>
+                <option value="questiona">Questiono com respeito</option>
+                <option value="rejeita_com_logica">Prefiro avaliar com razão e evidências</option>
+                <option value="indiferente">Não é central para mim</option>
               </select>
             </div>
             <div>
-              <label className="label-sacred">Como você compreende a não-violência na vida prática?</label>
+              <label className="label-sacred">Como você pratica a não-violência (Ahimsa) no dia a dia?</label>
               <select
                 className="input-sacred"
                 value={data.ahimsa_pratica ?? ""}
@@ -132,13 +133,13 @@ export function DiagnosticoWizard() {
               >
                 <option value="">Selecione...</option>
                 <option value="nunca_ouvi">Ainda não explorei este conceito</option>
-                <option value="conheço_teoricamente">Conheço teoricamente</option>
-                <option value="pratico_parcialmente">Pratico parcialmente no dia a dia</option>
-                <option value="e_minha_identidade">É parte da minha forma de viver</option>
+                <option value="conheço_teoricamente">Conheço a ideia, pratico pouco</option>
+                <option value="pratico_parcialmente">Tento aplicar no cotidiano</option>
+                <option value="e_minha_identidade">É parte importante da minha forma de viver</option>
               </select>
             </div>
             <div>
-              <label className="label-sacred">Postura diante da violência</label>
+              <label className="label-sacred">Sua postura diante da violência (física, verbal ou simbólica)</label>
               <select
                 className="input-sacred"
                 value={data.postura_violencia ?? ""}
@@ -147,9 +148,9 @@ export function DiagnosticoWizard() {
                 }
               >
                 <option value="">Selecione...</option>
-                <option value="justificada_em_casos">Justificada em alguns casos</option>
-                <option value="evito_mas_aceito">Evito, mas aceito em certos contextos</option>
-                <option value="recuso_em_qualquer_forma">Recuso em qualquer forma</option>
+                <option value="justificada_em_casos">Acredito que pode ser necessária em alguns casos</option>
+                <option value="evito_mas_aceito">Evito, mas entendo contextos extremos</option>
+                <option value="recuso_em_qualquer_forma">Busco sempre caminhos sem violência</option>
               </select>
             </div>
           </div>
@@ -158,13 +159,13 @@ export function DiagnosticoWizard() {
 
       {passo === 2 && (
         <div className="card-sacred rounded-sm p-8">
-          <h2 className="text-2xl text-[var(--sacred-gold)]">Domínio e Missão</h2>
+          <h2 className="text-2xl text-[var(--sacred-gold)]">Sua área de interesse</h2>
           <p className="mt-2 text-sm text-[rgba(248,246,240,0.6)]">
-            O sensor de ressonância — como você aplica a verdade no cotidiano.
+            Conte, com suas palavras, como você gostaria de servir ao bem comum.
           </p>
           <div className="mt-6 space-y-6">
             <div>
-              <label className="label-sacred">Território primário</label>
+              <label className="label-sacred">Área da vida que mais importa para você neste momento</label>
               <select
                 className="input-sacred"
                 value={data.territorio_primario ?? ""}
@@ -182,21 +183,21 @@ export function DiagnosticoWizard() {
               </select>
             </div>
             <div>
-              <label className="label-sacred">Como você aplica lógica e clareza no seu dia a dia?</label>
+              <label className="label-sacred">Como você aplica seus valores no dia a dia?</label>
               <textarea
                 className="input-sacred min-h-[120px] resize-y"
                 value={data.aplicacao_diaria ?? ""}
                 onChange={(e) => update("aplicacao_diaria", e.target.value)}
-                placeholder="Descreva com honestidade — a ressonância se revela nas suas palavras..."
+                placeholder="Ex.: no trabalho, em casa, na comunidade..."
               />
             </div>
             <div>
-              <label className="label-sacred">O que mais te incomoda no mundo atual?</label>
+              <label className="label-sacred">O que mais lhe preocupa no mundo hoje?</label>
               <textarea
                 className="input-sacred min-h-[100px] resize-y"
                 value={data.maior_questao ?? ""}
                 onChange={(e) => update("maior_questao", e.target.value)}
-                placeholder="Sua maior questão..."
+                placeholder="Opcional — compartilhe se desejar."
               />
             </div>
           </div>
@@ -205,9 +206,14 @@ export function DiagnosticoWizard() {
 
       {passo === 3 && (
         <div className="card-sacred rounded-sm p-8">
-          <h2 className="text-2xl text-[var(--sacred-gold)]">Conexão</h2>
+          <h2 className="text-2xl text-[var(--sacred-gold)]">Contato e consentimento</h2>
           <p className="mt-2 text-sm text-[rgba(248,246,240,0.6)]">
-            Consentimento explícito conforme LGPD.
+            Seus dados são tratados conforme a LGPD (Brasil) e o GDPR (União Europeia), quando
+            aplicável. Leia a{" "}
+            <a href="/privacidade" className="underline" target="_blank" rel="noopener noreferrer">
+              Política de Privacidade
+            </a>
+            . Você pode solicitar acesso, correção ou exclusão a qualquer momento.
           </p>
           <div className="mt-6 space-y-6">
             <div>
@@ -236,8 +242,9 @@ export function DiagnosticoWizard() {
                 className="mt-1"
               />
               <span>
-                Autorizo o tratamento dos meus dados conforme a LGPD para calibragem de
-                ressonância e evangelização científica da RCT.
+                Li a Política de Privacidade e autorizo o tratamento dos meus dados para
+                personalizar conteúdo e, se eu aceitar abaixo, para contato da RCT (consentimento
+                livre, específico e revogável).
               </span>
             </label>
             <label className="flex items-start gap-3 text-sm">
@@ -247,7 +254,7 @@ export function DiagnosticoWizard() {
                 onChange={(e) => update("consentimento_contato", e.target.checked)}
                 className="mt-1"
               />
-              <span>Aceito receber conteúdo e convites da RCT.</span>
+              <span>Aceito receber novidades e convites da RCT por e-mail ou Telegram.</span>
             </label>
           </div>
         </div>
@@ -267,7 +274,7 @@ export function DiagnosticoWizard() {
           </button>
         ) : (
           <button onClick={enviar} disabled={loading} className="btn-primary ml-auto">
-            {loading ? "Calibrando ressonância..." : "Concluir Calibragem"}
+            {loading ? "Enviando..." : "Enviar respostas"}
           </button>
         )}
       </div>

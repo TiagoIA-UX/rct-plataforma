@@ -87,7 +87,7 @@ export function ContribuicaoForm() {
             <option value="">Nenhum específico</option>
             <option value="fase-i">Fase I — Fundamentos</option>
             <option value="fase-ii">Fase II — Ahimsa</option>
-            <option value="fase-iii">Fase III — Epigenética</option>
+            <option value="fase-iii">Fase III — Vida e família</option>
             <option value="fase-iv">Fase IV — Rede</option>
           </select>
         </div>

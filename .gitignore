@@ -55,8 +55,8 @@ private/
 private/**
 scripts/
 scripts/**
-prompts/
-prompts/**
+private/prompts/
+private/prompts/**
 
 # RCT — Materiais confidenciais de treinamento (não versionar)
 RCT_Fase*_*.docx

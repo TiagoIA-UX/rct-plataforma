@@ -4,9 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 
 const perguntas = [
-  "Você busca convergência entre ciência verificável e espiritualidade pura?",
-  "A não-violência (Ahimsa) é um princípio, não apenas uma preferência?",
-  "Você sente que existe um território onde sua missão precisa se manifestar?",
+  "Você se interessa em unir espiritualidade e evidências científicas consolidadas?",
+  "A não-violência faz sentido para você como forma de viver?",
+  "Existe uma área da vida em que você gostaria de crescer mais?",
 ];
 
 export function DiagnosticoRapido() {
@@ -30,8 +30,11 @@ export function DiagnosticoRapido() {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)]">
-          Você já ressoa nesta frequência?
+          Um breve questionário
         </h2>
+        <p className="mt-3 text-sm text-[rgba(248,246,240,0.55)]">
+          Opcional — três perguntas para orientar sua navegação.
+        </p>
 
         {!concluido ? (
           <div className="mt-12 card-sacred rounded-sm p-8">
@@ -52,22 +55,22 @@ export function DiagnosticoRapido() {
           <div className="mt-12 card-sacred rounded-sm p-8">
             {positivas >= 2 ? (
               <>
-                <p className="text-xl text-[var(--sacred-gold)]">Você pode ser um escolhido.</p>
+                <p className="text-xl text-[var(--sacred-gold)]">Parece que este espaço pode fazer sentido para você.</p>
                 <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-                  Sua ressonância inicial indica alinhamento. O diagnóstico completo revelará
-                  o nível preciso da sua frequência.
+                  Se quiser, complete o questionário mais detalhado — leva poucos minutos e
+                  ajuda a sugerir conteúdos alinhados aos seus interesses.
                 </p>
               </>
             ) : (
               <>
-                <p className="text-xl text-[var(--pure-white)]">O processo está em curso.</p>
+                <p className="text-xl text-[var(--pure-white)]">Fique à vontade para explorar no seu ritmo.</p>
                 <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-                  Explore o conteúdo público. Quando a frequência estiver mais clara, retorne.
+                  Todo o blog e o caminho estão abertos. Volte quando desejar.
                 </p>
               </>
             )}
             <Link href="/diagnostico" className="btn-primary mt-8 inline-flex">
-              Iniciar Diagnóstico Completo
+              Questionário completo (opcional)
             </Link>
           </div>
         ) : null}

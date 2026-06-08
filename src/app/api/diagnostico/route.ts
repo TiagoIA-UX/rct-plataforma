@@ -68,6 +68,7 @@ export async function POST(req: Request) {
       frase_reconhecimento: analiseIA.frase_reconhecimento,
       resposta: RESPOSTAS_RESSONANCIA[nivelPublico],
       diagnostico_id: registro.id,
+      acesso_formacao: triagem.apto_treinamento,
     });
   } catch (error) {
     console.error("[api/diagnostico] Erro:", error);

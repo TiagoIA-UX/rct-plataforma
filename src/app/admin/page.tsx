@@ -128,13 +128,13 @@ export default function AdminPage() {
             </div>
             <div className="card-sacred p-6">
               <p className="text-3xl text-[var(--sacred-gold)]">{dados.metricas.total_escolhidos}</p>
-              <p className="text-sm">Escolhidos</p>
+              <p className="text-sm">Aptos à formação reservada</p>
             </div>
             <div className="card-sacred p-6">
               <p className="text-3xl text-[var(--sacred-gold)]">
                 {dados.metricas.taxa_escolhidos.toFixed(1)}%
               </p>
-              <p className="text-sm">Taxa de escolhidos</p>
+              <p className="text-sm">Taxa aptos formação</p>
             </div>
           </div>
         )}

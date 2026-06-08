@@ -1,14 +1,11 @@
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
+import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
+import { CATEGORIA_LABELS } from "@/lib/categorias";
+import { listarArtigosPublicados } from "@/lib/db/artigos";
+import { IMAGENS } from "@/lib/imagens";
 
-const CATEGORIA_LABELS: Record<string, string> = {
-  "milagres-decodificados": "Milagres Decodificados",
-  epigenetica: "Epigenética",
-  neurociencia: "Neurociência",
-  ahimsa: "Ahimsa",
-  "virus-do-dna": "Vírus do DNA",
-  "rede-dos-escolhidos": "Rede dos Escolhidos",
-};
+/** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
+export const revalidate = 3600;
 
 interface Props {
   searchParams: Promise<{ categoria?: string }>;
@@ -17,15 +14,9 @@ interface Props {
 export default async function BlogPage({ searchParams }: Props) {
   const { categoria } = await searchParams;
 
-  let artigos: Awaited<ReturnType<typeof prisma.artigo.findMany>> = [];
+  let artigos: Awaited<ReturnType<typeof listarArtigosPublicados>> = [];
   try {
-    artigos = await prisma.artigo.findMany({
-      where: {
-        publicado: true,
-        ...(categoria ? { categoria } : {}),
-      },
-      orderBy: { created_at: "desc" },
-    });
+    artigos = await listarArtigosPublicados(categoria);
   } catch {
     artigos = [];
   }
@@ -33,27 +24,45 @@ export default async function BlogPage({ searchParams }: Props) {
   return (
     <div className="px-6 pt-32 pb-24">
       <div className="mx-auto max-w-4xl">
+        <ImagemConteudo
+          src={IMAGENS.blog.src}
+          alt={IMAGENS.blog.alt}
+          credito={IMAGENS.blog.credito}
+          className="mb-10"
+        />
         <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)]">
-          Decodificando o Código-Fonte
+          Blog
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-          Bíblia como base · Patanjali como coluna · Ciência como alicerce ·
-          Tecnologia como energia · Contribuição como água cristalina
+          Artigos que dialogam com a neurociência comportamental — memória, emoção, hábitos
+          e vínculos sociais — sempre com tradição cristã e referência publicada.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-2">
-          <Link href="/blog" className={`btn-secondary text-xs px-3 py-1 ${!categoria ? "opacity-100" : "opacity-60"}`}>
+          <Link
+            href="/blog"
+            className={`btn-secondary text-xs px-3 py-1 ${!categoria ? "opacity-100" : "opacity-60"}`}
+          >
             Todos
           </Link>
+          <Link href="/blog?categoria=mandamentos" className="btn-secondary text-xs px-3 py-1">
+            Mandamentos
+          </Link>
           <Link href="/blog?categoria=milagres-decodificados" className="btn-secondary text-xs px-3 py-1">
-            Milagres Decodificados
+            Evangelho e vida
+          </Link>
+          <Link href="/blog?categoria=ahimsa" className="btn-secondary text-xs px-3 py-1">
+            Paz
+          </Link>
+          <Link href="/blog?categoria=neurociencia" className="btn-secondary text-xs px-3 py-1">
+            Mente e corpo
           </Link>
         </div>
 
         <div className="mt-12 space-y-6">
           {artigos.length === 0 ? (
             <p className="card-sacred p-8 text-[rgba(248,246,240,0.6)]">
-              Os primeiros artigos estão sendo gerados pelo Agente Divino. Retorne em breve.
+              Os primeiros artigos estão sendo preparados. Retorne em breve.
             </p>
           ) : (
             artigos.map((a) => (

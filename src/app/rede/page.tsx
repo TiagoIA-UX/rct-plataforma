@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
+import { IMAGENS } from "@/lib/imagens";
 import { NodeCard } from "@/components/rede/NodeCard";
 
 export default function RedePage() {
@@ -25,7 +27,7 @@ export default function RedePage() {
   if (autorizado === null) {
     return (
       <div className="flex min-h-screen items-center justify-center pt-24">
-        <p className="text-[rgba(248,246,240,0.6)]">Verificando ressonância...</p>
+        <p className="text-[rgba(248,246,240,0.6)]">Carregando...</p>
       </div>
     );
   }
@@ -33,17 +35,26 @@ export default function RedePage() {
   if (!autorizado) {
     return (
       <div className="px-6 pt-32 pb-24 text-center">
-        <div className="mx-auto max-w-xl card-sacred rounded-sm p-10">
+        <div className="mx-auto max-w-xl">
+          <ImagemConteudo
+            src={IMAGENS.comunidade.src}
+            alt={IMAGENS.comunidade.alt}
+            credito={IMAGENS.comunidade.credito}
+            className="mb-8"
+          />
+          <div className="card-sacred rounded-sm p-10">
           <h1 className="font-[family-name:var(--font-cormorant)] text-3xl text-[var(--pure-white)]">
-            Área da Rede
+            Comunidade RCT
           </h1>
           <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-            O acesso à rede requer diagnóstico de ressonância com nível &ldquo;alto&rdquo; ou
-            &ldquo;escolhido&rdquo;. Complete o diagnóstico para verificar sua frequência.
+            Esta área reúne participantes que completaram o questionário e demonstraram
+            interesse em caminhar de forma mais próxima. O blog e o caminho permanecem
+            abertos a todos.
           </p>
           <Link href="/diagnostico" className="btn-primary mt-8 inline-flex">
-            Iniciar Diagnóstico
+            Questionário (opcional)
           </Link>
+          </div>
         </div>
       </div>
     );
@@ -52,11 +63,18 @@ export default function RedePage() {
   return (
     <div className="px-6 pt-32 pb-24">
       <div className="mx-auto max-w-4xl">
+        <ImagemConteudo
+          src={IMAGENS.comunidade.src}
+          alt={IMAGENS.comunidade.alt}
+          credito={IMAGENS.comunidade.credito}
+          className="mb-8"
+        />
         <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)]">
-          A Rede dos Escolhidos
+          Comunidade RCT
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-          Cada membro é um nó. Cada nó tem um território. A rede se auto-organiza por ressonância.
+          Pessoas de diferentes áreas — saúde, educação, ciência, família — caminhando
+          juntas com transparência e respeito mútuo.
         </p>
 
         {dados?.frase_reconhecimento && (
@@ -68,13 +86,13 @@ export default function RedePage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <NodeCard nome="Você" territorio="ciencia_tecnologia" frase={dados?.frase_reconhecimento} />
           <div className="card-sacred flex items-center justify-center rounded-sm p-6 text-center text-[rgba(248,246,240,0.5)]">
-            <p>Nós da rede serão revelados conforme a rede cresce.</p>
+            <p>Novos participantes aparecerão aqui conforme a comunidade crescer.</p>
           </div>
         </div>
 
         <div className="mt-12">
           <Link href="/contribuir" className="btn-secondary">
-            Contribuir com o que você sabe →
+            Apoiar via PIX →
           </Link>
         </div>
       </div>

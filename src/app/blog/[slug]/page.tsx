@@ -1,15 +1,27 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
+import { buscarArtigoPorSlug, listarSlugsPublicados } from "@/lib/db/artigos";
+
+/** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
+export const revalidate = 3600;
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateStaticParams() {
+  try {
+    const slugs = await listarSlugsPublicados();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const artigo = await prisma.artigo.findUnique({ where: { slug } });
+  const artigo = await buscarArtigoPorSlug(slug);
   if (!artigo) return { title: "Artigo não encontrado" };
   return {
     title: artigo.titulo,
@@ -19,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ArtigoPage({ params }: Props) {
   const { slug } = await params;
-  const artigo = await prisma.artigo.findUnique({ where: { slug } });
+  const artigo = await buscarArtigoPorSlug(slug);
 
   if (!artigo || !artigo.publicado) notFound();
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
 import { Cormorant_Garamond, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
+import { ConsentAwareAnalytics } from "@/components/legal/ConsentAwareAnalytics";
+import { CookieConsent } from "@/components/legal/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import "./globals.css";
@@ -23,24 +24,30 @@ const jetbrains = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  process.env.NEXT_PUBLIC_APP_URL ??
+  "https://rct-plataforma.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "RCT — Religião Científica Tecnológica",
     template: "%s | RCT",
   },
   description:
-    "A plataforma onde a Ciência explica o que Jesus viveu, Patanjali nomeou, e a Tecnologia agora conecta.",
+    "Tradição cristã e neurociência comportamental — memória, emoção, hábitos e vínculos com referências publicadas.",
   keywords: [
     "RCT",
+    "fé e ciência",
     "Ahimsa",
-    "epigenética",
-    "neurociência",
-    "ciência verificável",
-    "espiritualidade pura",
+    "fé e ciência",
+    "vida interior",
+    "espiritualidade",
   ],
   openGraph: {
     title: "RCT — Religião Científica Tecnológica",
-    description: "O fim do misticismo irracional. O início da evolução biológica consciente.",
+    description: "Fé e neurociência comportamental no mesmo caminho — estudos publicados com referências verificáveis.",
     type: "website",
     locale: "pt_BR",
   },
@@ -56,7 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
-        <Analytics />
+        <CookieConsent />
+        <ConsentAwareAnalytics />
       </body>
     </html>
   );

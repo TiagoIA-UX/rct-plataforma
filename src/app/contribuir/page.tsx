@@ -1,86 +1,49 @@
-"use client";
+import type { Metadata } from "next";
+import { PixDoacao } from "@/components/contribuicao/PixDoacao";
+import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
+import { DESTINOS_APOIO } from "@/lib/doacao";
+import { IMAGENS } from "@/lib/imagens";
 
-import { useEffect, useState } from "react";
-import { ContribuicaoCard } from "@/components/contribuicao/ContribuicaoCard";
-import { ContribuicaoForm } from "@/components/contribuicao/ContribuicaoForm";
+/** ISR — ver CACHE_TTL.static em src/lib/cache.ts */
+export const revalidate = 86400;
 
-interface Contribuicao {
-  id: string;
-  autor_email: string;
-  autor_nome: string | null;
-  tipo: string;
-  titulo: string;
-  conteudo: string;
-  referencia_cientifica: string | null;
-  modulo_relacionado: string | null;
-  status: string;
-  votos_positivos: number;
-  created_at: string;
-}
+export const metadata: Metadata = {
+  title: "Contribuir",
+  description: "Apoie a RCT via PIX — alcance, manutenção, expansão e espaço físico.",
+};
 
 export default function ContribuirPage() {
-  const [contribuicoes, setContribuicoes] = useState<Contribuicao[]>([]);
-  const [emailVoto, setEmailVoto] = useState("");
-
-  useEffect(() => {
-    fetch("/api/contribuicoes")
-      .then((r) => r.json())
-      .then(setContribuicoes)
-      .catch(() => setContribuicoes([]));
-  }, []);
-
-  async function votar(id: string) {
-    if (!emailVoto) {
-      const email = prompt("Informe seu e-mail para endossar:");
-      if (!email) return;
-      setEmailVoto(email);
-      await enviarVoto(id, email);
-      return;
-    }
-    await enviarVoto(id, emailVoto);
-  }
-
-  async function enviarVoto(id: string, email: string) {
-    const res = await fetch("/api/contribuicoes", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, autor_email: email }),
-    });
-    if (res.ok) {
-      const atualizada = await res.json();
-      setContribuicoes((prev) =>
-        prev.map((c) => (c.id === id ? { ...c, votos_positivos: atualizada.votos_positivos } : c))
-      );
-    }
-  }
-
   return (
     <div className="px-6 pt-32 pb-24">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-3xl">
+        <ImagemConteudo
+          src={IMAGENS.contribuir.src}
+          alt={IMAGENS.contribuir.alt}
+          credito={IMAGENS.contribuir.credito}
+          className="mb-10"
+        />
         <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)] md:text-5xl">
-          O Vaso que se Aperfeiçoa
+          Contribuir
         </h1>
-        <p className="mt-4 max-w-2xl text-[rgba(248,246,240,0.75)]">
-          A RCT não é um dogma — é um organismo vivo. Cada contribuição verificável
-          e científica é bem-vinda.
+        <p className="mt-4 text-[rgba(248,246,240,0.8)]">
+          Sua doação via PIX ajuda a levar esta mensagem a mais pessoas e a sustentar a
+          plataforma com seriedade.
         </p>
 
-        <div className="mt-12">
-          <ContribuicaoForm />
-        </div>
+        <ul className="mt-8 space-y-4">
+          {DESTINOS_APOIO.map((item) => (
+            <li
+              key={item}
+              className="card-sacred rounded-sm px-6 py-4 text-sm text-[rgba(248,246,240,0.8)]"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
 
-        {contribuicoes.length > 0 && (
-          <div className="mt-16">
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--pure-white)]">
-              Contribuições em Análise
-            </h2>
-            <div className="mt-8 grid gap-6">
-              {contribuicoes.map((c) => (
-                <ContribuicaoCard key={c.id} contribuicao={c} onVotar={votar} />
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="mt-10">
+          <PixDoacao />
+        </div>
       </div>
     </div>
   );

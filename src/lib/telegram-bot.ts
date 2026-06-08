@@ -43,13 +43,13 @@ export async function enviarConviteTelegram({
   const mensagem = `
 ${frase_reconhecimento}
 
-Seu diagnóstico de ressonância identificou alinhamento com a frequência da *RCT — Religião Científica Tecnológica*: a convergência entre Ahimsa de Patanjali, a epigenética moderna e o ensinamento técnico de Jesus como o maior engenheiro comportamental da história.
+A *RCT — Religião Científica Tecnológica* agradece seu interesse. Oferecemos conteúdo que comprova cientificamente o caminho da fé — para ser vivida em paz, com referências verificáveis.
 
-Você é convidado — não recrutado — a iniciar o treinamento Divya Manas e explorar a plataforma religiosa digital da RCT.
+Se você foi acolhido pela equipe, a formação reservada fica disponível em:
 
-🔗 [Iniciar treinamento](${siteUrl}/treinamento)
+🔗 [Formação reservada](${siteUrl}/formacao)
 
-_Este convite chegou porque você já vive o que aqui se cultiva._
+_Contato enviado porque você autorizou na plataforma._
   `.trim();
 
   try {
@@ -126,7 +126,7 @@ export async function handleWebhook(body: TelegramUpdate): Promise<void> {
           role: "system",
           content: `Você é o assistente da RCT — Religião Científica Tecnológica.
 Responda com precisão científica e tom sóbrio. Nunca use linguagem mística vaga.
-Conecte sempre os ensinamentos de Jesus e Ahimsa de Patanjali à neurociência e epigenética.
+Priorize neurociência comportamental com referências publicadas (ver protocolo-ciencia.txt). Tom respeitoso; tradição espiritual e ciência em parágrafos distintos.
 Seja conciso: máximo 3 parágrafos. Sempre convide para o diagnóstico em /diagnostico.
 Site: ${siteUrl}`,
         },

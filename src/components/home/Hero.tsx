@@ -2,11 +2,24 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { IMAGENS } from "@/lib/imagens";
+import { citacao } from "@/lib/referencias";
 
 export function Hero() {
   return (
-    <section className="gradient-cosmos flex min-h-screen items-center px-6 pt-24">
-      <div className="mx-auto max-w-5xl">
+    <section className="gradient-cosmos relative flex min-h-screen items-center overflow-hidden px-6 pt-24">
+      <div className="absolute inset-0 opacity-25">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={IMAGENS.hero.src}
+          alt={IMAGENS.hero.alt}
+          className="h-full w-full object-cover"
+          loading="eager"
+          decoding="async"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="relative mx-auto max-w-5xl">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -21,9 +34,9 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="mt-6 font-[family-name:var(--font-cormorant)] text-5xl leading-tight text-[var(--pure-white)] md:text-7xl"
         >
-          A Verdade que a Ciência
+          Quando a fé encontra
           <br />
-          finalmente consegue nomear.
+          a neurociência comportamental.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -31,9 +44,17 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.6 }}
           className="mt-8 max-w-2xl text-xl text-[var(--sacred-gold)] md:text-[22px]"
         >
-          Epigenética. Neurociência. Ahimsa.
-          <br />
-          O código-fonte que Jesus viveu e Patanjali codificou.
+          Cada texto une tradição cristã e estudos publicados sobre memória, emoção, hábitos e
+          vínculos sociais — dimensões que a neurociência comportamental já descreve com rigor —
+          para sustentar uma fé que se encarna no cotidiano.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.75 }}
+          className="mt-4 max-w-2xl font-[family-name:var(--font-jetbrains)] text-xs text-[rgba(248,246,240,0.45)]"
+        >
+          {citacao("neuroplasticidade")}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,13 +62,16 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.9 }}
           className="mt-12 flex flex-wrap gap-4"
         >
-          <Link href="/diagnostico" className="btn-primary">
-            Iniciar Calibragem
+          <Link href="/blog" className="btn-primary">
+            Explorar o Blog
           </Link>
-          <Link href="/manifesto" className="btn-secondary">
-            Acessar o Manifesto
+          <Link href="/caminho" className="btn-secondary">
+            Conhecer o Caminho
           </Link>
         </motion.div>
+        <p className="mt-6 font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(248,246,240,0.35)]">
+          Foto: {IMAGENS.hero.credito}
+        </p>
       </div>
     </section>
   );

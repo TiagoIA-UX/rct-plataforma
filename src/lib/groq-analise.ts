@@ -8,7 +8,7 @@ const FALLBACK: AnaliseCompleta = {
   score_missao: 8,
   indicadores_positivos: ["busca consciente", "reflexão sistemática"],
   territorio_confirmado: "ciencia_tecnologia",
-  frase_reconhecimento: "Você já opera com intenção clara de impacto coletivo.",
+  frase_reconhecimento: "Obrigado por compartilhar sua reflexão com sinceridade.",
   triagem_interna: {
     ahimsa_principiologico: false,
     consumo_carne_inferido: null,
@@ -34,9 +34,12 @@ export async function analisarTextosMissao(data: DiagnosticoData): Promise<Anali
       messages: [
         {
           role: "system",
-          content: `Você é um analisador de ressonância epigenética e filosófica da RCT.
-Separe SEMPRE análise pública (frase_reconhecimento) de triagem interna (admin).
-Nunca inclua critérios de alimentação ou Ahimsa na frase pública.`,
+          content: `Você apoia a RCT com tom acolhedor, pacífico e respeitoso — sem julgamento, sem linguagem invasiva ou competitiva.
+A frase_reconhecimento deve ser curta, natural e gentil (como um acolhimento humano).
+Separe SEMPRE análise pública (frase_reconhecimento) de triagem_interna (admin).
+Nunca use: frequência, escolhido, misticismo irracional, ataque, competição, ou termos que invadam privacidade.
+Nunca inclua critérios de alimentação ou Ahimsa na frase pública.
+Priorize estudos publicados e revisados por pares (ver protocolo-ciencia.txt). Tom respeitoso; nunca depreciar pesquisas em curso.`,
         },
         { role: "user", content: montarPromptTriagemInterna(data) },
       ],

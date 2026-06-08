@@ -18,7 +18,7 @@ interface Props {
 
 export function ResultadoRessonancia({ nivel, score, fraseReconhecimento, resposta }: Props) {
   const ctaHref =
-    nivel === "alto" ? "/blog?categoria=milagres-decodificados" : nivel === "medio" ? "/manifesto" : "/";
+    nivel === "alto" ? "/blog?categoria=milagres-decodificados" : nivel === "medio" ? "/caminho" : "/";
 
   return (
     <motion.div
@@ -27,14 +27,14 @@ export function ResultadoRessonancia({ nivel, score, fraseReconhecimento, respos
       transition={{ duration: 1 }}
       className="card-sacred mx-auto max-w-2xl rounded-sm p-10 text-center"
     >
-      <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-        Score de Ressonância: {score}/100
-      </p>
-      <h2 className="mt-4 font-[family-name:var(--font-cormorant)] text-3xl text-[var(--pure-white)]">
+      <h2 className="font-[family-name:var(--font-cormorant)] text-3xl text-[var(--pure-white)]">
         {resposta.titulo}
       </h2>
       <p className="mt-6 italic text-[var(--sacred-gold)]">&ldquo;{fraseReconhecimento}&rdquo;</p>
       <p className="mt-6 whitespace-pre-line text-[rgba(248,246,240,0.8)]">{resposta.paragrafo}</p>
+      <p className="mt-6 font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(248,246,240,0.35)]">
+        Índice interno de coerência (não é nota nem julgamento): {score}/100
+      </p>
       <Link href={ctaHref} className="btn-primary mt-10 inline-flex">
         {resposta.cta}
       </Link>

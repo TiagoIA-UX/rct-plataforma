@@ -60,7 +60,7 @@ export function AmorUniversal() {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="relative z-10 mt-10 flex flex-wrap gap-4">
           <Link href="/blog?categoria=misticismo-decodificado" className="btn-secondary">
             Símbolos explicados
           </Link>

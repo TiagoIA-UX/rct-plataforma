@@ -57,7 +57,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.9 }}
-          className="mt-12 flex flex-wrap gap-4"
+          className="relative z-10 mt-12 flex flex-wrap gap-4"
         >
           <Link href="/blog" className="btn-primary">
             Explorar o Blog

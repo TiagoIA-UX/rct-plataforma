@@ -41,6 +41,7 @@
     "audit:marca": "node --experimental-strip-types scripts/auditoria-marca.mjs",
     "migrate:categorias": "node --experimental-strip-types scripts/migrate-categorias.mjs",
     "generate:biblia-neuro": "node scripts/generate-biblia-neurocientifica.mjs",
+    "export:artigos": "node scripts/export-artigos-estaticos.mjs",
     "test:newsletter": "node --experimental-strip-types scripts/test-newsletter.mjs",
     "postinstall": "prisma generate",
     "release:patch": "npm version patch --no-git-tag-version && node -e \"require('fs').writeFileSync('VERSION', require('./package.json').version + '\\n')\"",

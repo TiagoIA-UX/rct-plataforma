@@ -19,7 +19,7 @@ export const env = {
   scoreMinimoEscolhido,
   enableTelegramConvites: process.env.ENABLE_TELEGRAM_CONVITES === "true",
   enableAdminAlerts: process.env.ENABLE_ADMIN_ALERTS === "true",
-  rctPlataformaUrl: process.env.RCT_PLATAFORMA_URL || "https://rct.com.br",
+  rctPlataformaUrl: process.env.RCT_PLATAFORMA_URL || "https://todos-sejam-um.vercel.app",
 };
 
 export function requireEnv(name: string, value?: string) {

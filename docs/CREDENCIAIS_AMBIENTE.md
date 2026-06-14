@@ -116,16 +116,22 @@ curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook" \
 
 | Variável | Default | Descrição |
 |----------|---------|-----------|
-| `RCT_PLATAFORMA_URL` | `https://rct.com.br` | URL canônica |
+| `RCT_PLATAFORMA_URL` | `https://todos-sejam-um.vercel.app` | URL canônica |
 | `DIAGNOSTICO_SCORE_MINIMO_ESCOLHIDO` | `80` | Score mínimo para nível escolhido |
 
 ---
 
 ## Vercel — Variáveis de Produção
 
+**Conta:** Tiago Aureliano da Rocha (`TiagoIA-UX`). **Projeto:** `rct-plataforma`. **URL:** `https://todos-sejam-um.vercel.app`.
+
+Não vincular este repositório a outras contas ou teams Vercel (contas de terceiros, `uni-ia-br`, etc.).
+
 Configure em **Project → Settings → Environment Variables**:
 
 - Todas as variáveis acima marcadas como obrigatórias
+- `DATABASE_URL` é **crítica** — sem ela o blog não lista artigos
+- `NEXT_PUBLIC_SITE_URL` e `NEXT_PUBLIC_APP_URL` → `https://todos-sejam-um.vercel.app`
 - `NEXT_PUBLIC_*` → podem ser expostas ao browser
 - Demais → marcar como **Sensitive**
 

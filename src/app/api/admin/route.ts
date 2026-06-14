@@ -109,12 +109,21 @@ export async function PATCH(req: Request) {
       if (!slug) {
         return Response.json({ error: "Slug do artigo obrigatório." }, { status: 400 });
       }
+      const antes = await prisma.artigo.findUnique({ where: { slug } });
       const atualizado = await atualizarArtigoAdmin(slug, {
         ...dadosArtigo,
         ...(status === "publicar" ? { publicado: true, pendente_revisao: false } : {}),
         ...(status === "despublicar" ? { publicado: false } : {}),
         ...(status === "revisar" ? { pendente_revisao: true, publicado: false } : {}),
       });
+
+      if (status === "publicar" && antes && !antes.publicado && atualizado.publicado) {
+        const { notificarInscritosNovoArtigo } = await import("@/lib/newsletter-mail");
+        notificarInscritosNovoArtigo(atualizado).catch((err) =>
+          console.error("[admin] Newsletter novo artigo:", err)
+        );
+      }
+
       return Response.json(atualizado);
     }
 

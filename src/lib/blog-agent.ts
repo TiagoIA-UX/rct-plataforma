@@ -1,6 +1,7 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { executarPipelineArtigo } from "@/lib/blog-pipeline";
 import { CACHE_TAGS } from "@/lib/cache";
+import { notificarInscritosNovoArtigo } from "@/lib/newsletter-mail";
 import { prisma } from "@/lib/prisma";
 import { pickNextBlogTopic } from "@/lib/rct-topics";
 
@@ -138,6 +139,11 @@ export async function publicarArtigoPorId(id: string) {
   });
 
   revalidarBlog(atualizado.slug);
+
+  notificarInscritosNovoArtigo(atualizado).catch((err) =>
+    console.error("[blog-agent] Newsletter novo artigo:", err)
+  );
+
   return atualizado;
 }
 

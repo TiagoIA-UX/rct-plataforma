@@ -1,11 +1,13 @@
 import { prisma } from "@/lib/prisma";
+import { statusResendConfig } from "@/lib/newsletter-mail";
+import { MARCA_NOME } from "@/lib/identidade";
 
 export async function GET() {
   const checks: Record<string, string> = {
     status: "ok",
-    version: process.env.npm_package_version ?? "0.3.0",
+    version: process.env.npm_package_version ?? "0.5.1",
     timestamp: new Date().toISOString(),
-    plataforma: "RCT — Ressonância Científica Tecnológica",
+    plataforma: MARCA_NOME,
   };
 
   try {
@@ -15,7 +17,13 @@ export async function GET() {
     checks.database = "unavailable";
   }
 
-  const todasOk = !Object.values(checks).includes("unavailable");
+  const resend = statusResendConfig();
+  checks.resend = resend.pronto ? "ok" : "misconfigured";
 
-  return Response.json(checks, { status: todasOk ? 200 : 503 });
+  const todasOk = checks.database === "ok";
+
+  return Response.json(
+    { ...checks, resend_config: resend },
+    { status: todasOk ? 200 : 503 }
+  );
 }

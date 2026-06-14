@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/layout/Logo";
+import { NewsletterForm } from "@/components/shared/NewsletterForm";
 import { MARCA_DESCRICAO, MARCA_NOME, MARCA_PILAR, MARCA_SLOGAN_COMPLETO } from "@/lib/identidade";
 
 export function Footer() {
@@ -44,6 +45,12 @@ export function Footer() {
             <p className="mt-4 text-sm text-[rgba(248,246,240,0.6)]">
               {process.env.NEXT_PUBLIC_CONTATO_EMAIL ?? "zairyx.ai@gmail.com"}
             </p>
+            <div className="mt-6">
+              <p className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[var(--sacred-gold)] mb-2">
+                Newsletter
+              </p>
+              <NewsletterForm variant="compact" />
+            </div>
           </div>
         </div>
         <p className="mt-10 max-w-3xl mx-auto text-center text-xs leading-relaxed text-[rgba(248,246,240,0.45)]">

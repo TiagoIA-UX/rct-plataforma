@@ -3,6 +3,13 @@
 Todas as mudanças notáveis seguem [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.4.2] - 2026-06-14
+
+### Salvaguarda 0.8 — Protocolo de Aceitação Geral (Eixo Neuroteologia)
+- Formalizado em código: `PRINCIPIO_NEUROTEOLOGIA` e `descreveJesusComoYogue()` em `src/lib/salvaguardas.ts`; bloqueio na publicação (`validarArtigoAntesPublicar`) quando Jesus é descrito como yogue/Samadhi.
+- Documentado em `docs/PROTOCOLO_NEUROTEOLOGIA.md` e na regra sempre-aplicada `.cursor/rules/protocolo-mestre.mdc`.
+- Eixo: Caminho do aperfeiçoamento pela meditação/atenção com comprovação científica, referenciado biblicamente, na tradição contemplativa cristã — base para a "bíblia neuroteológica" da plataforma.
+
 ## [0.4.1] - 2026-06-14
 
 ### Eixo Neuroteologia reforçado (alinhamento editorial)
@@ -113,6 +120,7 @@ Primeira release da RCT após transformação completa do repositório legado.
 - Upstash Redis (cache de scores)
 - Módulos de treinamento Fase I–III integrados à UI
 
+[0.4.2]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.2
 [0.4.1]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.1
 [0.4.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.0
 [0.3.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.3.0

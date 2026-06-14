@@ -13,6 +13,8 @@ import { MARCA_DESCRICAO } from "@/lib/identidade";
 
 /** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
 export const revalidate = 3600;
+/** Evita cache CDN de lista vazia quando o banco oscila */
+export const dynamic = "force-dynamic";
 
 interface Props {
   searchParams: Promise<{ categoria?: string }>;
@@ -24,21 +26,11 @@ export default async function BlogPage({ searchParams }: Props) {
   const categoriaNorm = categoria ? categoria : undefined;
   const emConstrucao = categoriaNorm === CATEGORIA_EM_CONSTRUCAO;
 
-  let artigos: Awaited<ReturnType<typeof listarArtigosPublicados>> = [];
-  try {
-    if (!emConstrucao) {
-      artigos = await listarArtigosPublicados(categoriaNorm);
-    }
-  } catch {
-    artigos = [];
-  }
+  const artigos = emConstrucao
+    ? []
+    : await listarArtigosPublicados(categoriaNorm);
 
-  let categoriasFiltro: string[] = [];
-  try {
-    categoriasFiltro = await listarCategoriasComArtigos();
-  } catch {
-    categoriasFiltro = [];
-  }
+  const categoriasFiltro = await listarCategoriasComArtigos();
 
   const [destaque, ...demais] = artigos;
 

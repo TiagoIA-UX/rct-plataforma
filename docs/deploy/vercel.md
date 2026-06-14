@@ -4,22 +4,43 @@
 
 | Item | Valor correto |
 |------|----------------|
-| Conta Vercel | **Tiago Aureliano da Rocha** (`TiagoIA-UX` no GitHub) |
+| Conta | **Tiago Aureliano da Rocha** (`tiago-a-rocha`) |
+| Team Vercel | **Team Zairyx** (`team-zairyx`) |
+| Team ID | `team_7VXPFnWh4B2aHS581UwK77vz` |
 | Projeto | `rct-plataforma` |
 | URL de produção | `https://todos-sejam-um.vercel.app` |
 | Repositório | `TiagoIA-UX/rct-plataforma` |
 
-**Não usar** outras contas ou teams da Vercel para este projeto (ex.: contas de terceiros, `uni-ia-br`, ou qualquer organização que não seja a do fundador). Deploy ou `vercel link` na conta errada não atualiza o site público e pode expor variáveis no projeto errado.
-
-Se o CLI local estiver logado na conta errada:
+**Não usar** outras contas ou teams Vercel para este projeto. O CLI local deve apontar para **Team Zairyx**, não para contas de terceiros.
 
 ```bash
 vercel logout
 vercel login
-# Entrar com a conta Tiago Aureliano da Rocha
-rm -rf .vercel   # Windows: Remove-Item -Recurse -Force .vercel
-vercel link --project rct-plataforma
+# Entrar como Tiago Aureliano da Rocha
+Remove-Item -Recurse -Force .vercel   # se existir vínculo errado
+vercel link --scope team-zairyx --project rct-plataforma
 ```
+
+## Variáveis de ambiente (checklist)
+
+Em **Team Zairyx → rct-plataforma → Settings → Environment Variables → Production**, configure (copie os valores do seu `.env.local`):
+
+| Variável | Obrigatória | Função |
+|----------|-------------|--------|
+| `DATABASE_URL` | Sim | Blog, newsletter, admin (Neon `rct-plataforma`) |
+| `NEXT_PUBLIC_SITE_URL` | Sim | `https://todos-sejam-um.vercel.app` |
+| `NEXT_PUBLIC_APP_URL` | Sim | igual ao SITE_URL |
+| `ADMIN_PASSWORD` | Sim | Admin + notify newsletter |
+| `CRON_SECRET` | Sim | Cron jobs |
+| `GROQ_API_KEY` | Sim | Geração de artigos |
+| `RESEND_API_KEY` | Recomendado | Newsletter |
+| `RESEND_FROM_EMAIL` | Recomendado | Domínio verificado no Resend |
+| `NEXT_PUBLIC_CONTATO_EMAIL` | Recomendado | Rodapé |
+
+**Diagnóstico:** após salvar e redeploy, abra `/api/health`:
+- `"database":"ok"` → banco conectado
+- `"artigos":"fallback-estatico"` → blog funciona via JSON (sem banco)
+- `"database":"unconfigured"` → falta `DATABASE_URL`
 
 ## 1. Repositório
 

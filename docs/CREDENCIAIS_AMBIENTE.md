@@ -123,9 +123,9 @@ curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook" \
 
 ## Vercel — Variáveis de Produção
 
-**Conta:** Tiago Aureliano da Rocha (`TiagoIA-UX`). **Projeto:** `rct-plataforma`. **URL:** `https://todos-sejam-um.vercel.app`.
+**Conta:** Tiago Aureliano da Rocha · **Team Vercel:** Team Zairyx (`team-zairyx`) · **Projeto:** `rct-plataforma` · **URL:** `https://todos-sejam-um.vercel.app`
 
-Não vincular este repositório a outras contas ou teams Vercel (contas de terceiros, `uni-ia-br`, etc.).
+Não vincular este repositório a outros teams Vercel.
 
 Configure em **Project → Settings → Environment Variables**:
 

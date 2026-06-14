@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 
 const perguntas = [
-  "Você se interessa em unir espiritualidade e evidências científicas consolidadas?",
-  "A não-violência faz sentido para você como forma de viver?",
+  "Você se interessa em unir fé e evidências científicas consolidadas?",
+  "Amor ao próximo, à natureza e aos animais faz sentido para você como forma de viver?",
   "Existe uma área da vida em que você gostaria de crescer mais?",
 ];
 

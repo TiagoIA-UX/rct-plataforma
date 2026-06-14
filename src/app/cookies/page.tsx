@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/LegalPage";
+import { MARCA_NOME } from "@/lib/identidade";
 /** ISR — ver CACHE_TTL.static em src/lib/cache.ts */
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Política de Cookies",
-  description: "Cookies e tecnologias semelhantes na plataforma RCT — LGPD e ePrivacy (UE).",
+  description: `Cookies e tecnologias semelhantes em ${MARCA_NOME} — LGPD e ePrivacy (UE).`,
 };
 
 export default function CookiesPage() {

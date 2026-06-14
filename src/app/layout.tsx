@@ -4,7 +4,7 @@ import { ConsentAwareAnalytics } from "@/components/legal/ConsentAwareAnalytics"
 import { CookieConsent } from "@/components/legal/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { RCT_DESCRICAO_PADRAO, RCT_NOME_COMPLETO, RCT_NOME_EXIBICAO, RCT_SIGLA } from "@/lib/identidade";
+import { MARCA_DESCRICAO, MARCA_NOME, MARCA_SLOGAN_COMPLETO } from "@/lib/identidade";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -28,26 +28,26 @@ const jetbrains = JetBrains_Mono({
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   process.env.NEXT_PUBLIC_APP_URL ??
-  "https://rct-plataforma.vercel.app";
+  "https://todos-sejam-um.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: RCT_NOME_EXIBICAO,
-    template: `%s | ${RCT_SIGLA}`,
+    default: MARCA_NOME,
+    template: `%s | ${MARCA_NOME}`,
   },
-  description: RCT_DESCRICAO_PADRAO,
+  description: MARCA_DESCRICAO,
   keywords: [
-    RCT_SIGLA,
-    RCT_NOME_COMPLETO,
+    MARCA_NOME,
+    "João 17:21",
     "fé e ciência",
-    "não-violência",
-    "vida interior",
-    "espiritualidade",
+    "meditação cristã",
+    "amor universal",
+    "neuroteologia",
   ],
   openGraph: {
-    title: RCT_NOME_EXIBICAO,
-    description: "Fé e ciência do comportamento no mesmo caminho — estudos publicados com referências verificáveis.",
+    title: MARCA_NOME,
+    description: MARCA_SLOGAN_COMPLETO,
     type: "website",
     locale: "pt_BR",
   },

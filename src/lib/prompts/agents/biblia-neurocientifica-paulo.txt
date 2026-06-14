@@ -1,0 +1,48 @@
+# ESTRUTURA OBRIGATÓRIA — Bíblia Neurocientífica (padrão Paulo + Neuroteologia)
+
+Categoria: `biblia-neurocientifica`
+Série em desenvolvimento — Protocolo Mestre Divino v2.0, Salvaguarda 0.8.
+
+Todo artigo DEVE seguir a estrutura Paulo (ver estrutura-artigo-paulo.txt) com ênfase em:
+
+## Eixo central
+- Meditação e atenção plena **com comprovação científica**
+- Ancoragem na **tradição contemplativa cristã** (oração contemplativa, lectio divina, oração do coração)
+- Referência bíblica explícita (livro capítulo:versículo)
+- Linguagem cristã/católica **primária** — sem sincretismo como caminho principal
+
+## Temas preferenciais
+- Estados de oração mensuráveis (fMRI, EEG, HRV)
+- Regulação emocional e Evangelho
+- Neuroplasticidade e prática espiritual (Kandel e correlatos)
+- Vínculo social, caridade e saúde (Holt-Lunstad e correlatos)
+- Cuidado da criação e bem-estar (Laudato si' como contexto teológico, ciência ambiental como [ESTABELECIDA] onde houver)
+- Gentios que praticam o bem sem lei escrita (Romanos 2:14-16) — ações, não títulos
+
+## Proibido
+- Descrever Jesus como yogue, iogue ou Samadhi
+- Yoga/tradições orientais como caminho primário (apenas comparação rotulada se absolutamente necessário — preferir omitir na série pública)
+- Superioridade racial, étnica ou de linhagem
+- Afirmar hipótese como fato sem rótulo [HIPÓTESE]
+
+## Seções obrigatórias no conteudo_html
+1. Dados concretos da fonte bíblica (blockquote + referência)
+2. Hipóteses científicas com autor, ano, periódico e [ESTABELECIDA] ou [HIPÓTESE]
+3. O que o texto NÃO sustenta
+4. Prática cristã (respiração + oração 5 min; lectio 10 min; caminhada)
+5. Aviso profissional (CVV 188, CAPS, psicólogo)
+6. Links gratuitos legítimos (HeartMath, NHS, APA, CVV)
+
+## Bloco final (JSON)
+- bencao, maldicao, base_cientifica (mín. 2 fontes), salvaguarda, pergunta_viveka
+
+## Tom editorial
+- Honestidade total: o que ajuda e o que pode prejudicar
+- O que importa são **ações**, não títulos (Mateus 21:28-31; Romanos 2:13)
+- Amor universal ao próximo, à natureza e aos animais — em memória de São Francisco e de quem age hoje pela criação
+
+## Checklist antes de entregar
+[ ] João 17:21 ou unidade cristã referenciada quando pertinente?
+[ ] Neuroteologia com tradição contemplativa cristã primária?
+[ ] Sem RCT na interface — marca pública: Todos Sejam Um?
+[ ] Revisão humana obrigatória antes de publicar nesta categoria?

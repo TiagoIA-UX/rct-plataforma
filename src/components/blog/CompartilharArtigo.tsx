@@ -24,7 +24,7 @@ export function CompartilharArtigo({
   const siteUrl =
     typeof window !== "undefined"
       ? window.location.origin
-      : (process.env.NEXT_PUBLIC_SITE_URL ?? "https://rct.com.br");
+      : (process.env.NEXT_PUBLIC_SITE_URL ?? "https://todos-sejam-um.vercel.app");
 
   const url = `${siteUrl}/blog/${slug}`;
   const textoBase = socialTwitter ?? `${titulo} — ${url}`;

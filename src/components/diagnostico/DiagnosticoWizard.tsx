@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { DiagnosticoData, NivelPublico } from "@/types/diagnostico";
+import { MARCA_NOME } from "@/lib/identidade";
 import { ResultadoRessonancia } from "./ResultadoRessonancia";
 
 const TOTAL_PASSOS = 3;
@@ -121,7 +122,7 @@ export function DiagnosticoWizard() {
               </select>
             </div>
             <div>
-              <label className="label-sacred">Como você pratica a não-violência no dia a dia?</label>
+              <label className="label-sacred">Como você pratica o amor ao próximo, à natureza e aos animais?</label>
               <select
                 className="input-sacred"
                 value={data.ahimsa_pratica ?? ""}
@@ -243,7 +244,7 @@ export function DiagnosticoWizard() {
               />
               <span>
                 Li a Política de Privacidade e autorizo o tratamento dos meus dados para
-                personalizar conteúdo e, se eu aceitar abaixo, para contato da RCT (consentimento
+                personalizar conteúdo e, se eu aceitar abaixo, para contato de {MARCA_NOME} (consentimento
                 livre, específico e revogável).
               </span>
             </label>
@@ -254,7 +255,7 @@ export function DiagnosticoWizard() {
                 onChange={(e) => update("consentimento_contato", e.target.checked)}
                 className="mt-1"
               />
-              <span>Aceito receber novidades e convites da RCT por e-mail ou Telegram.</span>
+              <span>Aceito receber novidades e convites de {MARCA_NOME} por e-mail ou Telegram.</span>
             </label>
           </div>
         </div>

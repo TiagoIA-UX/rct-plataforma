@@ -2,13 +2,13 @@ import { labelCategoria, normalizarCategoria } from "@/lib/categorias";
 import { resolverImagemPorPalavraChave, extrairPalavraChaveImagem } from "@/lib/imagens-palavra-chave";
 
 const CATEGORIA_FRASE: Record<string, string> = {
-  "jesus-grande-yogue": "A oração de Jesus — Evangelhos com referências publicadas",
-  "prompts-do-mestre": "Orientações do Mestre — precisão, clareza e prática",
-  "epigenetica-sagrada": "Herança cultural e transformação pessoal",
-  "virus-do-dna": "Hábitos que moldam o cérebro no dia a dia",
-  "misticismo-decodificado": "Símbolos explicados com calma",
-  "ahimsa-aplicada": "Não-violência vivida no dia a dia",
-  "linhagem-do-conhecimento": "Sabedoria transmitida em rede",
+  "jesus-o-mestre": "A oração de Jesus — Evangelhos com referências publicadas",
+  "biblia-e-etimologia": "Escritura, etimologia e ciência com honestidade",
+  "fe-e-razao": "Fé e razão no mesmo caminho",
+  "vida-interior": "Mente, emoção e hábitos — estudos publicados",
+  "santos-por-acoes": "Santos por ações — não por títulos vazios",
+  "amor-universal": "Amor ao próximo, à natureza e aos animais",
+  "biblia-neurocientifica": "Escritura e neurociência — série em desenvolvimento",
 };
 
 export type BannerArtigoData = {
@@ -40,7 +40,7 @@ export function getBannerArtigo(
     };
   }
 
-  const img = resolverImagemPorPalavraChave("RCT", { categoria: slugCat });
+  const img = resolverImagemPorPalavraChave("unidade", { categoria: slugCat });
   return {
     src: img.url,
     alt: img.alt,
@@ -49,4 +49,3 @@ export function getBannerArtigo(
     frase: CATEGORIA_FRASE[slugCat] ?? "Tradição cristã e ciência do comportamento",
   };
 }
-

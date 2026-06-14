@@ -33,14 +33,21 @@ export default function AppleIcon() {
         </svg>
         <div
           style={{
-            marginTop: 14,
-            color: "#f8f6f0",
-            fontSize: 26,
+            marginTop: 10,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            color: "#c8a951",
+            fontSize: 11,
             fontWeight: 600,
-            letterSpacing: "0.14em",
+            letterSpacing: "0.08em",
+            textAlign: "center",
+            lineHeight: 1.2,
           }}
         >
-          RCT
+          Todos
+          <br />
+          Sejam Um
         </div>
       </div>
     ),

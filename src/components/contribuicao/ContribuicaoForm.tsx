@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MARCA_NOME } from "@/lib/identidade";
 
 export function ContribuicaoForm() {
   const [loading, setLoading] = useState(false);
@@ -50,7 +51,7 @@ export function ContribuicaoForm() {
       <div className="card-sacred rounded-sm p-8 text-center">
         <p className="text-xl text-[var(--sacred-gold)]">Contribuição submetida para análise.</p>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-          A RCT é um projeto em constante evolução. Sua contribuição será avaliada com rigor científico.
+          {MARCA_NOME} é um projeto em constante evolução. Sua contribuição será avaliada com rigor científico.
         </p>
         <button onClick={() => setSucesso(false)} className="btn-secondary mt-6">
           Submeter outra
@@ -86,7 +87,7 @@ export function ContribuicaoForm() {
           <select name="modulo_relacionado" className="input-sacred">
             <option value="">Nenhum específico</option>
             <option value="fase-i">Fase I — Fundamentos</option>
-            <option value="fase-ii">Fase II — Não-violência</option>
+            <option value="fase-ii">Fase II — Amor universal</option>
             <option value="fase-iii">Fase III — Vida e família</option>
             <option value="fase-iv">Fase IV — Rede</option>
           </select>

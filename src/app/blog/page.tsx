@@ -5,10 +5,12 @@ import {
   listarArtigosPublicados,
   resolverImagemArtigo,
 } from "@/lib/rct-blog.server";
+import { CATEGORIA_EM_CONSTRUCAO } from "@/lib/categorias";
+import { CategoriaEmConstrucao } from "@/components/blog/CategoriaEmConstrucao";
 import { NewsletterBlog } from "@/components/blog/NewsletterBlog";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { IMAGENS } from "@/lib/imagens";
-import { RCT_DESCRICAO_PADRAO } from "@/lib/identidade";
+import { MARCA_DESCRICAO } from "@/lib/identidade";
 
 /** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
 export const revalidate = 3600;
@@ -20,9 +22,14 @@ interface Props {
 export default async function BlogPage({ searchParams }: Props) {
   const { categoria } = await searchParams;
 
+  const categoriaNorm = categoria ? categoria : undefined;
+  const emConstrucao = categoriaNorm === CATEGORIA_EM_CONSTRUCAO;
+
   let artigos: Awaited<ReturnType<typeof listarArtigosPublicados>> = [];
   try {
-    artigos = await listarArtigosPublicados(categoria);
+    if (!emConstrucao) {
+      artigos = await listarArtigosPublicados(categoriaNorm);
+    }
   } catch {
     artigos = [];
   }
@@ -43,7 +50,7 @@ export default async function BlogPage({ searchParams }: Props) {
           Blog
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-          {RCT_DESCRICAO_PADRAO} Sempre com distinção clara entre ciência
+          {MARCA_DESCRICAO} Sempre com distinção clara entre ciência
           estabelecida e hipótese em estudo.
         </p>
 
@@ -55,18 +62,27 @@ export default async function BlogPage({ searchParams }: Props) {
           >
             Todos
           </Link>
-          {CATEGORIAS_BLOG.map((slug) => (
-            <Link
-              key={slug}
-              href={`/blog?categoria=${slug}`}
-              className={`btn-secondary text-xs px-3 py-1 ${categoria === slug ? "opacity-100" : "opacity-60"}`}
-            >
-              {CATEGORIA_LABELS[slug]}
-            </Link>
-          ))}
+          {CATEGORIAS_BLOG.map((slug) => {
+            const href =
+              slug === CATEGORIA_EM_CONSTRUCAO
+                ? "/blog/biblia-neurocientifica"
+                : `/blog?categoria=${slug}`;
+            const ativo = categoria === slug || (slug === CATEGORIA_EM_CONSTRUCAO && emConstrucao);
+            return (
+              <Link
+                key={slug}
+                href={href}
+                className={`btn-secondary text-xs px-3 py-1 ${ativo ? "opacity-100" : "opacity-60"}`}
+              >
+                {CATEGORIA_LABELS[slug]}
+              </Link>
+            );
+          })}
         </div>
 
-        {artigos.length === 0 ? (
+        {emConstrucao ? (
+          <CategoriaEmConstrucao />
+        ) : artigos.length === 0 ? (
           <p className="card-sacred mt-12 p-8 text-[rgba(248,246,240,0.6)]">
             Os primeiros artigos estão sendo preparados. Retorne em breve.
           </p>

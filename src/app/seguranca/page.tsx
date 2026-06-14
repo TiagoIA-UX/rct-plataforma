@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/LegalPage";
 import { LEGAL } from "@/lib/legal";
+import { MARCA_NOME } from "@/lib/identidade";
 
 /** ISR — ver CACHE_TTL.static em src/lib/cache.ts */
 export const revalidate = 86400;
@@ -8,14 +9,14 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Segurança e Disponibilidade",
   description:
-    "Pilares de segurança da informação, conformidade e medidas técnicas da plataforma RCT.",
+    `Pilares de segurança da informação, conformidade e medidas técnicas de ${MARCA_NOME}.`,
 };
 
 export default function SegurancaPage() {
   return (
     <LegalPage titulo="Segurança, Disponibilidade e Conformidade">
       <h2>1. Pilares que nos orientam</h2>
-      <p>A gestão de riscos da RCT considera, de forma integrada:</p>
+      <p>A gestão de riscos de {MARCA_NOME} considera, de forma integrada:</p>
       <ul>
         <li>
           <strong>Confidencialidade</strong> — só quem precisa acessa dados pessoais; criptografia

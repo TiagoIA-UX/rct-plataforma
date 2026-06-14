@@ -19,6 +19,7 @@
 // ─── IDENTIDADE ───────────────────────────────────────────────────────────────
 
 export { RCT_SIGLA, RCT_NOME_COMPLETO, RCT_NOME_EXIBICAO, RCT_DESCRICAO_PADRAO, RCT_TAGLINE } from "@/lib/identidade";
+import { MARCA_NOME } from "@/lib/identidade";
 
 // ─── CATEGORIAS ───────────────────────────────────────────────────────────────
 // 7 categorias obrigatórias do Protocolo Mestre Divino v2.0, Seção 5.1
@@ -31,8 +32,7 @@ export {
   normalizarCategoria,
 } from "@/lib/categorias";
 
-// ─── CITAÇÕES PARALELAS (Jesus × Patanjali) ───────────────────────────────────
-// 3 pares — Protocolo Mestre v2.0, Seção 4.3
+// ─── CITAÇÕES PARALELAS (Jesus × Escritura) ───────────────────────────────────
 
 export type { CitacaoParalela } from "@/lib/citacoes-paralelas";
 export { CITACOES_PARALELAS } from "@/lib/citacoes-paralelas";
@@ -99,7 +99,7 @@ export const STATUS_ARTIGO = {
  * Metadados do subsistema de blog
  */
 export const RCT_BLOG_META = {
-  nome: "Blog RCT",
+  nome: `Blog ${MARCA_NOME}`,
   descricao:
     "Artigos que unem ciência do comportamento e reflexão no dia a dia — sempre com referência publicada e honestidade sobre prós e contras.",
   protocolo: "Mestre Divino v2.0",

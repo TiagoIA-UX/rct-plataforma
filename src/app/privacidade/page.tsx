@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/LegalPage";
 import { LEGAL } from "@/lib/legal";
+import { MARCA_NOME } from "@/lib/identidade";
 
 /** ISR — ver CACHE_TTL.static em src/lib/cache.ts */
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
-  description: "Como a RCT trata dados pessoais — LGPD (Brasil) e GDPR (União Europeia).",
+  description: `Como ${MARCA_NOME} trata dados pessoais — LGPD (Brasil) e GDPR (União Europeia).`,
 };
 
 export default function PrivacidadePage() {

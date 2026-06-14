@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { MARCA_NOME, MARCA_SLOGAN_COMPLETO } from "@/lib/identidade";
 import { z } from "zod";
 import { Resend } from "resend";
 
@@ -62,14 +63,15 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: process.env.RESEND_FROM_EMAIL,
         to: dados.email,
-        subject: "Bem-vindo à RCT — Ressonância Científica Tecnológica",
+        subject: `Bem-vindo a ${MARCA_NOME}`,
         html: `
 <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #0d1520; color: #F8F6F0;">
   <h1 style="color: #C9A84C; font-size: 24px;">Você chegou aqui porque algo fez sentido para você.</h1>
   <p style="color: rgba(248,246,240,0.85); line-height: 1.8;">
-    ${dados.nome ? `${dados.nome}, obrigado` : "Obrigado"} por se inscrever na newsletter da
-    <strong style="color: #C9A84C;">RCT — Ressonância Científica Tecnológica</strong>.
+    ${dados.nome ? `${dados.nome}, obrigado` : "Obrigado"} por se inscrever na newsletter de
+    <strong style="color: #C9A84C;">${MARCA_NOME}</strong>.
   </p>
+  <p style="color: rgba(248,246,240,0.55); font-size: 14px; font-style: italic;">${MARCA_SLOGAN_COMPLETO}</p>
   <p style="color: rgba(248,246,240,0.75); line-height: 1.8;">
     Aqui você receberá artigos que unem ciência do comportamento e reflexão no dia a dia —
     sempre com referência publicada e honestidade sobre o que ajuda e o que pode prejudicar.

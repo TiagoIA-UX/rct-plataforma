@@ -17,7 +17,7 @@ export type ImagemCategoria = {
 
 const IMAGEM_PADRAO: ImagemCategoria = {
   url: "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?w=1200&q=80",
-  alt: "Luz e consciência — RCT",
+  alt: "Luz e consciência — Todos Sejam Um",
   credit: "Unsplash — Giammarco Boscaro",
 };
 
@@ -48,7 +48,7 @@ export function resolverImagemArtigo(
     return {
       url: imageUrl,
       alt: "Imagem do artigo",
-      credit: imageCredit ?? "RCT",
+      credit: imageCredit ?? "Todos Sejam Um",
     };
   }
 

@@ -35,9 +35,9 @@ export {
 
 export type { BlogTopic } from "@/lib/rct-topics";
 export {
+  SERIE_JESUS_MESTRE,
   SERIE_JESUS_GRANDE_YOGUE,
-  SERIE_MANDAMENTOS_AUTO,
-  SERIE_MILAGRES_AUTO,
+  SERIE_BIBLIA_NEUROCIENTIFICA,
   pickNextBlogTopic,
 } from "@/lib/rct-topics";
 

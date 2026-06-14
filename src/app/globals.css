@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Protocolo Mestre v1.0 — paleta RCT */
+  /* Protocolo Mestre v1.0 — paleta da marca */
   --rct-ouro: #c9a84c;
   --rct-azul-profundo: #1a2744;
   --rct-branco-luz: #f8f6f0;
-  --rct-verde-ahimsa: #4a7c59;
+  --marca-verde-amor: #4a7c59;
   --rct-cinza-ciencia: #6b7280;
 
   --deep-blue: var(--rct-azul-profundo);
   --sacred-gold: var(--rct-ouro);
   --dark-gold: #8b6914;
-  --life-green: var(--rct-verde-ahimsa);
+  --life-green: var(--marca-verde-amor);
   --pure-white: var(--rct-branco-luz);
   --cosmic-dark: #0d1520;
   --accent-gold: #c8a951;
@@ -192,7 +192,7 @@ a:hover {
 .prose-rct .rct-clausula-epigenetica {
   margin-bottom: 2rem;
   padding: 1.25rem;
-  border-left: 3px solid var(--rct-verde-ahimsa);
+  border-left: 3px solid var(--marca-verde-amor);
   background: rgba(74, 124, 89, 0.12);
   font-size: 0.95rem;
 }
@@ -215,7 +215,7 @@ a:hover {
 }
 
 .prose-rct .rct-bencao {
-  border-left: 3px solid var(--rct-verde-ahimsa);
+  border-left: 3px solid var(--marca-verde-amor);
 }
 
 .prose-rct .rct-autonomia {
@@ -279,7 +279,24 @@ a:hover {
 .prose-rct .rct-citacao-paralela {
   margin-top: 2.5rem;
   padding: 1.25rem 1.5rem;
-  border-left: 3px solid var(--rct-verde-ahimsa);
+  border-left: 3px solid var(--marca-verde-amor);
   background: rgba(74, 124, 89, 0.1);
   font-size: 0.95rem;
+}
+
+/* Palavras com link etimológico (Wikipédia — leitura complementar) */
+.palavra-etimologia,
+.prose-rct a.palavra-etimologia {
+  color: var(--sacred-gold);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.palavra-etimologia:hover,
+.prose-rct a.palavra-etimologia:hover {
+  color: #e8c97a;
+  background: rgba(200, 169, 81, 0.12);
 }

@@ -1,4 +1,5 @@
 import type { NivelPublico } from "@/types/diagnostico";
+import { MARCA_NOME } from "@/lib/identidade";
 import { CONVITE_SCORE_MINIMO } from "@/lib/ressonancia-pesos";
 
 /**
@@ -28,7 +29,7 @@ export const RESPOSTAS_RESSONANCIA: Record<
 > = {
   alto: {
     titulo: "Obrigado por compartilhar sua jornada.",
-    paragrafo: `Suas respostas mostram sintonia com a não-violência e com o caminho de Jesus.
+    paragrafo: `Suas respostas mostram sintonia com o amor vivido em ações e com o caminho de Jesus.
 Explore o blog — artigos que unem os Evangelhos e ciência do comportamento com referências publicadas.
 Quem atinge a pontuação mínima pode receber convite para a comunidade reservada.`,
     cta: "Explorar o Blog",
@@ -43,7 +44,7 @@ clara e estudos publicados — sem pressa e sem julgamento.`,
   },
   baixo: {
     titulo: "Bem-vindo.",
-    paragrafo: `Ficamos felizes com sua visita. A RCT oferece conteúdo aberto sobre fé, paz,
+    paragrafo: `Ficamos felizes com sua visita. ${MARCA_NOME} oferece conteúdo aberto sobre fé, paz,
 ciência do comportamento e os ensinamentos de Jesus — sempre com referências verificáveis.`,
     cta: "Conhecer o Caminho",
     acao: "CAMINHO",

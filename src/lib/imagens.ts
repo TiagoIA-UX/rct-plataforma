@@ -56,9 +56,9 @@ export const IMAGENS = {
     alt: "Bem-estar e hábitos saudáveis",
     credito: "Unsplash",
   },
-  ahimsa: {
+  amorUniversal: {
     src: "/images/formacao.jpg",
-    alt: "Paz e serenidade",
+    alt: "Natureza e criação — amor universal",
     credito: "Unsplash — Mor Shani",
   },
 } as const;

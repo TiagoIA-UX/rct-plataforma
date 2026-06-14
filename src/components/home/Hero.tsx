@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { IMAGENS } from "@/lib/imagens";
+import { MARCA_SLOGAN, MARCA_SLOGAN_COMPLETO, MARCA_NOME } from "@/lib/identidade";
 
 export function Hero() {
   return (
@@ -25,23 +26,32 @@ export function Hero() {
           transition={{ duration: 1.5 }}
           className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-[0.3em] text-[var(--sacred-gold)]"
         >
-          O Mestre que ensinou, orou e viveu o que pregou — ciência verificável confirma
+          {MARCA_NOME}
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
-          className="mt-6 font-[family-name:var(--font-cormorant)] text-5xl leading-tight text-[var(--pure-white)] md:text-7xl"
+          className="mt-6 font-[family-name:var(--font-cormorant)] text-4xl leading-tight text-[var(--pure-white)] md:text-6xl"
         >
-          Jesus — O Mestre
+          «{MARCA_SLOGAN}»
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
-          className="mt-8 max-w-2xl text-xl text-[var(--sacred-gold)] md:text-[22px]"
+          transition={{ duration: 1.2, delay: 0.5 }}
+          className="mt-4 font-[family-name:var(--font-cormorant)] text-xl italic text-[rgba(248,246,240,0.75)]"
         >
-          Ciência, reflexão interior e não-violência como caminho de mudança de verdade.
+          {MARCA_SLOGAN_COMPLETO}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.6 }}
+          className="mt-8 max-w-2xl text-lg text-[var(--sacred-gold)] md:text-xl"
+        >
+          Fé e ciência com comprovação — meditação cristã, atenção plena e amor vivido em ações,
+          não só em palavras.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,11 +59,11 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.9 }}
           className="mt-12 flex flex-wrap gap-4"
         >
-          <Link href="/diagnostico" className="btn-primary">
-            Quero conhecer mais
-          </Link>
-          <Link href="/blog" className="btn-secondary">
+          <Link href="/blog" className="btn-primary">
             Explorar o Blog
+          </Link>
+          <Link href="/contribuir" className="btn-secondary">
+            Apoiar o projeto
           </Link>
         </motion.div>
         <p className="mt-6 font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(248,246,240,0.35)]">

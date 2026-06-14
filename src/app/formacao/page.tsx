@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { IMAGENS } from "@/lib/imagens";
+import { MARCA_NOME } from "@/lib/identidade";
 import { citacao } from "@/lib/referencias";
 
 const FASES = [
@@ -92,7 +93,7 @@ export default function FormacaoPage() {
               Formação reservada
             </h1>
             <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-              Este espaço é para quem se identifica com os princípios da RCT — entra quem
+              Este espaço é para quem se identifica com os princípios de {MARCA_NOME} — entra quem
               pratica, não quem só diz que pratica. Nenhum participante tem autoridade sobre outro.
             </p>
             <p className="mt-4 text-sm text-[rgba(248,246,240,0.55)]">
@@ -179,7 +180,7 @@ export default function FormacaoPage() {
         )}
 
         <div className="mt-10">
-          <Link href="/blog?categoria=jesus-grande-yogue" className="btn-secondary">
+          <Link href="/blog?categoria=jesus-o-mestre" className="btn-secondary">
             Começar pelo Blog →
           </Link>
         </div>

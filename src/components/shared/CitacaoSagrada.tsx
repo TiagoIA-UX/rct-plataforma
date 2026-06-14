@@ -17,10 +17,10 @@ export function CitacaoSagrada() {
   const atual = citacoes[index];
 
   return (
-    <section className="px-6 py-24">
+    <section className="px-6 py-24 gradient-cosmos">
       <div className="mx-auto max-w-5xl text-center">
         <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-          Os Evangelhos — e como outras tradições descrevem o mesmo
+          Evangelho e Escritura — o que importa são as ações
         </p>
         <AnimatePresence mode="wait">
           <motion.div
@@ -45,7 +45,7 @@ export function CitacaoSagrada() {
               </blockquote>
               <blockquote className="card-sacred rounded-sm p-6">
                 <p className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[rgba(200,169,81,0.55)]">
-                  Para comparação — tradição do yoga
+                  {atual.tituloParalelo}
                 </p>
                 <p className="mt-3 font-[family-name:var(--font-cormorant)] text-2xl leading-snug text-[var(--pure-white)] md:text-3xl">
                   &ldquo;{atual.textoParalelo}&rdquo;

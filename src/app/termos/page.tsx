@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/LegalPage";
 import { LEGAL } from "@/lib/legal";
+import { MARCA_NOME } from "@/lib/identidade";
 
 /** ISR — ver CACHE_TTL.static em src/lib/cache.ts */
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Termos de Uso",
-  description: "Condições de uso da plataforma RCT.",
+  description: `Condições de uso de ${MARCA_NOME}.`,
 };
 
 export default function TermosPage() {
@@ -22,7 +23,7 @@ export default function TermosPage() {
 
       <h2>2. Natureza do conteúdo</h2>
       <p>
-        A RCT oferece textos que unem fé e estudos científicos publicados — para que a fé possa
+        {MARCA_NOME} oferece textos que unem fé e estudos científicos publicados — para que a fé possa
         ser compreendida e vivida — com referências verificáveis. O conteúdo é informativo e
         espiritual; não substitui aconselhamento médico, psicológico, jurídico ou pastoral individual.
       </p>
@@ -44,7 +45,7 @@ export default function TermosPage() {
 
       <h2>5. Propriedade intelectual</h2>
       <p>
-        Textos, marca RCT e layout são protegidos. Citação breve com link é permitida. Reprodução
+        Textos, marca {MARCA_NOME} e layout são protegidos. Citação breve com link é permitida. Reprodução
         integral requer autorização.
       </p>
 
@@ -70,7 +71,7 @@ export default function TermosPage() {
 
       <h2>9. Limitação de responsabilidade</h2>
       <p>
-        Na extensão permitida pela lei brasileira e europeia aplicável, a RCT não responde por
+        Na extensão permitida pela lei brasileira e europeia aplicável, {MARCA_NOME} não responde por
         danos indiretos decorrentes do uso do site ou de decisões tomadas com base nos textos.
       </p>
 

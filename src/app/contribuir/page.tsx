@@ -4,6 +4,7 @@ import { PixDoacao } from "@/components/contribuicao/PixDoacao";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { DECLARACAO_CONTRIBUIDOR } from "@/lib/salvaguardas";
 import { DESTINOS_APOIO } from "@/lib/doacao";
+import { MARCA_NOME } from "@/lib/identidade";
 import { IMAGENS } from "@/lib/imagens";
 
 /** ISR — ver CACHE_TTL.static em src/lib/cache.ts */
@@ -11,7 +12,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Contribuir",
-  description: "Apoie a RCT via PIX ou PayPal — alcance, manutenção, expansão e espaço físico.",
+  description: `Apoie ${MARCA_NOME} via PIX ou PayPal — alcance, manutenção, expansão e espaço físico.`,
 };
 
 export default function ContribuirPage() {
@@ -45,7 +46,7 @@ export default function ContribuirPage() {
 
         <div className="mt-10 card-sacred rounded-sm px-6 py-5 text-sm text-[rgba(248,246,240,0.75)]">
           <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-            Princípio da não-violência
+            Princípio do amor universal
           </p>
           <p className="mt-3 italic">&ldquo;{DECLARACAO_CONTRIBUIDOR}&rdquo;</p>
         </div>

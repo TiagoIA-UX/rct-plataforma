@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { IMAGENS } from "@/lib/imagens";
+import { MARCA_NOME } from "@/lib/identidade";
 import { NodeCard } from "@/components/rede/NodeCard";
 
 export default function RedePage() {
@@ -44,10 +45,10 @@ export default function RedePage() {
           />
           <div className="card-sacred rounded-sm p-10">
           <h1 className="font-[family-name:var(--font-cormorant)] text-3xl text-[var(--pure-white)]">
-            Comunidade RCT
+            Comunidade {MARCA_NOME}
           </h1>
           <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-            Esta área reúne quem se identifica com os princípios da RCT — sem escala de
+            Esta área reúne quem se identifica com os princípios de {MARCA_NOME} — sem escala de
             quem vale mais, julgada por humanos. O blog e o caminho permanecem abertos a todos.
           </p>
           <Link href="/diagnostico" className="btn-primary mt-8 inline-flex">
@@ -69,7 +70,7 @@ export default function RedePage() {
           className="mb-8"
         />
         <h1 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)]">
-          Comunidade RCT
+          Comunidade {MARCA_NOME}
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
           Pessoas de diferentes áreas — saúde, educação, ciência, família — caminhando

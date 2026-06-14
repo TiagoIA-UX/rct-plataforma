@@ -1,12 +1,11 @@
+/** Textos públicos — ciência do comportamento a serviço da fé vivida. */
 import { IMAGENS } from "@/lib/imagens";
-import { RCT_DESCRICAO_PADRAO } from "@/lib/identidade";
+import { MARCA_DESCRICAO, MARCA_NOME } from "@/lib/identidade";
 import { REFS } from "@/lib/referencias";
-
-/** Textos públicos da essência RCT — ciência do comportamento a serviço da fé vivida. */
 
 export const ESSENCIA_PLATAFORMA = {
   titulo: "Tradição cristã e ciência do comportamento",
-  texto: `A RCT é um espaço aberto para quem caminha com o Evangelho e busca coerência entre
+  texto: `${MARCA_NOME} é um espaço aberto para quem caminha com o Evangelho e busca coerência entre
 crença e experiência vivida. Os artigos conversam com estudos publicados sobre como o cérebro
 muda com a prática, controle das emoções, formação de hábitos e vínculos sociais — temas
 centrais da ciência do comportamento — sempre com referência explícita ao autor e ao periódico.
@@ -44,11 +43,11 @@ duradouras no modo de viver.`,
     creditoImagem: IMAGENS.blog.credito,
   },
   {
-    id: "ahimsa",
-    titulo: "Paz e não-violência",
-    conteudo: `Cuidar da vida em pensamento, palavra e ação é princípio do Evangelho e de tradições
-antigas de não-violência. A plataforma pratica isso no tom: respeito, transparência nas fontes
-e convite em vez de imposição.`,
+    id: "amor-universal",
+    titulo: "Amor universal vivido",
+    conteudo: `Cuidar do próximo, da natureza e dos animais é mandamento do Evangelho e testemunho
+de santos como Francisco de Assis. A plataforma pratica isso no tom: respeito, transparência nas fontes
+e convite em vez de imposição — porque o que importa são as ações (Mateus 21:28-31; Romanos 2:14).`,
     ref: null,
     imagem: IMAGENS.comunidade.src,
     creditoImagem: IMAGENS.comunidade.credito,
@@ -85,4 +84,4 @@ Contribuir. A formação reservada é oferecida depois de inscrição e acolhime
 ];
 
 /** Re-export para compatibilidade em páginas que usam descrição curta */
-export const ESSENCIA_DESCRICAO = RCT_DESCRICAO_PADRAO;
+export const ESSENCIA_DESCRICAO = MARCA_DESCRICAO;

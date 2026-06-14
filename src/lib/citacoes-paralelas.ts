@@ -1,46 +1,51 @@
-/** Pares Jesus × Patanjali — Protocolo Mestre v1.0, Etapa 3.3 (3 pares) */
+/** Pares Jesus × Escritura / testemunho de ação — sem termos não cristãos na interface */
 
 export type CitacaoParalela = {
   jesus: { texto: string; referencia: string };
-  patanjali: { texto: string; referencia: string };
+  paralelo: { titulo: string; texto: string; referencia: string };
   decodificacao: string;
 };
 
 export const CITACOES_PARALELAS: CitacaoParalela[] = [
   {
     jesus: {
-      texto: "O Reino de Deus está dentro de vós.",
-      referencia: "Lucas 17:21",
+      texto: "Para que todos sejam um.",
+      referencia: "João 17:21",
     },
-    patanjali: {
-      texto: "Quem domina a mente encontra plenitude.",
-      referencia: "Textos clássicos do yoga, sutra 3.3",
+    paralelo: {
+      titulo: "São Paulo",
+      texto:
+        "Quando os gentios, que não têm a lei, praticam naturalmente o que ela ordena, tornam-se lei para si mesmos.",
+      referencia: "Romanos 2:14",
     },
     decodificacao:
-      "Ambas as tradições apontam para dentro: a transformação passa pela atenção e pela prática vivida.",
+      "O que importa não é o título nem as palavras — é a prática. Muitos vivem o bem sem carregar o nome da lei escrita.",
   },
   {
     jesus: {
-      texto: "Conhecereis a verdade, e a verdade vos libertará.",
-      referencia: "João 8:32",
+      texto: "Filho, vai trabalhar hoje na vinha. Respondeu: não quero; mas depois arrependeu-se e foi.",
+      referencia: "Mateus 21:28-29",
     },
-    patanjali: {
-      texto: "O discernimento libera o ser do engano.",
-      referencia: "Textos clássicos do yoga, sutra 2.26",
+    paralelo: {
+      titulo: "O outro filho",
+      texto: "Eu vou, senhor — e não foi.",
+      referencia: "Mateus 21:30",
     },
     decodificacao:
-      "A honestidade reduz o desgaste mental de viver em conflito — abre espaço para mais clareza.",
+      "A parábola dos dois filhos ensina: contar com palavras não basta; quem vai e faz é quem cumpre a vontade do Pai.",
   },
   {
     jesus: {
-      texto: "Bem-aventurados os pacificadores.",
+      texto: "Bem-aventurados os pacificadores, porque serão chamados filhos de Deus.",
       referencia: "Mateus 5:9",
     },
-    patanjali: {
-      texto: "A não-violência é o primeiro e maior dos princípios.",
-      referencia: "Textos clássicos do yoga, sutra 2.30",
+    paralelo: {
+      titulo: "São Francisco de Assis",
+      texto:
+        "Louvado sejas, meu Senhor, por nossa irmã Mãe Terra, que nos sustenta e governa.",
+      referencia: "Cântico das Criaturas",
     },
     decodificacao:
-      "Não-violência como critério de vida em rede — paz praticada, não apenas declarada.",
+      "Amor ao próximo, à natureza e aos animais — em memória de quem dedicou a vida a estas causas, como São Francisco.",
   },
 ];

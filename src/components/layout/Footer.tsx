@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/layout/Logo";
-import { RCT_NOME_COMPLETO } from "@/lib/identidade";
-import { TransparenciaRessonancia } from "@/components/shared/TransparenciaRessonancia";
+import { RCT_DESCRICAO_PADRAO, RCT_NOME_COMPLETO } from "@/lib/identidade";
 
 export function Footer() {
   return (
@@ -14,8 +13,7 @@ export function Footer() {
               {RCT_NOME_COMPLETO}
             </p>
             <p className="mt-2 text-sm text-[rgba(248,246,240,0.6)]">
-              Tradição cristã e neurociência comportamental — memória, emoção, hábitos e
-              vínculos, com referências publicadas.
+              {RCT_DESCRICAO_PADRAO}
             </p>
           </div>
           <div>
@@ -45,7 +43,10 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <TransparenciaRessonancia className="mt-10 max-w-3xl mx-auto text-center" />
+        <p className="mt-10 max-w-3xl mx-auto text-center text-xs leading-relaxed text-[rgba(248,246,240,0.45)]">
+          RCT — um espaço aberto para quem busca unir fé, ciência e oração no dia a dia.
+          Sem coleta de dados de comportamento, sem critérios ocultos de acesso.
+        </p>
         <p className="mt-6 border-t border-gold pt-6 text-center text-xs text-[rgba(248,246,240,0.4)]">
           © {new Date().getFullYear()} RCT — Transparência, consentimento e respeito ao visitante.
         </p>

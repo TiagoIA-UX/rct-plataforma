@@ -1,4 +1,5 @@
 import { listarDiagnosticos } from "@/lib/db/diagnostico";
+import { listarTodosArtigosAdmin, atualizarArtigoAdmin } from "@/lib/db/artigos";
 import { prisma } from "@/lib/prisma";
 
 function isAuthorized(req: Request): boolean {
@@ -35,6 +36,11 @@ export async function GET(req: Request) {
         include: { membro: true },
       });
       return Response.json({ provas });
+    }
+
+    if (tab === "artigos") {
+      const artigos = await listarTodosArtigosAdmin();
+      return Response.json({ artigos });
     }
 
     if (tab === "metricas") {
@@ -77,12 +83,40 @@ export async function PATCH(req: Request) {
 
   try {
     const body = await req.json();
-    const { id, status, tipo, fase_proxima } = body as {
+    const { id, status, tipo, fase_proxima, slug, ...dadosArtigo } = body as {
       id?: string;
       status?: string;
-      tipo?: "contribuicao" | "prova";
+      tipo?: "contribuicao" | "prova" | "artigo";
       fase_proxima?: string;
+      slug?: string;
+      publicado?: boolean;
+      pendente_revisao?: boolean;
+      titulo?: string;
+      subtitulo?: string;
+      conteudo_html?: string;
+      meta_descricao?: string;
+      image_url?: string;
+      image_credit?: string;
+      social_instagram?: string;
+      social_facebook?: string;
+      social_linkedin?: string;
+      social_twitter?: string;
+      tags?: string[];
+      nivel?: string;
     };
+
+    if (tipo === "artigo") {
+      if (!slug) {
+        return Response.json({ error: "Slug do artigo obrigatório." }, { status: 400 });
+      }
+      const atualizado = await atualizarArtigoAdmin(slug, {
+        ...dadosArtigo,
+        ...(status === "publicar" ? { publicado: true, pendente_revisao: false } : {}),
+        ...(status === "despublicar" ? { publicado: false } : {}),
+        ...(status === "revisar" ? { pendente_revisao: true, publicado: false } : {}),
+      });
+      return Response.json(atualizado);
+    }
 
     if (!id || !status) {
       return Response.json({ error: "ID e status obrigatórios." }, { status: 400 });

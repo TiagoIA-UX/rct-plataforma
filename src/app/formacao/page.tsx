@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { IMAGENS } from "@/lib/imagens";
-import { FRASE_AUTONOMIA_PLATAFORMA } from "@/lib/salvaguardas";
 import { citacao } from "@/lib/referencias";
 
 const FASES = [
@@ -93,8 +92,8 @@ export default function FormacaoPage() {
               Formação reservada
             </h1>
             <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-              Este espaço é para quem ressoa com os princípios da RCT — critério verificável pela
-              prática, não por autodeclaração. Nenhum participante tem autoridade sobre outro.
+              Este espaço é para quem se identifica com os princípios da RCT — entra quem
+              pratica, não quem só diz que pratica. Nenhum participante tem autoridade sobre outro.
             </p>
             <p className="mt-4 text-sm text-[rgba(248,246,240,0.55)]">
               Enquanto isso, o blog e o caminho estão abertos a todos.
@@ -124,10 +123,10 @@ export default function FormacaoPage() {
           Formação reservada
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-          Você ressoa com este caminho. O ritmo é seu — sem pressa, sem hierarquia entre pares.
+          Você se identifica com este caminho. O ritmo é seu — sem pressa, sem chefia entre participantes.
         </p>
         <p className="mt-4 text-sm italic text-[rgba(248,246,240,0.55)]">
-          {FRASE_AUTONOMIA_PLATAFORMA}
+          «Vinde a mim, todos os que estais cansados e sobrecarregados, e eu vos aliviarei.» — Mateus 11:28
         </p>
 
         <div className="mt-10 grid gap-4">

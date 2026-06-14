@@ -223,3 +223,63 @@ a:hover {
   font-size: 0.9rem;
   color: rgba(248, 246, 240, 0.55);
 }
+
+.prose-rct ul,
+.prose-rct ol {
+  margin: 0 0 1.25rem 1.25rem;
+  padding-left: 1rem;
+  color: rgba(248, 246, 240, 0.88);
+  line-height: 1.8;
+}
+
+.prose-rct li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-rct a {
+  color: var(--sacred-gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-rct blockquote {
+  border-left: 3px solid var(--sacred-gold);
+  padding-left: 1.2rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: rgba(248, 246, 240, 0.92);
+}
+
+.prose-rct table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.95rem;
+}
+
+.prose-rct th,
+.prose-rct td {
+  border: 1px solid rgba(200, 169, 81, 0.25);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  color: rgba(248, 246, 240, 0.88);
+}
+
+.prose-rct thead th {
+  background: rgba(26, 39, 68, 0.55);
+  color: var(--sacred-gold);
+}
+
+.prose-rct .rct-base ul,
+.prose-rct .rct-bloco ul {
+  margin-bottom: 0;
+}
+
+.prose-rct .rct-citacao-paralela {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--rct-verde-ahimsa);
+  background: rgba(74, 124, 89, 0.1);
+  font-size: 0.95rem;
+}

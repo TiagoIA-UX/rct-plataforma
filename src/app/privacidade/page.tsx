@@ -40,8 +40,8 @@ export default function PrivacidadePage() {
       <h2>3. Dados que coletamos</h2>
       <ul>
         <li>
-          <strong>Navegação pública:</strong> cookies essenciais, preferência de consentimento,
-          logs técnicos (IP, navegador, horário) para segurança e disponibilidade.
+          <strong>Navegação pública:</strong> cookies essenciais, sua escolha de cookies (guardada
+          no cache do navegador), logs técnicos (IP, navegador, horário) para segurança.
         </li>
         <li>
           <strong>Questionário (opcional):</strong> nome, e-mail, respostas, território de
@@ -63,7 +63,7 @@ export default function PrivacidadePage() {
         <li>Personalizar conteúdo e sugerir leituras — consentimento (LGPD art. 7º, I; GDPR art. 6º, 1, a).</li>
         <li>Contato por e-mail/Telegram — consentimento específico e revogável.</li>
         <li>Segurança, prevenção a fraudes e logs — legítimo interesse / obrigação legal.</li>
-        <li>Medição anônima de audiência (Vercel Analytics) — consentimento via banner de cookies.</li>
+        <li>Cookies de visita anônima (Vercel Analytics) — somente se você clicar em &ldquo;Aceitar cookies&rdquo; no aviso inicial.</li>
       </ul>
 
       <h2>5. Seus direitos</h2>

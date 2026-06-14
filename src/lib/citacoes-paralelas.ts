@@ -13,8 +13,8 @@ export const CITACOES_PARALELAS: CitacaoParalela[] = [
       referencia: "Lucas 17:21",
     },
     patanjali: {
-      texto: "O Yogue que conquistou a mente encontrou o Absoluto.",
-      referencia: "Yoga Sutras 3.3",
+      texto: "Quem domina a mente encontra plenitude.",
+      referencia: "Textos clássicos do yoga, sutra 3.3",
     },
     decodificacao:
       "Ambas as tradições apontam para dentro: a transformação passa pela atenção e pela prática vivida.",
@@ -25,11 +25,11 @@ export const CITACOES_PARALELAS: CitacaoParalela[] = [
       referencia: "João 8:32",
     },
     patanjali: {
-      texto: "O conhecimento discriminativo libera o ser da ilusão.",
-      referencia: "Yoga Sutras 2.26",
+      texto: "O discernimento libera o ser do engano.",
+      referencia: "Textos clássicos do yoga, sutra 2.26",
     },
     decodificacao:
-      "A honestidade reduz o esforço cognitivo do conflito interno — estado de maior clareza neural.",
+      "A honestidade reduz o desgaste mental de viver em conflito — abre espaço para mais clareza.",
   },
   {
     jesus: {
@@ -37,10 +37,10 @@ export const CITACOES_PARALELAS: CitacaoParalela[] = [
       referencia: "Mateus 5:9",
     },
     patanjali: {
-      texto: "Ahimsa — a não-violência — é o primeiro e maior dos princípios.",
-      referencia: "Yoga Sutras 2.30",
+      texto: "A não-violência é o primeiro e maior dos princípios.",
+      referencia: "Textos clássicos do yoga, sutra 2.30",
     },
     decodificacao:
-      "Ahimsa como critério de vida em rede — paz praticada, não apenas declarada.",
+      "Não-violência como critério de vida em rede — paz praticada, não apenas declarada.",
   },
 ];

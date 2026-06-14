@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { VivekaProtocolo } from "@/components/shared/VivekaProtocolo";
 import { ESSENCIA_PLATAFORMA, SECOES_CAMINHO } from "@/lib/essencia";
+import { RCT_DESCRICAO_PADRAO } from "@/lib/identidade";
 import { IMAGENS } from "@/lib/imagens";
 
 /** ISR — ver CACHE_TTL.static em src/lib/cache.ts */
@@ -10,8 +11,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "O Caminho",
-  description:
-    "Tradição cristã e neurociência comportamental — referências publicadas e tom acolhedor.",
+  description: RCT_DESCRICAO_PADRAO,
 };
 
 export default function CaminhoPage() {

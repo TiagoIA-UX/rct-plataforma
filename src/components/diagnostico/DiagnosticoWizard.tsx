@@ -121,7 +121,7 @@ export function DiagnosticoWizard() {
               </select>
             </div>
             <div>
-              <label className="label-sacred">Como você pratica a não-violência (Ahimsa) no dia a dia?</label>
+              <label className="label-sacred">Como você pratica a não-violência no dia a dia?</label>
               <select
                 className="input-sacred"
                 value={data.ahimsa_pratica ?? ""}

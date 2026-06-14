@@ -10,9 +10,9 @@ export type BlogTopic = {
 /** Artigo 01 (mandamentos) é inserido manualmente (seed). */
 export const SERIE_JESUS_GRANDE_YOGUE: BlogTopic[] = [
   {
-    slug: "jesus-12-anos-templo-dharana-dhyana-samadhi",
+    slug: "jesus-12-anos-templo-oracao-concentracao-plena",
     tema:
-      "Jesus aos 12 anos no Templo: Dharana, Dhyana e o Samadhi de uma criança que já era yogue",
+      "Jesus aos 12 anos no Templo: oração com concentração plena e o que a neurociência explica sobre esse estado",
     referencia: "Lucas 2:46-47",
     categoria: "jesus-grande-yogue",
   },
@@ -20,10 +20,10 @@ export const SERIE_JESUS_GRANDE_YOGUE: BlogTopic[] = [
 
 export const SERIE_MANDAMENTOS_AUTO: BlogTopic[] = [
   {
-    slug: "anjos-neuroplasticidade-agentes-codigo-fonte",
+    slug: "anjos-serviram-jesus-neurociencia-cuidado-ministerio",
     tema:
-      "Os anjos que serviam a Jesus: neuroplasticidade e mensageiros do código-fonte",
-    referencia: "Evangelhos — ministério de Jesus",
+      "Os anjos que serviram a Jesus no deserto: o que a neurociência diz sobre suporte social e recuperação",
+    referencia: "Mateus 4:11",
     categoria: "jesus-grande-yogue",
   },
 ];
@@ -31,7 +31,7 @@ export const SERIE_MANDAMENTOS_AUTO: BlogTopic[] = [
 export const SERIE_MILAGRES_AUTO: BlogTopic[] = [
   {
     slug: "milagre-cego-nascenca",
-    tema: "O cego de nascença: herança epigenética e engenharia reversa do trauma",
+    tema: "O cego de nascença: neuroplasticidade e a reversão de padrões de sofrimento",
     referencia: "João 9:1-7",
     categoria: "milagres-decodificados",
   },
@@ -80,7 +80,7 @@ export const SERIE_MILAGRES_AUTO: BlogTopic[] = [
 ];
 
 const POOL_EXTRA = [
-  "Ahimsa de Patanjali: não-violência e coerência cardíaca",
+  "A paz de Cristo que excede todo entendimento: coerência cardíaca e regulação do sistema nervoso",
   "O nervo vago: respiração, calma e presença",
   "Autofagia e descanso: biologia do sábado e regeneração celular",
 ];

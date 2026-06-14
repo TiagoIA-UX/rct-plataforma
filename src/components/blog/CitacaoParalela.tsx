@@ -1,4 +1,4 @@
-import { CITACOES_PARALELAS } from "@/lib/citacoes-paralelas";
+import { CITACOES_PARALELAS } from "@/lib/rct-blog";
 
 interface Props {
   /** Índice do par (0–4). Se omitido, usa hash do slug para variar */
@@ -33,8 +33,8 @@ export function CitacaoParalela({ indice, slug }: Props) {
           <p className="mt-2 text-xs text-[rgba(248,246,240,0.5)]">{par.jesus.referencia}</p>
         </blockquote>
         <blockquote className="card-sacred rounded-sm p-6">
-          <p className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[var(--sacred-gold)]">
-            Patanjali
+          <p className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[rgba(200,169,81,0.55)]">
+            Para comparação — tradição do yoga
           </p>
           <p className="mt-3 font-[family-name:var(--font-cormorant)] text-xl italic text-[var(--pure-white)]">
             &ldquo;{par.patanjali.texto}&rdquo;

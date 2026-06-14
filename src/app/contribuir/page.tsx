@@ -45,7 +45,7 @@ export default function ContribuirPage() {
 
         <div className="mt-10 card-sacred rounded-sm px-6 py-5 text-sm text-[rgba(248,246,240,0.75)]">
           <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-            Princípio de Ahimsa
+            Princípio da não-violência
           </p>
           <p className="mt-3 italic">&ldquo;{DECLARACAO_CONTRIBUIDOR}&rdquo;</p>
         </div>

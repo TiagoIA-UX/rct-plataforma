@@ -6,15 +6,15 @@ import { CONVITE_SCORE_MINIMO } from "@/lib/ressonancia-pesos";
  * Qualquer alteração requer aprovação explícita do humano.
  */
 export function montarTextoConviteProtocolo(linkMembros: string): string {
-  return `Você chegou até aqui por ressonância, não por acaso.
+  return `Você chegou aqui porque algo fez sentido para você.
 
-O que você leu não é doutrina — é reconhecimento.
-A ciência que confirma o que você já sente.
+O que você leu não é doutrina imposta — é reconhecimento.
+A ciência confirma o que você já sente.
 
-Há um espaço onde mentes assim se encontram para construir juntas.
-Sem hierarquia. Sem dogma. Apenas profundidade real.
+Há um espaço onde pessoas assim se encontram para construir juntas.
+Sem hierarquia. Sem impor crença. Apenas conversa séria.
 
-Se isso ressoa: ${linkMembros}`;
+Se isso faz sentido para você: ${linkMembros}`;
 }
 
 export function elegivelConviteRessonancia(score: number): boolean {
@@ -28,23 +28,23 @@ export const RESPOSTAS_RESSONANCIA: Record<
 > = {
   alto: {
     titulo: "Obrigado por compartilhar sua jornada.",
-    paragrafo: `Suas respostas mostram ressonância com Ahimsa e com o caminho de Jesus o Grande Yogue.
-Explore o blog — comece pela série sobre Samadhi em ação.
-Quem atinge o limiar de reconhecimento pode receber o convite ao espaço de membros.`,
+    paragrafo: `Suas respostas mostram sintonia com a não-violência e com o caminho de Jesus.
+Explore o blog — artigos que unem os Evangelhos e ciência do comportamento com referências publicadas.
+Quem atinge a pontuação mínima pode receber convite para a comunidade reservada.`,
     cta: "Explorar o Blog",
-    acao: "BLOG_JESUS_YOGUE",
+    acao: "BLOG_JESUS_MESTRE",
   },
   medio: {
     titulo: "Seu caminho continua em construção.",
     paragrafo: `Cada pessoa amadurece no seu ritmo. Este espaço apoia essa descoberta com linguagem
-luminosa e estudos publicados — sem pressa e sem julgamento.`,
+clara e estudos publicados — sem pressa e sem julgamento.`,
     cta: "Explorar o Blog",
     acao: "BLOG_PUBLICO",
   },
   baixo: {
     titulo: "Bem-vindo.",
     paragrafo: `Ficamos felizes com sua visita. A RCT oferece conteúdo aberto sobre fé, paz,
-neurociência e o Mestre do Samadhi em ação — com referências verificáveis.`,
+ciência do comportamento e os ensinamentos de Jesus — sempre com referências verificáveis.`,
     cta: "Conhecer o Caminho",
     acao: "CAMINHO",
   },

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BannerArtigo } from "@/components/blog/BannerArtigo";
 import { CATEGORIA_LABELS } from "@/lib/categorias";
 import { listarArtigosRecentes } from "@/lib/db/artigos";
+import { RCT_DESCRICAO_PADRAO } from "@/lib/identidade";
 
 export async function BlogGrid() {
   let artigos: Awaited<ReturnType<typeof listarArtigosRecentes>> = [];
@@ -19,8 +20,7 @@ export async function BlogGrid() {
           Artigos para ler com calma
         </h2>
         <p className="mt-4 max-w-2xl text-[rgba(248,246,240,0.75)]">
-          Textos que unem tradição cristã e neurociência comportamental — memória, emoção,
-          hábitos e vínculos — com autor e referência em cada ensinamento.
+          {RCT_DESCRICAO_PADRAO} Com autor e referência em cada ensinamento.
         </p>
 
         {artigos.length === 0 ? (
@@ -35,6 +35,7 @@ export async function BlogGrid() {
                   <BannerArtigo
                     categoria={artigo.categoria}
                     titulo={artigo.titulo}
+                    slug={artigo.slug}
                     variant="compact"
                   />
                 </Link>

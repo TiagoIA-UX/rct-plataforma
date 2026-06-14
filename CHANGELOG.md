@@ -3,6 +3,28 @@
 Todas as mudanças notáveis seguem [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.4.0] - 2026-06-14
+
+### Pipeline multi-agente de geração de artigos (padrão Paulo)
+
+#### Adicionado
+- Protocolo multi-agente em `src/lib/prompts/agents/`: Scout de polêmicas (01), Exegese de versículos (02), Redator padrão Paulo (03), Orquestrador (Patanjali + ética planetária + Salvaguardas RCT) e checklist `estrutura-artigo-paulo.txt`.
+- Orquestração em `src/lib/blog-pipeline.ts`, integrada ao `blog-agent.ts`.
+- CLI `scripts/generate-artigo-pipeline.mjs` + npm `generate:pipeline` (`--tema`, `--dry-run`, `--publish`).
+- Imagem de capa definida pela **palavra-chave do título** (`src/lib/imagens-palavra-chave.ts`, `imagens-artigo.ts`, `banner-artigo.ts`) + script `sync:imagens`.
+- Newsletter do blog, health check (`/api/health`) e admin de artigos (`/admin/artigos`).
+- **Fluxo de aprovação humana no Telegram** (`@posts_do_dia_bot`): o cron das 03h gera rascunho e envia mensagem com botões Aprovar/Rejeitar; nada é publicado sem confirmação. Módulo `src/lib/telegram-posts-bot.ts`, rota `/api/telegram/posts-webhook` (com `secret_token`) e script `posts-bot:setup`.
+- Conversor markdown→HTML padrão RCT (`scripts/seed-posts-do-dia.mjs`, npm `seed:posts-do-dia`) + fontes versionadas em `content/posts-do-dia/`.
+- Estilos de tabela, listas, links, blockquote e citação paralela no `prose-rct`.
+
+#### Alterado
+- Auditoria de linguagem clara em todo o site (Viveka → "5 perguntas de honestidade"/"Pergunta para refletir"; Ahimsa → não-violência; "neurociência comportamental" → "ciência do comportamento"; "Aceitar medição" → "Aceitar cookies/estatísticas").
+- `revisar-artigos-existentes.mjs` e pipeline com backoff/retry para limite de TPM do Groq e resumo do artigo no orquestrador.
+- Artigos no padrão Paulo (versículos concretos → ciência [ESTABELECIDA/HIPÓTESE] → "o que NÃO sustenta" → prática/meditação com comprovação + bloco bênção/maldição): Paulo, Jesus aos 12 anos, 10 Mandamentos, Fé e Razão, Tentação e Autocontrole (Hebreus 4:15).
+
+#### Removido
+- Fallback de geração legada e textos placeholder em `blog-agent.ts`: artigos incompletos são descartados (sem publicação de conteúdo provisório).
+
 ## [0.3.0] - 2026-06-08
 
 ### Blog cron recalibrado + seed do Artigo 01
@@ -85,5 +107,8 @@ Primeira release da RCT após transformação completa do repositório legado.
 - Upstash Redis (cache de scores)
 - Módulos de treinamento Fase I–III integrados à UI
 
+[0.4.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.0
+[0.3.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.3.0
+[0.2.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.2.0
 [0.1.1]: https://github.com/TiagoIA-UX/blog-terapia-elisa-rietjens/releases/tag/v0.1.1
 [0.1.0]: https://github.com/TiagoIA-UX/blog-terapia-elisa-rietjens/releases/tag/v0.1.0

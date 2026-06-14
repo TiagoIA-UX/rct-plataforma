@@ -1,18 +1,33 @@
 /** Protocolo Mestre Divino v2.0 — Seção 0: Salvaguardas Fundamentais */
 
-export const CLAUSULA_EPIGENETICA = `A herança epigenética indica potencial — nunca superioridade. O código se ativa pela prática de Ahimsa: não por origem, etnia, cultura ou linhagem familiar. Nenhuma raça, povo ou tradição detém monopólio sobre a sabedoria. Alguém de qualquer origem pode ativar o código.`;
+/**
+ * Cláusula anti-superioridade — exibida em artigos que mencionem herança, linhagem
+ * ou termos de biologia comportamental. Protege contra interpretações racistas.
+ * Nota: a herança transgeracional em humanos é hipótese em investigação científica,
+ * não fato estabelecido — este aviso reflete essa precisão.
+ */
+export const CLAUSULA_EPIGENETICA = `⚠️ Nota científica: estudos sobre herança transgeracional em humanos são preliminares e ainda não replicados em escala — trata-se de hipótese em investigação, não de fato científico estabelecido. Além disso, nenhuma origem, etnia, raça ou linhagem confere superioridade. O caminho da transformação se ativa pela prática, não pelo nascimento.`;
 
+/**
+ * Texto de transparência do questionário — LGPD/GDPR.
+ * Descreve o que realmente acontece: scoring sobre respostas
+ * do próprio usuário, não rastreamento passivo de leitura.
+ */
 export const TEXTO_TRANSPARENCIA_RESSONANCIA =
-  "Esta plataforma observa padrões de leitura para identificar ressonância com seus princípios. Se você recebeu um convite, foi porque seu comportamento de leitura indicou alinhamento com Ahimsa e ciência aplicada. Nenhum dado pessoal identificável é armazenado ou compartilhado.";
+  "O questionário calcula uma pontuação de compatibilidade apenas a partir das respostas que você preencher — nenhum dado de navegação ou padrão de leitura é coletado. Se você receber um convite, será com base no que declarou aqui, com seu consentimento. Nenhum dado pessoal identificável é armazenado ou compartilhado.";
 
 export const AVISO_LEITURA_COMPLEMENTAR =
-  "Esta é uma leitura complementar, nunca substitutiva — uma leitura possível e fundamentada, não a única verdade.";
+  "Esta é uma leitura extra, não um substituto da sua fé — uma leitura possível e fundamentada, não a única verdade.";
 
+/**
+ * Frase de encerramento dos artigos — convite à prática.
+ * Contexto cristão: o ensinamento aponta para O Caminho, não substitui.
+ */
 export const FRASE_AUTONOMIA_PLATAFORMA =
-  "O objetivo deste ensinamento é tornar-se desnecessário para você.";
+  "Este ensinamento aponta para O Caminho. A prática é sua.";
 
 export const DECLARACAO_CONTRIBUIDOR =
-  "Contribuo com intenção construtiva, sem violência intelectual. Aceito que minha contribuição seja revisada e eventualmente não publicada, sem ressentimento.";
+  "Contribuo com intenção construtiva, sem impor minha verdade sobre os outros. Aceito que minha contribuição seja revisada e eventualmente não publicada, sem ressentimento.";
 
 /** Categorias que exigem revisão humana antes de publicação — Salvaguarda 0.7 */
 export const CATEGORIAS_REVISAO_HUMANA = new Set([

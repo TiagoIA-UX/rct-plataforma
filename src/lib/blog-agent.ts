@@ -1,17 +1,8 @@
-import { readFileSync } from "fs";
-import { join } from "path";
-import Groq from "groq-sdk";
 import { revalidatePath, revalidateTag } from "next/cache";
-import {
-  montarConteudoArtigoCompleto,
-  validarArtigoAntesPublicar,
-} from "@/lib/artigo-template";
+import { executarPipelineArtigo } from "@/lib/blog-pipeline";
 import { CACHE_TAGS } from "@/lib/cache";
-import { CATEGORIAS_REVISAO_HUMANA } from "@/lib/salvaguardas";
 import { prisma } from "@/lib/prisma";
 import { pickNextBlogTopic } from "@/lib/rct-topics";
-import { loadPrivateMjs } from "@/lib/load-private";
-import type { BlocoBencaoMaldicao } from "@/lib/viveka";
 
 export interface ArtigoGerado {
   titulo: string;
@@ -28,134 +19,133 @@ export interface ArtigoGerado {
   maldicao?: string;
   salvaguarda?: string;
   pergunta_viveka?: string;
+  social_instagram?: string;
+  social_facebook?: string;
+  social_linkedin?: string;
+  social_twitter?: string;
+  image_url?: string;
+  image_credit?: string;
 }
 
-const PROMPTS_DIR = join(process.cwd(), "src/lib/prompts");
+const MIN_CONTEUDO_CHARS = 2500;
 
-type BlogAgentPrivate = {
-  gerarArtigoDivino: (overrideTema?: string) => Promise<ArtigoGerado | null>;
-};
+/**
+ * Garante que o artigo é completo e real — sem placeholders nem fallback operacional.
+ * Retorna a lista de campos ausentes; vazia = pronto para publicação.
+ */
+export function camposIncompletosArtigo(artigo: ArtigoGerado): string[] {
+  const faltando: string[] = [];
+  if (!artigo.titulo?.trim()) faltando.push("titulo");
+  if (!artigo.slug?.trim()) faltando.push("slug");
+  if (!artigo.categoria?.trim()) faltando.push("categoria");
+  if ((artigo.conteudo_html?.trim().length ?? 0) < MIN_CONTEUDO_CHARS)
+    faltando.push(`conteudo_html (mínimo ${MIN_CONTEUDO_CHARS} caracteres)`);
+  if (!artigo.bencao?.trim()) faltando.push("bencao");
+  if (!artigo.maldicao?.trim()) faltando.push("maldicao");
+  if (!artigo.salvaguarda?.trim()) faltando.push("salvaguarda");
+  if (!artigo.pergunta_viveka?.trim()) faltando.push("pergunta_viveka");
+  if (!(artigo.base_cientifica?.length)) faltando.push("base_cientifica");
 
-function readPrompt(name: string): string {
-  return readFileSync(join(PROMPTS_DIR, name), "utf-8");
+  const placeholders = /revisad[oa] pela equipe humana|a ser explicitado|lorem ipsum|placeholder|TODO|xxxx/i;
+  const blob = `${artigo.bencao}\n${artigo.maldicao}\n${artigo.salvaguarda}\n${artigo.pergunta_viveka}`;
+  if (placeholders.test(blob)) faltando.push("conteúdo placeholder detectado");
+
+  return faltando;
 }
 
-function prepararArtigo(artigo: ArtigoGerado): ArtigoGerado | null {
-  const bloco: BlocoBencaoMaldicao = {
-    bencao: artigo.bencao ?? "Benefício a ser revisado pela equipe humana.",
-    maldicao: artigo.maldicao ?? "Risco a ser explicitado na revisão humana.",
-    base_cientifica: artigo.base_cientifica ?? [],
-    salvaguarda: artigo.salvaguarda ?? "Praticar com Ahimsa e fontes verificáveis.",
-    pergunta_viveka:
-      artigo.pergunta_viveka ??
-      "Você estaria disposto a ensinar esta ideia para alguém de qualquer origem, com a mesma convicção?",
-  };
-
-  const conteudoCompleto = montarConteudoArtigoCompleto(
-    artigo.conteudo_html,
-    bloco,
-    artigo.categoria
-  );
-
-  const validacao = validarArtigoAntesPublicar(artigo.titulo, conteudoCompleto, artigo.categoria);
-  if (!validacao.ok) {
-    console.error("[blog-agent] Bloqueado pela Salvaguarda 0.1:", validacao.motivo);
-    return null;
-  }
-
-  return { ...artigo, conteudo_html: conteudoCompleto };
-}
-
-async function gerarViaGroq(topic: {
-  tema: string;
-  referencia?: string;
-  categoria: string;
-  slug: string;
-}): Promise<ArtigoGerado | null> {
-  const apiKey = process.env.GROQ_API_KEY;
-  if (!apiKey) return null;
-
-  const systemAgente = readPrompt("system-agente.txt");
-  const promptTemplate = readPrompt("rct-blog.txt");
-  const prompt = promptTemplate
-    .replace("[TEMA]", topic.tema)
-    .replace("[REFERENCIA]", topic.referencia ?? "Contexto bíblico aplicável")
-    .replace("[CATEGORIA]", topic.categoria);
-
-  const groq = new Groq({ apiKey });
-  const completion = await groq.chat.completions.create({
-    model: "llama-3.3-70b-versatile",
-    messages: [
-      { role: "system", content: systemAgente },
-      { role: "user", content: prompt },
-    ],
-    max_tokens: 8000,
-    response_format: { type: "json_object" },
-  });
-
-  const content = completion.choices[0]?.message?.content;
-  if (!content) return null;
-
-  const artigo = JSON.parse(content) as ArtigoGerado;
-  artigo.categoria = artigo.categoria || topic.categoria;
-  artigo.slug = artigo.slug || topic.slug;
-  artigo.tags = artigo.tags ?? [];
-
-  return prepararArtigo(artigo);
-}
-
+/**
+ * Geração exclusiva pelo pipeline multi-agente (padrão Paulo).
+ * SEM fallback legado e SEM placeholders: se o pipeline falhar ou o artigo
+ * vier incompleto, retorna null e nada é gravado/publicado.
+ */
 export async function gerarArtigoDivino(
   overrideTema?: string
 ): Promise<ArtigoGerado | null> {
-  if (overrideTema) {
-    return gerarViaGroq({
-      tema: overrideTema,
-      categoria: "misticismo-decodificado",
-      slug: overrideTema
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9]+/g, "-")
-        .slice(0, 80),
-    });
+  if (!process.env.GROQ_API_KEY) {
+    console.error("[blog-agent] GROQ_API_KEY ausente — geração abortada (sem fallback).");
+    return null;
   }
 
-  const topic = await pickNextBlogTopic();
-  const viaDeploy = await gerarViaGroq(topic);
-  if (viaDeploy) return viaDeploy;
+  const topic = overrideTema ? undefined : await pickNextBlogTopic();
+  const resultado = await executarPipelineArtigo({ temaOverride: overrideTema, topic });
 
-  const mod = loadPrivateMjs<BlogAgentPrivate>("blog-agent");
-  if (mod?.gerarArtigoDivino) return mod.gerarArtigoDivino();
-  return null;
+  if (!resultado) {
+    console.error("[blog-agent] Pipeline multi-agente falhou — nada será gerado (sem fallback).");
+    return null;
+  }
+
+  const faltando = camposIncompletosArtigo(resultado.artigo);
+  if (faltando.length) {
+    console.error("[blog-agent] Artigo incompleto, descartado:", faltando.join(", "));
+    return null;
+  }
+
+  console.log(
+    `[blog-agent] Pipeline OK — tentativas: ${resultado.log.tentativas_redacao}, ` +
+      `ética: ${resultado.log.veredito.pontuacao_etica_planetaria}/100`
+  );
+  return resultado.artigo;
 }
 
-export async function publicarArtigoGerado(artigo: ArtigoGerado) {
+function revalidarBlog(slug: string) {
+  revalidateTag(CACHE_TAGS.artigos, "max");
+  revalidateTag(CACHE_TAGS.artigo(slug), "max");
+  revalidatePath("/");
+  revalidatePath("/blog");
+  revalidatePath(`/blog/${slug}`);
+}
+
+/**
+ * Cria o artigo SEMPRE como rascunho (não publicado, pendente de aprovação).
+ * A publicação só ocorre via aprovação humana no bot do Telegram.
+ */
+export async function criarRascunhoArtigo(artigo: ArtigoGerado) {
   const existente = await prisma.artigo.findUnique({ where: { slug: artigo.slug } });
   if (existente) return existente;
 
-  const requerRevisao = CATEGORIAS_REVISAO_HUMANA.has(artigo.categoria);
-
-  const criado = await prisma.artigo.create({
+  return prisma.artigo.create({
     data: {
       titulo: artigo.titulo,
       subtitulo: artigo.subtitulo ?? null,
       slug: artigo.slug,
       categoria: artigo.categoria,
+      nivel: artigo.nivel ?? "abertura",
       tags: artigo.tags ?? [],
       meta_descricao: artigo.meta_descricao ?? null,
       tempo_leitura: artigo.tempo_leitura ?? null,
       conteudo_html: artigo.conteudo_html,
-      publicado: !requerRevisao,
+      image_url: artigo.image_url ?? null,
+      image_credit: artigo.image_credit ?? null,
+      social_instagram: artigo.social_instagram ?? null,
+      social_facebook: artigo.social_facebook ?? null,
+      social_linkedin: artigo.social_linkedin ?? null,
+      social_twitter: artigo.social_twitter ?? null,
+      publicado: false,
+      pendente_revisao: true,
     },
   });
+}
 
-  if (!requerRevisao) {
-    revalidateTag(CACHE_TAGS.artigos, "max");
-    revalidateTag(CACHE_TAGS.artigo(artigo.slug), "max");
-    revalidatePath("/");
-    revalidatePath("/blog");
-    revalidatePath(`/blog/${artigo.slug}`);
-  }
+/** Publica um rascunho aprovado pelo fundador (botão do Telegram). */
+export async function publicarArtigoPorId(id: string) {
+  const artigo = await prisma.artigo.findUnique({ where: { id } });
+  if (!artigo) return null;
+  if (artigo.publicado) return artigo;
 
-  return criado;
+  const atualizado = await prisma.artigo.update({
+    where: { id },
+    data: { publicado: true, pendente_revisao: false, updated_at: new Date() },
+  });
+
+  revalidarBlog(atualizado.slug);
+  return atualizado;
+}
+
+/** Rejeita (descarta) um rascunho não aprovado. */
+export async function rejeitarArtigoPorId(id: string) {
+  const artigo = await prisma.artigo.findUnique({ where: { id } });
+  if (!artigo) return null;
+  if (artigo.publicado) return artigo;
+  await prisma.artigo.delete({ where: { id } });
+  return artigo;
 }

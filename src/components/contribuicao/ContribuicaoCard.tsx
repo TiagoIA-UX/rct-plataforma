@@ -18,7 +18,7 @@ const TIPO_LABELS: Record<string, string> = {
   reforco: "Reforço",
   correcao: "Correção",
   aperfeicoamento: "Aperfeiçoamento",
-  novo_modulo: "Novo Módulo",
+  novo_modulo: "Nova seção",
 };
 
 interface Props {
@@ -44,7 +44,7 @@ export function ContribuicaoCard({ contribuicao, onVotar }: Props) {
           <h3 className="mt-2 text-xl text-[var(--pure-white)]">{contribuicao.titulo}</h3>
         </div>
         <span className="font-[family-name:var(--font-jetbrains)] text-sm text-[var(--sacred-gold)]">
-          {contribuicao.votos_positivos} endossos
+          {contribuicao.votos_positivos} apoios
         </span>
       </div>
       <p className="mt-4 line-clamp-4 text-[rgba(248,246,240,0.75)]">{contribuicao.conteudo}</p>
@@ -62,7 +62,7 @@ export function ContribuicaoCard({ contribuicao, onVotar }: Props) {
         <span>por {apelido}</span>
         {onVotar && (
           <button onClick={() => onVotar(contribuicao.id)} className="btn-secondary text-xs px-3 py-1">
-            Endossar
+            Apoiar
           </button>
         )}
       </div>

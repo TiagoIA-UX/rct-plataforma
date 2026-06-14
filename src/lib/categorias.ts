@@ -1,13 +1,13 @@
 /** 7 categorias obrigatórias — Protocolo Mestre Divino v1.0, Etapa 4.1 */
 
 export const CATEGORIA_LABELS: Record<string, string> = {
-  "jesus-grande-yogue": "Jesus: O Grande Yogue",
-  "prompts-do-mestre": "Prompts do Grande Mestre",
-  "epigenetica-sagrada": "Epigenética Sagrada",
-  "virus-do-dna": "Vírus do DNA",
-  "misticismo-decodificado": "Misticismo Decodificado",
-  "ahimsa-aplicada": "Ahimsa na Prática",
-  "linhagem-do-conhecimento": "Linhagem do Conhecimento",
+  "jesus-grande-yogue": "Jesus: O Mestre",
+  "prompts-do-mestre": "Orientações do Mestre",
+  "epigenetica-sagrada": "Herança e Transformação",
+  "virus-do-dna": "Hábitos que mudam o corpo",
+  "misticismo-decodificado": "Símbolos explicados",
+  "ahimsa-aplicada": "Não-violência no dia a dia",
+  "linhagem-do-conhecimento": "Sabedoria de geração em geração",
 };
 
 export const CATEGORIAS_BLOG = Object.keys(CATEGORIA_LABELS);

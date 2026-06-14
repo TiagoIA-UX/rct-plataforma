@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type Tab = "diagnosticos" | "triagem" | "provas" | "contribuicoes" | "metricas";
+type Tab = "diagnosticos" | "triagem" | "provas" | "contribuicoes" | "artigos" | "metricas";
 
 interface Diagnostico {
   id: string;
@@ -26,9 +26,23 @@ export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [autenticado, setAutenticado] = useState(false);
   const [tab, setTab] = useState<Tab>("diagnosticos");
+  interface Artigo {
+    id: string;
+    slug: string;
+    titulo: string;
+    categoria: string;
+    nivel: string;
+    publicado: boolean;
+    pendente_revisao: boolean;
+    created_at: string;
+    tempo_leitura: string | null;
+    image_url: string | null;
+  }
+
   const [dados, setDados] = useState<{
     diagnosticos?: Diagnostico[];
     contribuicoes?: Contribuicao[];
+    artigos?: Artigo[];
     metricas?: {
       total_diagnosticos: number;
       total_escolhidos: number;
@@ -94,6 +108,7 @@ export default function AdminPage() {
     { id: "triagem", label: "Triagem Interna" },
     { id: "provas", label: "Provas" },
     { id: "contribuicoes", label: "Contribuições" },
+    { id: "artigos", label: "Artigos" },
     { id: "metricas", label: "Métricas" },
   ];
 
@@ -163,6 +178,73 @@ export default function AdminPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        )}
+
+        {tab === "artigos" && dados.artigos && (
+          <div className="mt-8 space-y-3">
+            <div className="flex justify-between items-center mb-4">
+              <p className="text-sm text-[rgba(248,246,240,0.5)]">
+                {dados.artigos.length} artigo(s) · clique para editar
+              </p>
+              <button
+                onClick={async () => {
+                  await fetch("/api/cron/generate", {
+                    headers: { Authorization: `Bearer ${password}` },
+                  });
+                  carregar("artigos");
+                }}
+                className="btn-secondary text-xs px-3 py-1"
+              >
+                + Gerar artigo (IA)
+              </button>
+            </div>
+            {dados.artigos.map((a) => (
+              <div
+                key={a.id}
+                className="card-sacred flex items-center justify-between gap-4 p-4"
+              >
+                <div className="flex items-center gap-4 min-w-0">
+                  {a.image_url && (
+                    <div className="w-16 h-10 shrink-0 overflow-hidden rounded-sm">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={a.image_url} alt="" className="h-full w-full object-cover" />
+                    </div>
+                  )}
+                  <div className="min-w-0">
+                    <p className="font-semibold truncate">{a.titulo}</p>
+                    <p className="text-xs text-[rgba(248,246,240,0.4)] mt-0.5">
+                      {a.categoria} · {a.nivel} ·{" "}
+                      {new Date(a.created_at).toLocaleDateString("pt-BR")}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  {a.pendente_revisao && (
+                    <span className="text-xs text-yellow-400 font-[family-name:var(--font-jetbrains)]">
+                      Revisão
+                    </span>
+                  )}
+                  <span className={`text-xs ${a.publicado ? "text-[var(--sacred-gold)]" : "text-[rgba(248,246,240,0.3)]"}`}>
+                    {a.publicado ? "Publicado" : "Rascunho"}
+                  </span>
+                  <a
+                    href={`/admin/artigos/${a.slug}`}
+                    className="btn-secondary text-xs px-3 py-1"
+                  >
+                    Editar
+                  </a>
+                  <a
+                    href={`/blog/${a.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary text-xs px-3 py-1 opacity-60"
+                  >
+                    Ver
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         )}
 

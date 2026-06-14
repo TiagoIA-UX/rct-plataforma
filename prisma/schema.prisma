@@ -8,20 +8,30 @@ datasource db {
 }
 
 model Artigo {
-  id              String   @id @default(cuid())
-  titulo          String
-  subtitulo       String?
-  slug            String   @unique
-  categoria       String
-  tags            String[]
-  meta_descricao  String?
-  tempo_leitura   String?
-  conteudo_html   String   @db.Text
-  publicado       Boolean  @default(true)
-  created_at      DateTime @default(now())
-  updated_at      DateTime @updatedAt
+  id                  String   @id @default(cuid())
+  titulo              String
+  subtitulo           String?
+  slug                String   @unique
+  categoria           String
+  nivel               String   @default("abertura")
+  tags                String[]
+  meta_descricao      String?
+  tempo_leitura       String?
+  conteudo_html       String   @db.Text
+  image_url           String?
+  image_credit        String?
+  social_instagram    String?  @db.Text
+  social_facebook     String?  @db.Text
+  social_linkedin     String?  @db.Text
+  social_twitter      String?  @db.Text
+  publicado           Boolean  @default(true)
+  pendente_revisao    Boolean  @default(false)
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
 
   @@index([categoria])
+  @@index([nivel])
+  @@index([publicado])
   @@index([created_at])
 }
 
@@ -100,6 +110,20 @@ model Membro {
   @@index([status])
   @@index([plano])
   @@index([fase_atual])
+}
+
+model Newsletter {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  nome           String?
+  ativo          Boolean  @default(true)
+  resend_id      String?
+  consentimento  Boolean  @default(true)
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  @@index([ativo])
+  @@index([created_at])
 }
 
 model ProvaTreinamento {

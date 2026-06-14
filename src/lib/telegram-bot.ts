@@ -50,8 +50,11 @@ export async function enviarConviteTelegram({ username }: ConviteParams): Promis
 }
 
 /**
- * Alerta admin — Protocolo Etapa 6
- * Apenas score, categoria de interesse e timestamp. Sem dados pessoais identificáveis.
+ * Alerta admin — Protocolo Etapa 6 — conformidade LGPD/GDPR.
+ * Envia apenas: score (numérico), território de interesse (categoria), timestamp.
+ * NÃO envia: nome, e-mail, username, IP ou qualquer dado pessoal identificável.
+ * Disparo condicional: apenas se score >= CONVITE_SCORE_MINIMO (60) e
+ * ENABLE_ADMIN_ALERTS=true.
  */
 export async function alertarAltaRessonancia({
   score,

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/layout/LogoMark";
+import { RCT_PILAR_SUBTITULO } from "@/lib/identidade";
 
 interface Props {
   variant?: "header" | "footer";
@@ -24,7 +25,7 @@ export function Logo({ variant = "header" }: Props) {
           RCT
         </span>
         <span className="mt-1 font-[family-name:var(--font-jetbrains)] text-[9px] uppercase tracking-[0.18em] text-[var(--sacred-gold)] opacity-90">
-          Tradição · Neurociência · Paz
+          {RCT_PILAR_SUBTITULO}
         </span>
       </span>
     </Link>

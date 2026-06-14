@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "RCT — Tradição e neurociência comportamental";
+export const alt = "RCT — Fé e ciência do comportamento";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
           RCT
         </div>
         <div style={{ marginTop: 24, fontSize: 30, opacity: 0.9, textAlign: "center", padding: "0 48px" }}>
-          Tradição cristã e neurociência comportamental
+          Tradição cristã e ciência do comportamento
         </div>
         <div style={{ marginTop: 16, fontSize: 20, opacity: 0.65 }}>
           Memória · Emoção · Hábitos · Vínculos

@@ -1,0 +1,51 @@
+# ESTRUTURA OBRIGATÓRIA — Artigo RCT (padrão Paulo)
+
+Todo artigo gerado DEVE seguir esta sequência no conteudo_html:
+
+## 1. Dados concretos da fonte primária
+- Lista objetiva (números, fatos, datas quando houver)
+- Blockquote com citação literal + referência (livro capítulo:versículo ou fonte histórica)
+
+## 2. Tema central — indícios e hipóteses (NÃO fechar diagnóstico)
+Para CADA candidato ou camada:
+  a) **Indício na fonte** — o que o texto registra
+  b) **Hipótese científica** — estudo publicado (autor, ano, periódico)
+  c) **Rótulo** — [ESTABELECIDA] ou [HIPÓTESE] inline
+
+## 3. O que a ciência diz sobre o corpo/mente envolvido
+- Mecanismo fisiológico ou psicológico verificável
+- Correlação trauma/estresse/hábito → sintoma (com fonte)
+- Versículo ou relato que antecipa o que a ciência descreve hoje
+
+## 4. O que o personagem/tema NÃO foi (descartar teorias fracas)
+- Listar teorias rejeitadas pela evidência
+- Honrar sem reduzir a diagnóstico clínico
+
+## 5. Síntese RCT
+- Ciência amplia respeito; não substitui fé/ética
+- Linguagem cristã/católica primária
+
+## 6. Prática — o que a ciência indica + o que a tradição já fazia
+Obrigatório:
+  - Respiração lenta (5 min) — linguagem cristã, não yoga como primária
+  - Oração contemplativa (10 min) — versículo curto
+  - Movimento leve (caminhada)
+  - **Aviso profissional** destacado: psicólogo/psiquiatra/CAPS/CVV 188
+  - **Links web legítimos e gratuitos** (HeartMath, NHS, APA trauma, CVV, gov.br)
+
+## 7. Bloco final (JSON separado — plataforma monta HTML)
+- bencao: benefício verificável
+- maldicao: risco real se mal aplicado
+- base_cientifica: mínimo 2 fontes com [ESTABELECIDA] ou [HIPÓTESE]
+- salvaguarda: aviso de prática segura
+- pergunta_viveka: pergunta para refletir + indicação prática diária (5 min / 10 min / 3-5x semana)
+
+## Checklist antes de entregar
+[ ] Versículos específicos com capítulo:versículo?
+[ ] Números/fatos objetivos?
+[ ] Autor + ano em cada afirmação científica?
+[ ] Distinção estabelecida vs hipótese?
+[ ] Seção "o que NÃO sustenta"?
+[ ] Prática + links + encaminhamento profissional?
+[ ] Sem superioridade racial/étnica/linhagem?
+[ ] Jesus/tradição cristã como linguagem primária?

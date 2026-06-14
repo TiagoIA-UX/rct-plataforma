@@ -4,7 +4,7 @@ export function VivekaProtocolo() {
   return (
     <section className="card-sacred rounded-sm px-6 py-8">
       <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-        Protocolo Viveka
+        5 perguntas de honestidade
       </p>
       <p className="mt-4 text-sm text-[rgba(248,246,240,0.75)]">{SINAL_ATIVACAO_VIVEKA}</p>
       <ol className="mt-8 space-y-6">

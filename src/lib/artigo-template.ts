@@ -1,15 +1,14 @@
 import {
   CLAUSULA_EPIGENETICA,
-  FRASE_AUTONOMIA_PLATAFORMA,
   validarSalvaguardaEpigenetica,
-} from "@/lib/salvaguardas";
-import type { BlocoBencaoMaldicao } from "@/lib/viveka";
+} from "@/lib/salvaguardas"; // importa direto para evitar ciclo (rct-blog re-exporta este arquivo)
+import type { BlocoBencaoMaldicao } from "@/lib/viveka"; // idem
 
 export function montarHtmlBencaoMaldicao(bloco: BlocoBencaoMaldicao): string {
   const fontes = bloco.base_cientifica.map((f) => `<li>${f}</li>`).join("");
   return `
 <section class="rct-bencao-maldicao" data-rct-template="v2">
-  <h2>Bênção e maldição — transparência radical</h2>
+  <h2>O que ajuda e o que pode prejudicar — com honestidade total</h2>
   <div class="rct-bloco rct-bencao">
     <p><strong>🌱 Bênção</strong></p>
     <p>${bloco.bencao}</p>
@@ -23,14 +22,13 @@ export function montarHtmlBencaoMaldicao(bloco: BlocoBencaoMaldicao): string {
     <ul>${fontes}</ul>
   </div>
   <div class="rct-bloco rct-salvaguarda">
-    <p><strong>🛡️ Salvaguarda</strong></p>
+    <p><strong>🛡️ Aviso importante</strong></p>
     <p>${bloco.salvaguarda}</p>
   </div>
   <div class="rct-bloco rct-viveka">
-    <p><strong>🪞 Pergunta Viveka</strong></p>
+    <p><strong>🪞 Pergunta para refletir</strong></p>
     <p><em>${bloco.pergunta_viveka}</em></p>
   </div>
-  <p class="rct-autonomia"><em>${FRASE_AUTONOMIA_PLATAFORMA}</em></p>
 </section>`.trim();
 }
 

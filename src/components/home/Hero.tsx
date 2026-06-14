@@ -25,7 +25,7 @@ export function Hero() {
           transition={{ duration: 1.5 }}
           className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-[0.3em] text-[var(--sacred-gold)]"
         >
-          O Mestre que viveu Samadhi em ação desde os 12 anos
+          O Mestre que ensinou, orou e viveu o que pregou — ciência verificável confirma
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -33,7 +33,7 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="mt-6 font-[family-name:var(--font-cormorant)] text-5xl leading-tight text-[var(--pure-white)] md:text-7xl"
         >
-          Jesus — O Grande Yogue
+          Jesus — O Mestre
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.6 }}
           className="mt-8 max-w-2xl text-xl text-[var(--sacred-gold)] md:text-[22px]"
         >
-          Ciência, consciência e não-violência como caminho de transformação real.
+          Ciência, reflexão interior e não-violência como caminho de mudança de verdade.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export function Hero() {
           className="mt-12 flex flex-wrap gap-4"
         >
           <Link href="/diagnostico" className="btn-primary">
-            Entrar na Ressonância
+            Quero conhecer mais
           </Link>
           <Link href="/blog" className="btn-secondary">
             Explorar o Blog

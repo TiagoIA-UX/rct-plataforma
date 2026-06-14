@@ -34,23 +34,25 @@ export function CookieConsent() {
     >
       <div className="mx-auto flex max-w-4xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="text-sm text-[rgba(248,246,240,0.8)]">
-          Usamos cookies essenciais para o site funcionar e, com seu consentimento, cookies de
-          medição anônima (Vercel Analytics). Leia nossa{" "}
+          Este site usa <strong>cookies essenciais</strong> para funcionar (login, segurança).
+          Se você permitir, usamos também <strong>cookies de visita</strong> e um pequeno
+          registro no seu navegador (<strong>cache</strong>) para contar acessos de forma
+          anônima — sem saber quem você é. Leia a{" "}
           <Link href="/privacidade" className="underline">
             Política de Privacidade
           </Link>{" "}
-          e{" "}
+          e a{" "}
           <Link href="/cookies" className="underline">
             Política de Cookies
           </Link>
-          . Conforme LGPD (Brasil) e GDPR (União Europeia).
+          .
         </p>
         <div className="flex shrink-0 flex-wrap gap-3">
           <button type="button" onClick={() => aceitar("essencial")} className="btn-secondary text-sm">
-            Só essenciais
+            Só o essencial
           </button>
           <button type="button" onClick={() => aceitar("todos")} className="btn-primary text-sm">
-            Aceitar medição
+            Aceitar cookies
           </button>
         </div>
       </div>

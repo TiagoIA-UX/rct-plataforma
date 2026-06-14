@@ -4,7 +4,7 @@ import { ConsentAwareAnalytics } from "@/components/legal/ConsentAwareAnalytics"
 import { CookieConsent } from "@/components/legal/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { RCT_NOME_COMPLETO, RCT_NOME_EXIBICAO, RCT_SIGLA } from "@/lib/identidade";
+import { RCT_DESCRICAO_PADRAO, RCT_NOME_COMPLETO, RCT_NOME_EXIBICAO, RCT_SIGLA } from "@/lib/identidade";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -36,20 +36,18 @@ export const metadata: Metadata = {
     default: RCT_NOME_EXIBICAO,
     template: `%s | ${RCT_SIGLA}`,
   },
-  description:
-    "Tradição cristã e neurociência comportamental — memória, emoção, hábitos e vínculos com referências publicadas.",
+  description: RCT_DESCRICAO_PADRAO,
   keywords: [
     RCT_SIGLA,
     RCT_NOME_COMPLETO,
     "fé e ciência",
-    "Ahimsa",
-    "fé e ciência",
+    "não-violência",
     "vida interior",
     "espiritualidade",
   ],
   openGraph: {
     title: RCT_NOME_EXIBICAO,
-    description: "Fé e neurociência comportamental no mesmo caminho — estudos publicados com referências verificáveis.",
+    description: "Fé e ciência do comportamento no mesmo caminho — estudos publicados com referências verificáveis.",
     type: "website",
     locale: "pt_BR",
   },

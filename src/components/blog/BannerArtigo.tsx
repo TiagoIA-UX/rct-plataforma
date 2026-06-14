@@ -1,8 +1,9 @@
-import { getBannerArtigo } from "@/lib/banner-artigo";
+import { getBannerArtigo } from "@/lib/rct-blog";
 
 interface Props {
   categoria: string;
   titulo?: string;
+  slug?: string;
   /** hero = página do artigo; compact = listagens */
   variant?: "hero" | "compact";
   priority?: boolean;
@@ -12,11 +13,12 @@ interface Props {
 export function BannerArtigo({
   categoria,
   titulo,
+  slug,
   variant = "hero",
   priority = false,
   className = "",
 }: Props) {
-  const banner = getBannerArtigo(categoria, titulo);
+  const banner = getBannerArtigo(categoria, titulo, slug);
   const isHero = variant === "hero";
 
   return (

@@ -5,7 +5,7 @@ const pilares = [
     numero: "01",
     titulo: "Memória e transformação",
     descricao:
-      "A neuroplasticidade sináptica (Kandel) explica como experiências repetidas moldam circuitos cerebrais — base científica para entender mudança interior ao longo do tempo.",
+      "O cérebro muda com a prática (Kandel) — experiências repetidas moldam hábitos e reações. Base científica para entender mudança interior ao longo do tempo.",
     ref: citacao("neuroplasticidade"),
     icon: (
       <svg viewBox="0 0 48 48" className="h-12 w-12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -18,7 +18,7 @@ const pilares = [
     numero: "02",
     titulo: "Emoção e serenidade",
     descricao:
-      "A regulação emocional (Gross; LeDoux) descreve como a mente modula afeto e impulso — linguagem neurocomportamental que dialoga com a paz prometida no Evangelho.",
+      "O controle das emoções (Gross; LeDoux) descreve como a mente regula afeto e impulso — linguagem da ciência do comportamento que dialoga com a paz prometida no Evangelho.",
     ref: citacao("regulacao"),
     icon: (
       <svg viewBox="0 0 48 48" className="h-12 w-12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -30,7 +30,7 @@ const pilares = [
     numero: "03",
     titulo: "Vínculo e comunidade",
     descricao:
-      "Estudos em saúde pública (Holt-Lunstad et al.) associam relações de apoio a melhor bem-estar — ponte entre neurociência social e a caridade vivida em rede.",
+      "Estudos em saúde pública (Holt-Lunstad et al.) associam relações de apoio a melhor bem-estar — ponte entre ciência das relações e a caridade vivida em rede.",
     ref: citacao("vinculos"),
     icon: (
       <svg viewBox="0 0 48 48" className="h-12 w-12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -48,10 +48,10 @@ export function Pilares() {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)]">
-          Neurociência comportamental na prática
+          Ciência do comportamento na prática
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-[rgba(248,246,240,0.7)]">
-          Três eixos que a ciência já documenta e que sustentam uma fé encarnada no dia a dia.
+          Três temas que a ciência já documenta e que sustentam uma fé vivida no dia a dia.
         </p>
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {pilares.map((pilar) => (

@@ -3,6 +3,12 @@
 Todas as mudanças notáveis seguem [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.4.1] - 2026-06-14
+
+### Eixo Neuroteologia reforçado (alinhamento editorial)
+- Protocolo dos agentes (`agente-03-redator-paulo.txt`, `estrutura-artigo-paulo.txt`) passa a explicitar o Caminho do aperfeiçoamento pela **meditação e atenção plena com comprovação científica**, ancorado na tradição contemplativa cristã (oração contemplativa, lectio divina, oração do coração, respiração unida à oração).
+- Decisão baseada na aceitação do público-alvo cristão/católico (Carta da CDF, 1989; *Jesus Cristo Portador da Água da Viva*, 2003): meditação a serviço da oração tem alta aceitação; yoga como caminho primário, não. Mantida a Salvaguarda 0.5 — yoga/tradições orientais apenas como comparação rotulada; nunca Jesus descrito como yogue/Samadhi.
+
 ## [0.4.0] - 2026-06-14
 
 ### Pipeline multi-agente de geração de artigos (padrão Paulo)
@@ -107,6 +113,7 @@ Primeira release da RCT após transformação completa do repositório legado.
 - Upstash Redis (cache de scores)
 - Módulos de treinamento Fase I–III integrados à UI
 
+[0.4.1]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.1
 [0.4.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.0
 [0.3.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.3.0
 [0.2.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.2.0

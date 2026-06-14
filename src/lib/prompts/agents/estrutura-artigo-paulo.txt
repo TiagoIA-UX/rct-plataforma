@@ -25,13 +25,19 @@ Para CADA candidato ou camada:
 - Ciência amplia respeito; não substitui fé/ética
 - Linguagem cristã/católica primária
 
-## 6. Prática — o que a ciência indica + o que a tradição já fazia
+## 6. Prática — o Caminho da meditação e atenção com comprovação científica
+Eixo da Neuroteologia: apresentar a MEDITAÇÃO e a ATENÇÃO PLENA como caminho central
+de aperfeiçoamento, sempre (a) ancoradas na tradição contemplativa cristã e (b) com
+respaldo científico verificável. NUNCA como auto-realização desligada de Deus.
 Obrigatório:
-  - Respiração lenta (5 min) — linguagem cristã, não yoga como primária
-  - Oração contemplativa (10 min) — versículo curto
-  - Movimento leve (caminhada)
+  - Respiração lenta unida à oração (5 min) — comprovação: HRV/HeartMath, sistema parassimpático
+  - Oração contemplativa / lectio divina / oração do coração (10 min) — versículo curto
+  - Atenção plena cristã — recolhimento, guarda do coração (citar estudo quando houver)
+  - Movimento leve (caminhada) para consolidar
+  - Yoga e tradições orientais SOMENTE como comparação rotulada ("Para comparação — tradição X");
+    nunca como caminho primário e NUNCA descrever Jesus como yogue/Samadhi
   - **Aviso profissional** destacado: psicólogo/psiquiatra/CAPS/CVV 188
-  - **Links web legítimos e gratuitos** (HeartMath, NHS, APA trauma, CVV, gov.br)
+  - **Links web legítimos e gratuitos** (HeartMath, NHS, APA, CVV, gov.br)
 
 ## 7. Bloco final (JSON separado — plataforma monta HTML)
 - bencao: benefício verificável

@@ -1,11 +1,10 @@
 import Link from "next/link";
 import {
-  CATEGORIA_LABELS,
-  CATEGORIAS_BLOG,
   listarArtigosPublicados,
+  listarCategoriasComArtigos,
   resolverImagemArtigo,
 } from "@/lib/rct-blog.server";
-import { CATEGORIA_EM_CONSTRUCAO } from "@/lib/categorias";
+import { CATEGORIA_EM_CONSTRUCAO, labelCategoria } from "@/lib/categorias";
 import { CategoriaEmConstrucao } from "@/components/blog/CategoriaEmConstrucao";
 import { NewsletterBlog } from "@/components/blog/NewsletterBlog";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
@@ -32,6 +31,13 @@ export default async function BlogPage({ searchParams }: Props) {
     }
   } catch {
     artigos = [];
+  }
+
+  let categoriasFiltro: string[] = [];
+  try {
+    categoriasFiltro = await listarCategoriasComArtigos();
+  } catch {
+    categoriasFiltro = [];
   }
 
   const [destaque, ...demais] = artigos;
@@ -62,7 +68,7 @@ export default async function BlogPage({ searchParams }: Props) {
           >
             Todos
           </Link>
-          {CATEGORIAS_BLOG.map((slug) => {
+          {categoriasFiltro.map((slug) => {
             const href =
               slug === CATEGORIA_EM_CONSTRUCAO
                 ? "/blog/biblia-neurocientifica"
@@ -74,7 +80,7 @@ export default async function BlogPage({ searchParams }: Props) {
                 href={href}
                 className={`btn-secondary text-xs px-3 py-1 ${ativo ? "opacity-100" : "opacity-60"}`}
               >
-                {CATEGORIA_LABELS[slug]}
+                {labelCategoria(slug)}
               </Link>
             );
           })}
@@ -113,7 +119,7 @@ export default async function BlogPage({ searchParams }: Props) {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0d1520] via-transparent to-transparent" />
                         <div className="absolute bottom-0 left-0 p-6">
                           <span className="rounded-sm border border-[rgba(200,169,81,0.35)] bg-[rgba(13,21,32,0.65)] px-3 py-1 font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[var(--sacred-gold)] backdrop-blur-sm">
-                            {CATEGORIA_LABELS[destaque.categoria] ?? destaque.categoria}
+                            {labelCategoria(destaque.categoria)}
                           </span>
                         </div>
                       </div>
@@ -167,7 +173,7 @@ export default async function BlogPage({ searchParams }: Props) {
                         </div>
                         <div className="p-5">
                           <span className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[var(--sacred-gold)]">
-                            {CATEGORIA_LABELS[artigo.categoria] ?? artigo.categoria}
+                            {labelCategoria(artigo.categoria)}
                           </span>
                           <h3 className="mt-2 font-[family-name:var(--font-cormorant)] text-xl leading-snug">
                             {artigo.titulo}

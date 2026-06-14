@@ -16,16 +16,36 @@ export type ArtigoListItem = {
 };
 
 export async function listarArtigosPublicados(categoria?: string) {
+  const whereCategoria = categoria
+    ? { categoria: { in: (await import("@/lib/categorias")).slugsEquivalentes(categoria) } }
+    : {};
+
   return unstable_cache(
     async () =>
       prisma.artigo.findMany({
         where: {
           publicado: true,
-          ...(categoria ? { categoria } : {}),
+          ...whereCategoria,
         },
         orderBy: { created_at: "desc" },
       }),
     ["listar-artigos", categoria ?? "all"],
+    { revalidate: CACHE_TTL.blog, tags: [CACHE_TAGS.artigos] }
+  )();
+}
+
+export async function listarCategoriasComArtigos(): Promise<string[]> {
+  return unstable_cache(
+    async () => {
+      const { normalizarCategoria, ordenarCategoriasFiltro } = await import("@/lib/categorias");
+      const rows = await prisma.artigo.findMany({
+        where: { publicado: true },
+        select: { categoria: true },
+      });
+      const slugs = rows.map((r) => normalizarCategoria(r.categoria));
+      return ordenarCategoriasFiltro(slugs);
+    },
+    ["categorias-com-artigos"],
     { revalidate: CACHE_TTL.blog, tags: [CACHE_TAGS.artigos] }
   )();
 }

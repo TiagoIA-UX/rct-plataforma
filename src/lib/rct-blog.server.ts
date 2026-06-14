@@ -71,6 +71,7 @@ export {
 export type { ArtigoListItem } from "@/lib/db/artigos";
 export {
   listarArtigosPublicados,
+  listarCategoriasComArtigos,
   listarArtigosRecentes,
   buscarArtigoPorSlug,
   listarSlugsPublicados,

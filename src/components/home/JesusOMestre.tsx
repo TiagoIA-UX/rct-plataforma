@@ -65,7 +65,7 @@ export function JesusOMestre() {
         </div>
 
         <AvisoLeituraComplementar className="mt-8" />
-        <Link href="/blog?categoria=jesus-o-mestre" className="btn-primary mt-10 inline-block">
+        <Link href="/blog?categoria=jesus-grande-yogue" className="btn-primary mt-10 inline-block">
           Série Jesus o Mestre →
         </Link>
       </div>

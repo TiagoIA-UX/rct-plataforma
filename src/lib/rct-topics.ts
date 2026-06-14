@@ -13,7 +13,7 @@ export const SERIE_JESUS_MESTRE: BlogTopic[] = [
     tema:
       "Jesus aos 12 anos no Templo: oração com atenção plena e o que a neurociência explica sobre esse estado",
     referencia: "Lucas 2:46-47",
-    categoria: "jesus-o-mestre",
+    categoria: "jesus-grande-yogue",
   },
 ];
 

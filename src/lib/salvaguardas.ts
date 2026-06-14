@@ -31,8 +31,9 @@ export const DECLARACAO_CONTRIBUIDOR =
 
 /** Categorias que exigem revisão humana antes de publicação — Salvaguarda 0.7 */
 export const CATEGORIAS_REVISAO_HUMANA = new Set([
+  "prompts-do-mestre",
+  "epigenetica-sagrada",
   "biblia-neurocientifica",
-  "fe-e-razao",
 ]);
 
 /**

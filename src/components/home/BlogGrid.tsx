@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BannerArtigo } from "@/components/blog/BannerArtigo";
-import { CATEGORIA_LABELS } from "@/lib/categorias";
+import { labelCategoria } from "@/lib/categorias";
 import { listarArtigosRecentes } from "@/lib/db/artigos";
 import { MARCA_DESCRICAO } from "@/lib/identidade";
 
@@ -41,7 +41,7 @@ export async function BlogGrid() {
                 </Link>
                 <div className="p-6">
                   <span className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[var(--sacred-gold)]">
-                    {CATEGORIA_LABELS[artigo.categoria] ?? artigo.categoria}
+                    {labelCategoria(artigo.categoria)}
                   </span>
                   <h3 className="mt-3 text-xl text-[var(--pure-white)]">{artigo.titulo}</h3>
                   {artigo.subtitulo && (

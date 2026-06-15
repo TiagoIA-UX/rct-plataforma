@@ -50,24 +50,27 @@ export const SLUG_PALAVRA_CHAVE: Record<string, string> = {
   "jesus-aos-12-anos-no-temple": "templo",
 };
 
+const DESERTE_ORIENTE_MEDIO =
+  "https://images.unsplash.com/photo-1709912151503-6a386f35a963?w=1200&q=80";
+
 export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
   mandamentos: {
     palavra_chave: "mandamentos",
-    url: "https://images.unsplash.com/photo-1518173946687-a86c6e49f401?w=1200&q=80",
-    alt: "Deserto ao entardecer — paisagem do Oriente Médio e das leis do Êxodo",
-    credit: "Unsplash — Dave Hoefler",
+    url: DESERTE_ORIENTE_MEDIO,
+    alt: "Deserto de Wadi Rum, Jordânia — paisagem do Oriente Médio e das leis do Êxodo",
+    credit: "Unsplash — Matt Jones",
   },
   mandamento: {
     palavra_chave: "mandamento",
-    url: "https://images.unsplash.com/photo-1518173946687-a86c6e49f401?w=1200&q=80",
+    url: DESERTE_ORIENTE_MEDIO,
     alt: "Deserto ao entardecer — paisagem do Oriente Médio",
-    credit: "Unsplash — Dave Hoefler",
+    credit: "Unsplash — Matt Jones",
   },
   espinho: {
     palavra_chave: "espinho",
-    url: "https://images.unsplash.com/photo-1518709268805-4e9042af2179?w=1200&q=80",
-    alt: "Galho com espinhos — metáfora do espinho na carne",
-    credit: "Unsplash — Daiga Ellaby",
+    url: "https://images.unsplash.com/photo-1465146633011-14f8e0781093?w=1200&q=80",
+    alt: "Galhos e espinhos na vegetação — metáfora do espinho na carne",
+    credit: "Unsplash — Sebastian Unrau",
   },
   paulo: {
     palavra_chave: "paulo",
@@ -113,15 +116,15 @@ export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
   },
   éxodo: {
     palavra_chave: "éxodo",
-    url: "https://images.unsplash.com/photo-1509316788709-9f5d8b0e8e1e?w=1200&q=80",
+    url: DESERTE_ORIENTE_MEDIO,
     alt: "Dunas no deserto — caminho do Êxodo",
-    credit: "Unsplash — Walid Ahmad",
+    credit: "Unsplash — Matt Jones",
   },
   exodo: {
     palavra_chave: "exodo",
-    url: "https://images.unsplash.com/photo-1509316788709-9f5d8b0e8e1e?w=1200&q=80",
+    url: DESERTE_ORIENTE_MEDIO,
     alt: "Dunas no deserto — caminho do Êxodo",
-    credit: "Unsplash — Walid Ahmad",
+    credit: "Unsplash — Matt Jones",
   },
   anjos: {
     palavra_chave: "anjos",
@@ -155,9 +158,9 @@ export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
   },
   deserto: {
     palavra_chave: "deserto",
-    url: "https://images.unsplash.com/photo-1509316788709-9f5d8b0e8e1e?w=1200&q=80",
+    url: DESERTE_ORIENTE_MEDIO,
     alt: "Deserto — provação e clareza",
-    credit: "Unsplash — Walid Ahmad",
+    credit: "Unsplash — Matt Jones",
   },
   cruz: {
     palavra_chave: "cruz",

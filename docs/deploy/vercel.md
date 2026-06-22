@@ -35,6 +35,8 @@ Em **Team Zairyx → rct-plataforma → Settings → Environment Variables → P
 | `GROQ_API_KEY` | Sim | Geração de artigos |
 | `RESEND_API_KEY` | Recomendado | Newsletter |
 | `RESEND_FROM_EMAIL` | Recomendado | Domínio verificado no Resend |
+| `NEON_AUTH_BASE_URL` | Sim (comunidade) | URL Auth do Neon — login Google |
+| `NEON_AUTH_COOKIE_SECRET` | Sim (comunidade) | Segredo ≥ 32 caracteres (gerar aleatório) |
 | `NEXT_PUBLIC_CONTATO_EMAIL` | Recomendado | Rodapé |
 
 **Diagnóstico:** após salvar e redeploy, abra `/api/health`:

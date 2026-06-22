@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MenuConta } from "@/components/auth/MenuConta";
 import { Logo } from "@/components/layout/Logo";
 
 const links = [
@@ -32,9 +33,12 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/blog" className="btn-primary text-sm px-4 py-2">
-          Blog
-        </Link>
+        <div className="flex items-center gap-3">
+          <MenuConta />
+          <Link href="/blog" className="btn-primary hidden text-sm px-4 py-2 sm:inline-flex">
+            Blog
+          </Link>
+        </div>
       </div>
     </header>
   );

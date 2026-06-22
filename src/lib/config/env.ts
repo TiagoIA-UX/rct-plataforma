@@ -19,7 +19,9 @@ export const env = {
   scoreMinimoEscolhido,
   enableTelegramConvites: process.env.ENABLE_TELEGRAM_CONVITES === "true",
   enableAdminAlerts: process.env.ENABLE_ADMIN_ALERTS === "true",
-  rctPlataformaUrl: process.env.RCT_PLATAFORMA_URL || "https://todos-sejam-um.vercel.app",
+  rctPlataformaUrl:
+    process.env.RCT_PLATAFORMA_URL ||
+    "https://institutoneuma-tiagorocha-team-zairyx.vercel.app",
 };
 
 export function requireEnv(name: string, value?: string) {
@@ -42,6 +44,13 @@ export function hasGoogleCalendarEnv() {
 export function hasMercadoPagoEnv() {
   return Boolean(
     process.env.MERCADOPAGO_ACCESS_TOKEN || process.env.MERCADO_PAGO_ACCESS_TOKEN
+  );
+}
+
+export function isNeonAuthEnabled() {
+  return (
+    Boolean(process.env.NEON_AUTH_BASE_URL?.trim()) &&
+    Boolean(process.env.NEON_AUTH_COOKIE_SECRET?.trim())
   );
 }
 

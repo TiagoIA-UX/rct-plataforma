@@ -107,8 +107,8 @@ curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook" \
 | `MERCADOPAGO_WEBHOOK_SECRET` | Webhook Mercado Pago |
 | `GOOGLE_CALENDAR_CLIENT_ID` | Agendamento |
 | `GOOGLE_CALENDAR_CLIENT_SECRET` | Agendamento |
-| `NEON_AUTH_URL` | Neon Auth (Google Login) |
-| `NEON_AUTH_SECRET` | Neon Auth |
+| `NEON_AUTH_BASE_URL` | Neon Auth — URL base do branch (login exclusivo Google) |
+| `NEON_AUTH_COOKIE_SECRET` | Neon Auth — segredo ≥ 32 caracteres para cookies de sessão |
 
 ---
 

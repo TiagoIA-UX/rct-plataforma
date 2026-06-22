@@ -28,7 +28,7 @@ const jetbrains = JetBrains_Mono({
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   process.env.NEXT_PUBLIC_APP_URL ??
-  "https://todos-sejam-um.vercel.app";
+  "https://institutoneuma-tiagorocha-team-zairyx.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

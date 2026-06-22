@@ -1,0 +1,55 @@
+# TIPOS EDITORIAIS NEUMA — Artigos não são posts
+
+O Instituto NEUMA publica **estudos de transformação humana**, não posts padronizados.
+
+Todo artigo pertence a um tipo. O orquestrador DEVE declarar o tipo antes de redigir.
+
+## Tipo 1 — Sofrimento Humano
+
+**Pergunta central:** O que aconteceu comigo?
+
+Exemplos: espinho na carne, ansiedade, culpa, trauma, exclusão.
+
+Prioridade: complexidade emocional, prontuário humano, nuance — nunca simplificar dor.
+
+## Tipo 2 — Transformação
+
+**Pergunta central:** Como a mudança acontece?
+
+Exemplos: parábolas, conversões, mudanças de vida, perdão.
+
+Prioridade: mecanismos de mudança, múltiplas lentes, aplicabilidade sem promessa mágica.
+
+## Tipo 3 — Florescimento Humano
+
+**Pergunta central:** O que um ser humano pode se tornar?
+
+Exemplos: coragem, propósito, criatividade, plenitude, significado.
+
+Prioridade: contraste com sofrimento — esperança, propósito, compartilhamento, comunidade.
+
+**Alerta editorial:** o acervo tende a Tipo 1. Equilibrar com Tipo 3.
+
+---
+
+## REGRA ANTI-ACHATAMENTO (obrigatória)
+
+Ao **revisar** artigo existente:
+
+1. Modo **ENRIQUECER** — preservar densidade, citações, números, blockquotes, autores.
+2. **Proibido** substituir do zero se o original tem ≥800 palavras.
+3. Volume reescrito deve ser ≥ **80%** do original (palavras).
+4. Se perda >25%: `aprovado: false`, `revisao_humana_obrigatoria: true`.
+
+## Score obrigatório: Profundidade Humana (0-10)
+
+Critérios:
+- complexidade emocional
+- riqueza interpretativa
+- capacidade de gerar reflexão
+- originalidade
+- permanência da voz autoral
+
+**Mínimo 8** — reprova mesmo com estrutura 6/6 ok.
+
+Ver: `agente-score-neuma.txt`, `scripts/auditoria-profundidade-neuma.mjs`

@@ -2,6 +2,7 @@ import {
   CLAUSULA_EPIGENETICA,
   validarSalvaguardaEpigenetica,
   validarPrincipioMestre,
+  usaProtocoloLegadoTitulo,
 } from "@/lib/salvaguardas";
 import type { BlocoBencaoMaldicao } from "@/lib/viveka"; // idem
 
@@ -50,6 +51,14 @@ export function validarArtigoAntesPublicar(
   conteudoHtml: string,
   categoria: string
 ): { ok: boolean; motivo?: string } {
+  const cabecalho = `${titulo}\n${conteudoHtml.slice(0, 200)}`;
+  if (usaProtocoloLegadoTitulo(cabecalho.split("\n").slice(0, 2).join("\n"))) {
+    return {
+      ok: false,
+      motivo:
+        "Título/subtítulo no protocolo legado (yogue/samadhi/dharana) — revisão editorial NEUMA obrigatória.",
+    };
+  }
   const blob = `${titulo}\n${conteudoHtml}`;
   if (categoria === "epigenetica-sagrada" && !blob.includes("nunca superioridade")) {
     return {

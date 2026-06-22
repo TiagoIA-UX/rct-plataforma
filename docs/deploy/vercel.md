@@ -8,7 +8,7 @@
 | Team Vercel | **Team Zairyx** (`team-zairyx`) |
 | Team ID | `team_7VXPFnWh4B2aHS581UwK77vz` |
 | Projeto | `rct-plataforma` |
-| URL de produção | `https://todos-sejam-um.vercel.app` |
+| URL de produção | `https://institutoneuma-tiagorocha-team-zairyx.vercel.app` |
 | Repositório | `TiagoIA-UX/rct-plataforma` |
 
 **Não usar** outras contas ou teams Vercel para este projeto. O CLI local deve apontar para **Team Zairyx**, não para contas de terceiros.
@@ -21,6 +21,33 @@ Remove-Item -Recurse -Force .vercel   # se existir vínculo errado
 vercel link --scope team-zairyx --project rct-plataforma
 ```
 
+## Site pede login da Vercel (“Você precisa de acesso”) — OBRIGATÓRIO DESLIGAR
+
+Se visitantes veem *“Esta implementação do Vercel está protegida”* (como em
+`institutoneuma-tiagorocha-team-zairyx.vercel.app`), **não é bug do site nem do Google OAuth**.
+O **Deployment Protection** do team está bloqueando o público — inclusive o retorno do login Google.
+
+**Quem desliga:** dono ou admin do **Team Zairyx** (conta Tiago), não visitantes.
+
+### Por projeto (recomendado)
+
+1. [vercel.com](https://vercel.com) → team **Team Zairyx**
+2. Projeto (`rct-plataforma` ou nome do deploy NEUMA)
+3. **Settings** → **Deployment Protection**
+4. **Vercel Authentication** → **Disabled** (desligado)
+5. **Password Protection** → desligado (se estiver ativo)
+6. **Save**
+
+### Padrão do team (evita repetir em projetos novos)
+
+1. **Team Settings** → **Deployment Protection**
+2. Default para novos projetos → **None** (nenhuma proteção)
+3. Salvar
+
+Depois: **Deployments** → último deploy → **Redeploy**.
+
+Site público + OAuth Google só funcionam com proteção **desligada** na produção.
+
 ## Variáveis de ambiente (checklist)
 
 Em **Team Zairyx → rct-plataforma → Settings → Environment Variables → Production**, configure (copie os valores do seu `.env.local`):
@@ -28,7 +55,7 @@ Em **Team Zairyx → rct-plataforma → Settings → Environment Variables → P
 | Variável | Obrigatória | Função |
 |----------|-------------|--------|
 | `DATABASE_URL` | Sim | Blog, newsletter, admin (Neon `rct-plataforma`) |
-| `NEXT_PUBLIC_SITE_URL` | Sim | `https://todos-sejam-um.vercel.app` |
+| `NEXT_PUBLIC_SITE_URL` | Sim | `https://institutoneuma-tiagorocha-team-zairyx.vercel.app` |
 | `NEXT_PUBLIC_APP_URL` | Sim | igual ao SITE_URL |
 | `ADMIN_PASSWORD` | Sim | Admin + notify newsletter |
 | `CRON_SECRET` | Sim | Cron jobs |

@@ -1,0 +1,69 @@
+# REVISÃO EDITORIAL OBRIGATÓRIA — Instituto NEUMA
+
+O Instituto NEUMA mudou de paradigma.
+
+O foco não é mais interpretar Jesus como yogue, mestre oriental ou praticante de samadhi.
+O foco é investigar relatos de transformação humana.
+
+Leia também:
+- src/lib/prompts/prompt-mestre-neuma.txt
+- src/lib/prompts/sistema-decodificacao-humana.txt
+- src/lib/prompts/agents/estrutura-artigo-canonico.txt
+
+## REVISAR artigos de:
+- mateus-transformacao
+- jesus-transformacao
+- evangelhos-transformacao
+- qualquer artigo com título/subtítulo legado (yogue, samadhi, dharana, dhyana)
+
+## REGRAS
+
+1. Remover títulos centrados em yogue, samadhi, dharana, dhyana como identidade principal de Jesus.
+
+2. Substituir por perguntas humanas universais:
+   - O que aconteceu com estas pessoas?
+   - O que este relato revela sobre sofrimento humano?
+   - O que este relato revela sobre transformação humana?
+
+3. Reestruturar cada artigo segundo as 6 seções canônicas:
+   A. O que aconteceu?
+   B. O que isso revela sobre a condição humana?
+   C. Leitura neurocomportamental
+   D. Múltiplas lentes interpretativas
+   E. O que posso fazer hoje?
+   F. Esperança responsável
+
+4. Toda hipótese explicitamente rotulada [HIPÓTESE] ou [INTERPRETAÇÃO].
+
+5. Nenhum artigo depende da premissa "Jesus era um yogue."
+
+6. Valor para leitor ateu, agnóstico, cristão ou pesquisador.
+
+7. Encerrar com aplicação prática — não só teoria.
+
+8. Frase-guia obrigatória no encerramento:
+   "O cérebro muda. A consciência se expande. A vida pode ser transformada."
+
+9. Esperança responsável:
+   "Você não está condenado a permanecer como está."
+
+## TÍTULO
+
+Você DEVE propor novo titulo e subtitulo alinhados ao NEUMA (JSON: titulo, subtitulo).
+Proibido yogue/samadhi/dharana/dhyana no título.
+
+## OBJETIVO
+
+Transformar a coleção "Mateus: Um Mapa da Transformação Humana" e "Jesus: Educador de Consciência"
+na biblioteca de estudos neuroteológicos focada em sofrimento, consciência, comportamento e florescimento humano.
+
+## PAUSA ESTRATÉGICA — ANTI-ACHATAMENTO
+
+Leia: tipos-editoriais-neuma.txt
+
+Ao revisar artigo existente:
+- Modo **ENRIQUECER** — aplicar 6 seções SEM destruir densidade original
+- Preservar: blockquotes, autores citados, números concretos, subseções h3
+- Volume final ≥ 80% do original (palavras)
+- Score **profundidade_humana** ≥ 8 ou revisão humana obrigatória
+- Artigos NEUMA não são posts — declarar tipo (sofrimento | transformação | florescimento)

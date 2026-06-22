@@ -62,9 +62,6 @@ export const MARCA_CTA_PRINCIPAL = "Começar a compreender";
 
 export const MARCA_FRASE_SINTESE = MARCA_FRASE_GUIA;
 
-export const MARCA_NOTA_PLATAFORMA =
-  "O Instituto NEUMA observa padrões de leitura para identificar ressonância com seus princípios. Se você recebeu um convite, foi porque seu comportamento de leitura indicou alinhamento com Ahimsa e ciência aplicada. Nenhum dado pessoal identificável é armazenado ou compartilhado.";
-
 export const MARCA_AMOR_UNIVERSAL =
   "Cuidado com o próximo, com a natureza e com os animais — prática de transformação coletiva, não rótulo religioso.";
 

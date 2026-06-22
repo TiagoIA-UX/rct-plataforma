@@ -1,0 +1,194 @@
+{
+  "gerado_em": "2026-06-22T17:58:09.952Z",
+  "pausa_estrategica": true,
+  "groq": false,
+  "artigos": [
+    {
+      "slug": "paulo-espinho-na-carne-ciencia-e-biblia",
+      "tipo": "sofrimento",
+      "pergunta": "O que aconteceu comigo?",
+      "titulo_original": "Paulo e o Espinho na Carne: o que a Ciência Diz sobre o Corpo que Sofreu por Cristo",
+      "titulo_reescrito": "Paulo e o Espinho na Carne: como o sofrimento molda a mente humana",
+      "delta": {
+        "original": {
+          "chars": 18690,
+          "palavras": 2154,
+          "blockquotes": 6,
+          "h2": 8,
+          "h3": 9,
+          "listas": 5,
+          "tabelas": 0,
+          "citacoes_ano": 5,
+          "rotulo_estabelecida": 7,
+          "rotulo_hipotese": 1,
+          "autores_citados": 15,
+          "versiculos": 25,
+          "numeros_concretos": 132
+        },
+        "reescrito": {
+          "chars": 18929,
+          "palavras": 2168,
+          "blockquotes": 6,
+          "h2": 9,
+          "h3": 9,
+          "listas": 5,
+          "tabelas": 0,
+          "citacoes_ano": 5,
+          "rotulo_estabelecida": 7,
+          "rotulo_hipotese": 1,
+          "autores_citados": 15,
+          "versiculos": 24,
+          "numeros_concretos": 131
+        },
+        "delta_palavras_pct": 1,
+        "delta_blockquotes": 0,
+        "delta_h3": 0,
+        "delta_citacoes": 0,
+        "delta_autores": 0,
+        "delta_numeros": -1
+      },
+      "score": {
+        "profundidade_humana": 10,
+        "aprovado": true,
+        "motivos": []
+      },
+      "qualitativo": {
+        "perdido": [],
+        "ganho": [
+          "Estrutura canônica 6 seções NEUMA",
+          "Esperança responsável explícita no encerramento"
+        ],
+        "restaurar": []
+      }
+    },
+    {
+      "slug": "jesus-aos-12-anos-no-temple",
+      "tipo": "transformacao",
+      "pergunta": "Como a mudança acontece?",
+      "titulo_original": "Jesus aos 12 anos no Templo: o que o relato sugere sobre atenção e desenvolvimento",
+      "titulo_reescrito": "Jesus aos 12 anos no Templo: o que o relato revela sobre atenção e pertencimento",
+      "delta": {
+        "original": {
+          "chars": 7188,
+          "palavras": 886,
+          "blockquotes": 2,
+          "h2": 5,
+          "h3": 6,
+          "listas": 3,
+          "tabelas": 0,
+          "citacoes_ano": 3,
+          "rotulo_estabelecida": 7,
+          "rotulo_hipotese": 1,
+          "autores_citados": 8,
+          "versiculos": 7,
+          "numeros_concretos": 27
+        },
+        "reescrito": {
+          "chars": 7464,
+          "palavras": 916,
+          "blockquotes": 2,
+          "h2": 6,
+          "h3": 6,
+          "listas": 3,
+          "tabelas": 0,
+          "citacoes_ano": 3,
+          "rotulo_estabelecida": 7,
+          "rotulo_hipotese": 1,
+          "autores_citados": 8,
+          "versiculos": 7,
+          "numeros_concretos": 27
+        },
+        "delta_palavras_pct": 3,
+        "delta_blockquotes": 0,
+        "delta_h3": 0,
+        "delta_citacoes": 0,
+        "delta_autores": 0,
+        "delta_numeros": 0
+      },
+      "score": {
+        "profundidade_humana": 10,
+        "aprovado": true,
+        "motivos": []
+      },
+      "qualitativo": {
+        "perdido": [],
+        "ganho": [
+          "Título sem linguagem legada (yogue/samadhi)",
+          "6 seções padronizadas"
+        ],
+        "restaurar": []
+      }
+    },
+    {
+      "slug": "fe-e-razao-reconciliando-religiao-e-ciencia",
+      "tipo": "transformacao",
+      "pergunta": "Como a mudança acontece?",
+      "titulo_original": "A Fé e a Razão: Reconciliando a Religião e a Ciência",
+      "titulo_reescrito": "Reconciliando Fé e Razão: Um Caminho para a Transformação Humana",
+      "delta": {
+        "original": {
+          "chars": 3021,
+          "palavras": 386,
+          "blockquotes": 2,
+          "h2": 2,
+          "h3": 3,
+          "listas": 2,
+          "tabelas": 0,
+          "citacoes_ano": 0,
+          "rotulo_estabelecida": 3,
+          "rotulo_hipotese": 0,
+          "autores_citados": 3,
+          "versiculos": 2,
+          "numeros_concretos": 7
+        },
+        "reescrito": {
+          "chars": 4177,
+          "palavras": 571,
+          "blockquotes": 2,
+          "h2": 7,
+          "h3": 0,
+          "listas": 2,
+          "tabelas": 0,
+          "citacoes_ano": 0,
+          "rotulo_estabelecida": 2,
+          "rotulo_hipotese": 2,
+          "autores_citados": 3,
+          "versiculos": 1,
+          "numeros_concretos": 5
+        },
+        "delta_palavras_pct": 48,
+        "delta_blockquotes": 0,
+        "delta_h3": -3,
+        "delta_citacoes": 0,
+        "delta_autores": 0,
+        "delta_numeros": -2
+      },
+      "score": {
+        "profundidade_humana": 8,
+        "aprovado": true,
+        "motivos": [
+          "Subseções analíticas (h3) removidas",
+          "Rigor epistemológico/científico reduzido"
+        ]
+      },
+      "qualitativo": {
+        "perdido": [
+          "Original já era raso — pouco a perder"
+        ],
+        "ganho": [
+          "Volume expandido em relação ao original fraco",
+          "6 seções NEUMA e práticas concretas"
+        ],
+        "restaurar": [
+          "Adicionar mais lentes (filosofia, história das ciências) e citações com ano"
+        ]
+      }
+    }
+  ],
+  "aprovados": [
+    "paulo-espinho-na-carne-ciencia-e-biblia",
+    "jesus-aos-12-anos-no-temple",
+    "fe-e-razao-reconciliando-religiao-e-ciencia"
+  ],
+  "reprovados": []
+}

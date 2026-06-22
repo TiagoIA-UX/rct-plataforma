@@ -3,6 +3,24 @@
 Todas as mudanças notáveis seguem [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.7.0] - 2026-06-22
+
+### Acervo editorial NEUMA — modo ENRIQUECER
+
+#### Adicionado
+- Pipeline editorial sem Groq: `enriquecer-artigo-neuma.mjs`, `auditoria-profundidade-neuma.mjs`, `biblioteca-neuma.mjs`.
+- Métrica **Profundidade Humana (0–10)** e tipos editoriais (Sofrimento · Transformação · Florescimento).
+- Agente Crítico e score ampliado (`agente-critico-neuma.txt`, `agente-score-neuma.txt`).
+- Detecção de protocolo legado (`artigo-legado.ts`); filtro na home e listagens.
+
+#### Alterado
+- **6 artigos publicados** reestruturados nas 6 seções NEUMA preservando densidade original (modo ENRIQUECER).
+- Títulos canônicos: Paulo, Jesus aos 12; duplicatas legado despublicadas.
+- Removido texto de transparência de ressonância (Footer, questionário, `identidade.ts`).
+
+#### Corrigido
+- Encoding UTF-8 no snapshot editorial; originals via `git show v0.6.0`.
+
 ## [0.6.0] - 2026-06-22
 
 ### Instituto NEUMA — rebrand e Módulo Mateus

@@ -56,12 +56,23 @@ private/
 private/**
 scripts/*
 !scripts/seed-artigo01.mjs
+!scripts/enriquecer-artigo-neuma.mjs
+!scripts/auditoria-profundidade-neuma.mjs
+!scripts/biblioteca-neuma.mjs
+!scripts/migrar-titulos-neuma.mjs
+!scripts/lib/
+!scripts/lib/**
 !scripts/content/
 !scripts/content/**
 private/prompts/
 private/prompts/**
 
-# RCT — Materiais confidenciais de treinamento (não versionar)
+docs/editorial/backup-*.json
+docs/editorial/relatorio-biblioteca-neuma-*.json
+docs/editorial/relatorio-biblioteca-neuma-*.md
+docs/editorial/auditoria-profundidade-*.json
+docs/editorial/auditoria-profundidade-*.md
+docs/editorial/pipeline-neuma.log
 RCT_Fase*_*.docx
 **/RCT_Fase*_*.docx
 RCT_*_Confidencial.docx

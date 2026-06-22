@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { BannerArtigo } from "@/components/blog/BannerArtigo";
 import { labelCategoria } from "@/lib/categorias";
-import { listarArtigosRecentes } from "@/lib/db/artigos";
+import { listarArtigosHome } from "@/lib/db/artigos";
 import { MARCA_DESCRICAO } from "@/lib/identidade";
 
 export async function BlogGrid() {
-  let artigos: Awaited<ReturnType<typeof listarArtigosRecentes>> = [];
+  let artigos: Awaited<ReturnType<typeof listarArtigosHome>> = [];
 
   try {
-    artigos = await listarArtigosRecentes(6);
+    artigos = await listarArtigosHome(6);
   } catch {
     artigos = [];
   }

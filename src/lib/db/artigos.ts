@@ -1,3 +1,4 @@
+import { filtrarArtigosAlinhadosNeuma } from "@/lib/artigo-legado";
 import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { CACHE_TAGS, CACHE_TTL } from "@/lib/cache";
@@ -38,16 +39,17 @@ async function buscarPublicadosDb(categoria?: string) {
 
 export async function listarArtigosPublicados(categoria?: string) {
   if (!dbConfigurado()) {
-    return listarArtigosEstaticos(categoria);
+    return filtrarArtigosAlinhadosNeuma(listarArtigosEstaticos(categoria));
   }
 
   return unstable_cache(
     async () => {
       try {
-        return await buscarPublicadosDb(categoria);
+        const rows = await buscarPublicadosDb(categoria);
+        return filtrarArtigosAlinhadosNeuma(rows);
       } catch (err) {
         console.error("[artigos] DB falhou, usando fallback estático:", err);
-        return listarArtigosEstaticos(categoria);
+        return filtrarArtigosAlinhadosNeuma(listarArtigosEstaticos(categoria));
       }
     },
     ["listar-artigos", categoria ?? "all"],
@@ -82,7 +84,16 @@ export async function listarCategoriasComArtigos(): Promise<string[]> {
 
 export async function listarArtigosRecentes(take = 6) {
   const todos = await listarArtigosPublicados();
-  return todos.slice(0, take);
+  const alinhados = filtrarArtigosAlinhadosNeuma(todos);
+  const fonte = alinhados.length > 0 ? alinhados : todos;
+  return fonte.slice(0, take);
+}
+
+/** Artigos visíveis na home — exclui protocolo legado (yogue/samadhi). */
+export async function listarArtigosHome(take = 6) {
+  const todos = await listarArtigosPublicados();
+  const alinhados = filtrarArtigosAlinhadosNeuma(todos);
+  return alinhados.slice(0, take);
 }
 
 export async function buscarArtigoPorSlug(slug: string) {

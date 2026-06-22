@@ -84,6 +84,36 @@ export const MECANISMOS_NEUROCOMPORTAMENTAIS = [
 
 export type TipoArtigoModulo = "principal" | "sofrimento" | "florescimento";
 
+/** Tipos editoriais NEUMA — artigos não são posts genéricos. */
+export const TIPOS_EDITORIAIS_NEUMA = {
+  sofrimento: {
+    id: "sofrimento",
+    label: "Sofrimento Humano",
+    perguntaCentral: "O que aconteceu comigo?",
+    exemplos: ["espinho na carne", "ansiedade", "culpa", "trauma", "exclusão"],
+  },
+  transformacao: {
+    id: "transformacao",
+    label: "Transformação",
+    perguntaCentral: "Como a mudança acontece?",
+    exemplos: ["parábolas", "conversões", "mudanças de vida", "perdão"],
+  },
+  florescimento: {
+    id: "florescimento",
+    label: "Florescimento Humano",
+    perguntaCentral: "O que um ser humano pode se tornar?",
+    exemplos: ["coragem", "propósito", "criatividade", "plenitude", "significado"],
+  },
+} as const;
+
+export type TipoEditorialNeuma = keyof typeof TIPOS_EDITORIAIS_NEUMA;
+
+/** Score mínimo de profundidade humana — abaixo disso, reprovar mesmo com estrutura ok. */
+export const SCORE_MIN_PROFUNDIDADE_HUMANA = 8;
+
+/** Pipeline em pausa até validação de profundidade nos 3 artigos reescritos. */
+export const PAUSA_MIGRACAO_ACERVO = true;
+
 export const TIPOS_ARTIGO_MODULO: TipoArtigoModulo[] = [
   "principal",
   "sofrimento",

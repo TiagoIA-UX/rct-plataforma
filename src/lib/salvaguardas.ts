@@ -6,9 +6,6 @@
  */
 export const CLAUSULA_EPIGENETICA = `⚠️ Nota científica: estudos sobre herança transgeracional em humanos são preliminares e ainda não replicados em escala — trata-se de hipótese em investigação, não de fato científico estabelecido. Além disso, nenhuma origem, etnia, raça ou linhagem confere superioridade. O caminho da transformação se ativa pela prática, não pelo nascimento.`;
 
-export const TEXTO_TRANSPARENCIA_RESSONANCIA =
-  "O Instituto NEUMA observa padrões de leitura para identificar ressonância com seus princípios. Se você recebeu um convite, foi porque seu comportamento de leitura indicou alinhamento com Ahimsa e ciência aplicada. Nenhum dado pessoal identificável é armazenado ou compartilhado.";
-
 export const AVISO_LEITURA_COMPLEMENTAR =
   "Esta é uma leitura investigativa — uma interpretação possível entre outras, não dogma religioso nem verdade fechada.";
 
@@ -177,17 +174,21 @@ export function reduzMilagresAutomaticamentePsicossomatico(texto: string): boole
   return PADROES_REDUCAO_PSICOSSOMATICA.some((re) => re.test(texto));
 }
 
-/**
- * @deprecated Mantido para compatibilidade — substituído pelo PROMPT MESTRE NEUMA.
- * Categoria renomeada; bloqueio removido da validação principal.
- */
-export function descreveJesusComoYogue(texto: string): boolean {
+/** Título/subtítulo — protocolo legado (yogue, samadhi, dharana…). */
+export function usaProtocoloLegadoTitulo(texto: string): boolean {
   const padroes = [
-    /jesus[^.\n]{0,60}\b(yogue|yogui|iogue)\b/i,
-    /jesus[^.\n]{0,60}\bsamadhi\b/i,
-    /\b(yogue|yogui|iogue)\b[^.\n]{0,40}\bjesus\b/i,
+    /\b(yogue|yogui|iogue)\b/i,
+    /\bsamadhi\b/i,
+    /\bdharana\b/i,
+    /\bdhyana\b/i,
+    /jesus[^.\n]{0,80}\b(yogue|yogui|iogue|samadhi)\b/i,
   ];
   return padroes.some((re) => re.test(texto));
+}
+
+/** @deprecated Use usaProtocoloLegadoTitulo */
+export function descreveJesusComoYogue(texto: string): boolean {
+  return usaProtocoloLegadoTitulo(texto);
 }
 
 export function conteudoEpigeneticoSuspeito(texto: string): boolean {
@@ -222,6 +223,13 @@ export function validarSalvaguardaEpigenetica(texto: string): {
 
 /** Validação editorial — PROMPT MESTRE NEUMA */
 export function validarPrincipioMestre(texto: string): { ok: boolean; motivo?: string } {
+  if (usaProtocoloLegadoTitulo(texto)) {
+    return {
+      ok: false,
+      motivo:
+        "Protocolo NEUMA: remover yogue/samadhi/dharana/dhyana como identidade de Jesus — investigar transformação humana.",
+    };
+  }
   if (afirmaParanormalComoFato(texto)) {
     return {
       ok: false,

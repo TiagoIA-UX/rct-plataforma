@@ -11,6 +11,7 @@ import {
   listarSlugsPublicados,
   resolverImagemArtigo,
 } from "@/lib/rct-blog.server";
+import { metadataArtigo } from "@/lib/seo-artigo";
 
 /** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
 export const revalidate = 3600;
@@ -42,21 +43,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     artigo.slug
   );
 
-  return {
-    title: artigo.titulo,
-    description: artigo.meta_descricao ?? artigo.subtitulo ?? undefined,
-    openGraph: {
-      title: artigo.titulo,
-      description: artigo.meta_descricao ?? artigo.subtitulo ?? undefined,
-      images: [{ url: img.url, alt: img.alt }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: artigo.titulo,
-      description: artigo.meta_descricao ?? artigo.subtitulo ?? undefined,
-      images: [img.url],
-    },
-  };
+  return metadataArtigo({
+    slug,
+    titulo: artigo.titulo,
+    subtitulo: artigo.subtitulo,
+    meta_descricao: artigo.meta_descricao,
+    created_at: artigo.created_at,
+    imagem: img,
+  });
 }
 
 export default async function ArtigoPage({ params }: Props) {
@@ -139,6 +133,10 @@ export default async function ArtigoPage({ params }: Props) {
         <CompartilharArtigo
           titulo={artigo.titulo}
           slug={artigo.slug}
+          subtitulo={artigo.subtitulo}
+          metaDescricao={artigo.meta_descricao}
+          imagemUrl={img.url}
+          imagemAlt={img.alt}
           socialInstagram={artigo.social_instagram}
           socialFacebook={artigo.social_facebook}
           socialLinkedin={artigo.social_linkedin}

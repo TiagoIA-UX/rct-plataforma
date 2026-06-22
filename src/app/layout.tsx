@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     description: MARCA_META_DESCRIPTION,
     type: "website",
     locale: "pt_BR",
+    siteName: MARCA_NOME,
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],

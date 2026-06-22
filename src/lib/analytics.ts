@@ -10,3 +10,20 @@ export function isGoogleAnalyticsEnabled(): boolean {
 export function conteudoContemGoogleTag(texto: string): boolean {
   return /googletagmanager\.com/i.test(texto) || /function\s+gtag\s*\(/i.test(texto);
 }
+
+type GtagFn = (...args: unknown[]) => void;
+
+declare global {
+  interface Window {
+    gtag?: GtagFn;
+  }
+}
+
+/** Evento GA4 — compartilhamento de artigo (requer consentimento de cookies). */
+export function trackShareArticle(articleSlug: string, network: string): void {
+  if (typeof window === "undefined" || !window.gtag) return;
+  window.gtag("event", "share_article", {
+    article_slug: articleSlug,
+    network,
+  });
+}

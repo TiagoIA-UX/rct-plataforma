@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { trackShareArticle } from "@/lib/analytics";
+import { hasAnalyticsConsent } from "@/components/legal/CookieConsent";
 import {
   aplicarUrlNoTextoSocial,
+  redeParaUtm,
   resolverTextoRede,
   urlArtigo,
+  urlArtigoComUtm,
   urlFacebookShare,
   urlLinkedInShare,
   urlWhatsAppShare,
@@ -56,22 +60,61 @@ export function CompartilharArtigo({
   const [copiado, setCopiado] = useState<RedeId | null>(null);
   const [aviso, setAviso] = useState<string | null>(null);
 
-  const url =
-    typeof window !== "undefined"
-      ? urlArtigo(slug, window.location.origin)
-      : urlArtigo(slug);
-
+  const origin = typeof window !== "undefined" ? window.location.origin : undefined;
+  const urlCanonica = urlArtigo(slug, origin);
   const descricao = metaDescricao?.trim() || subtitulo?.trim() || titulo;
 
-  const textos: Record<Exclude<RedeId, "link">, string> = {
-    linkedin: resolverTextoRede(socialLinkedin, "linkedin", titulo, descricao, url),
-    facebook: resolverTextoRede(socialFacebook, "facebook", titulo, descricao, url),
-    x: socialTwitter?.trim()
-      ? aplicarUrlNoTextoSocial(socialTwitter, url)
-      : `${titulo}\n\n${url}`,
-    whatsapp: resolverTextoRede(null, "whatsapp", titulo, descricao, url),
-    instagram: resolverTextoRede(socialInstagram, "instagram", titulo, descricao, url),
-  };
+  const urlPorRede = useMemo(() => {
+    const map = {} as Record<RedeId, string>;
+    for (const rede of REDES) {
+      map[rede.id] = urlArtigoComUtm(slug, redeParaUtm(rede.id), origin);
+    }
+    return map;
+  }, [slug, origin]);
+
+  const textos: Record<Exclude<RedeId, "link">, string> = useMemo(
+    () => ({
+      linkedin: resolverTextoRede(
+        socialLinkedin,
+        "linkedin",
+        titulo,
+        descricao,
+        urlPorRede.linkedin
+      ),
+      facebook: resolverTextoRede(
+        socialFacebook,
+        "facebook",
+        titulo,
+        descricao,
+        urlPorRede.facebook
+      ),
+      x: socialTwitter?.trim()
+        ? aplicarUrlNoTextoSocial(socialTwitter, urlPorRede.x)
+        : `${titulo}\n\n${urlPorRede.x}`,
+      whatsapp: resolverTextoRede(null, "whatsapp", titulo, descricao, urlPorRede.whatsapp),
+      instagram: resolverTextoRede(
+        socialInstagram,
+        "instagram",
+        titulo,
+        descricao,
+        urlPorRede.instagram
+      ),
+    }),
+    [
+      socialLinkedin,
+      socialFacebook,
+      socialTwitter,
+      socialInstagram,
+      titulo,
+      descricao,
+      urlPorRede,
+    ]
+  );
+
+  function registrarCompartilhamento(rede: RedeId) {
+    if (!hasAnalyticsConsent()) return;
+    trackShareArticle(slug, rede === "x" ? "twitter" : rede);
+  }
 
   async function copiar(texto: string, rede: RedeId) {
     await navigator.clipboard.writeText(texto);
@@ -81,15 +124,18 @@ export function CompartilharArtigo({
 
   async function acionarRede(rede: (typeof REDES)[number]) {
     if (rede.id === "link") {
-      await copiar(url, "link");
-      setAviso("Link copiado.");
+      await copiar(urlPorRede.link, "link");
+      registrarCompartilhamento("link");
+      setAviso("Link copiado (com rastreamento UTM para analytics).");
       return;
     }
 
     const texto = textos[rede.id as Exclude<RedeId, "link">];
+    const urlTrack = urlPorRede[rede.id];
 
     if (rede.soCopiar) {
       await copiar(texto, rede.id);
+      registrarCompartilhamento(rede.id);
       setAviso(`Texto para ${rede.nome} copiado — cole no app.`);
       return;
     }
@@ -101,8 +147,10 @@ export function CompartilharArtigo({
       );
     }
 
+    registrarCompartilhamento(rede.id);
+
     if (rede.abrir) {
-      window.open(rede.abrir(url, texto), "_blank", "noopener,noreferrer");
+      window.open(rede.abrir(urlTrack, texto), "_blank", "noopener,noreferrer");
     }
   }
 
@@ -112,8 +160,8 @@ export function CompartilharArtigo({
         Publicar nas redes
       </h3>
       <p className="mt-2 text-sm text-[rgba(248,246,240,0.55)]">
-        Cada rede abre com preview profissional (imagem, título e descrição do artigo). LinkedIn e
-        Facebook copiam o texto pronto para você colar no post.
+        Preview profissional (imagem, título e descrição). Links incluem UTM para medir origem no
+        Google Analytics. LinkedIn e Facebook copiam o texto pronto para colar no post.
       </p>
 
       {imagemUrl && (
@@ -147,7 +195,7 @@ export function CompartilharArtigo({
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {REDES.map((rede) => {
           const texto =
-            rede.id === "link" ? url : textos[rede.id as Exclude<RedeId, "link">];
+            rede.id === "link" ? urlPorRede.link : textos[rede.id as Exclude<RedeId, "link">];
           const ativo = copiado === rede.id;
 
           return (
@@ -173,7 +221,7 @@ export function CompartilharArtigo({
 
               {rede.id === "link" && (
                 <p className="mt-3 truncate font-[family-name:var(--font-jetbrains)] text-xs text-[rgba(248,246,240,0.5)]">
-                  {url}
+                  {urlCanonica}
                 </p>
               )}
 

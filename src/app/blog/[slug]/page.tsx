@@ -6,11 +6,13 @@ import { BlocoBencaoMaldicaoFallback } from "@/components/blog/BlocoBencaoMaldic
 import { CitacaoParalela } from "@/components/blog/CitacaoParalela";
 import { CompartilharArtigo } from "@/components/blog/CompartilharArtigo";
 import { NewsletterBlog } from "@/components/blog/NewsletterBlog";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   buscarArtigoPorSlug,
   listarSlugsPublicados,
   resolverImagemArtigo,
 } from "@/lib/rct-blog.server";
+import { schemaArtigoJsonLd } from "@/lib/schema-artigo";
 import { metadataArtigo } from "@/lib/seo-artigo";
 
 /** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
@@ -70,6 +72,17 @@ export default async function ArtigoPage({ params }: Props) {
 
   return (
     <article className="px-6 pt-32 pb-24">
+      <JsonLd
+        data={schemaArtigoJsonLd({
+          slug: artigo.slug,
+          titulo: artigo.titulo,
+          subtitulo: artigo.subtitulo,
+          meta_descricao: artigo.meta_descricao,
+          created_at: artigo.created_at,
+          updated_at: artigo.updated_at,
+          imagem: img,
+        })}
+      />
       <div className="mx-auto max-w-3xl">
         <Link
           href="/blog"

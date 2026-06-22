@@ -1,9 +1,27 @@
 import { env } from "@/lib/config/env";
 
+/** Redes com parâmetro utm_source padronizado. */
+export type RedeUtm =
+  | "linkedin"
+  | "facebook"
+  | "twitter"
+  | "whatsapp"
+  | "instagram"
+  | "copy";
+
 /** URL canônica absoluta do artigo (OG + compartilhamento). */
 export function urlArtigo(slug: string, origin?: string): string {
   const base = (origin ?? env.siteUrl).replace(/\/$/, "");
   return `${base}/blog/${slug}`;
+}
+
+/** URL com UTM para medir origem social no GA4. */
+export function urlArtigoComUtm(slug: string, rede: RedeUtm, origin?: string): string {
+  const u = new URL(urlArtigo(slug, origin));
+  u.searchParams.set("utm_source", rede);
+  u.searchParams.set("utm_medium", "social");
+  u.searchParams.set("utm_campaign", "compartilhamento");
+  return u.toString();
 }
 
 /** Substitui placeholders editoriais pelo link real. */
@@ -69,4 +87,19 @@ export function urlAbsolutaImagem(url: string, siteOrigin?: string): string {
   if (url.startsWith("http://") || url.startsWith("https://")) return url;
   const base = (siteOrigin ?? env.siteUrl).replace(/\/$/, "");
   return `${base}${url.startsWith("/") ? url : `/${url}`}`;
+}
+
+/** Mapeia id interno do botão para utm_source. */
+export function redeParaUtm(rede: string): RedeUtm {
+  if (rede === "x") return "twitter";
+  if (rede === "link") return "copy";
+  if (
+    rede === "linkedin" ||
+    rede === "facebook" ||
+    rede === "whatsapp" ||
+    rede === "instagram"
+  ) {
+    return rede;
+  }
+  return "copy";
 }

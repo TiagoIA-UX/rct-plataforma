@@ -27,7 +27,6 @@ export function Footer() {
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/caminho">O Caminho</Link></li>
               <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/diagnostico">Questionário</Link></li>
               <li><Link href="/contribuir">Contribuir</Link></li>
               <li><Link href="/rede">Comunidade</Link></li>
             </ul>

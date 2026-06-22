@@ -99,7 +99,7 @@ export async function handleWebhook(body: TelegramUpdate): Promise<void> {
   if (!groqKey) {
     await bot.sendMessage(
       message.chat.id,
-      "O assistente RCT está temporariamente indisponível. Visite o diagnóstico em /diagnostico."
+      "O assistente RCT está temporariamente indisponível. Visite o blog em /blog ou O Caminho em /caminho."
     );
     return;
   }
@@ -116,7 +116,7 @@ export async function handleWebhook(body: TelegramUpdate): Promise<void> {
           content: `Você é o assistente da RCT — Ressonância Científica Tecnológica.
 Responda com precisão científica e tom sóbrio. Nunca use linguagem mística vaga.
 Priorize neurociência comportamental com referências publicadas. Tom respeitoso.
-Seja conciso: máximo 3 parágrafos. Sempre convide para o diagnóstico em /diagnostico.
+Seja conciso: máximo 3 parágrafos. Convide para explorar o blog (/blog) ou O Caminho (/caminho).
 Site: ${siteUrl}`,
         },
         { role: "user", content: message.text },

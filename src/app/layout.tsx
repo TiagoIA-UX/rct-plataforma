@@ -39,7 +39,9 @@ export const metadata: Metadata = {
   description: MARCA_META_DESCRIPTION,
   keywords: [
     MARCA_NOME,
+    "Instituto NEUMA Tiago Rocha",
     "Instituto NEUMA",
+    "Tiago Rocha",
     "neuroteologia",
     "João 17:21",
     "epigenética",

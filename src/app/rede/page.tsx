@@ -56,9 +56,6 @@ export default function RedePage() {
           <Link href="/contribuir" className="btn-secondary">
             Apoiar via PIX →
           </Link>
-          <Link href="/diagnostico" className="btn-secondary">
-            Questionário (opcional)
-          </Link>
         </div>
       </div>
     </div>

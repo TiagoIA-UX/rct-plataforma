@@ -76,7 +76,7 @@ e a pergunta final: eu ainda posso mudar?`,
   {
     id: "convite",
     titulo: "Fique à vontade",
-    conteudo: `Blog e caminho são abertos. O questionário é opcional. Quem desejar apoiar encontra
+    conteudo: `Blog e caminho são abertos. Quem desejar apoiar encontra
 PIX em Contribuir. Comece pela compreensão — no seu ritmo.`,
     ref: null,
   },

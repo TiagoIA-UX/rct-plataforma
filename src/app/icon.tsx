@@ -1,9 +1,10 @@
 import { ImageResponse } from "next/og";
+import { MARCA_TEAL, NEUMA_ICON_N } from "@/lib/marca-visual";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-/** Favicon alinhado ao emblema: caminho + luz (sem aparência de rosto) */
+/** Favicon — N geométrico NEUMA */
 export default function Icon() {
   return new ImageResponse(
     (
@@ -14,21 +15,12 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0d1520",
-          borderRadius: 7,
+          background: "#f8f6f0",
+          borderRadius: 6,
         }}
       >
-        <svg width="28" height="28" viewBox="0 0 40 40">
-          <circle cx="20" cy="20" r="15" fill="#1a2744" stroke="#c8a951" strokeWidth="2" />
-          <path
-            d="M10 18 Q20 9 30 18"
-            stroke="#e8c97a"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path d="M20 28 L20 16" stroke="#c8a951" strokeWidth="2.5" strokeLinecap="round" />
-          <circle cx="20" cy="14" r="2.5" fill="#e8c97a" />
+        <svg width="22" height="22" viewBox="0 0 32 32">
+          <path d={NEUMA_ICON_N} fill={MARCA_TEAL} />
         </svg>
       </div>
     ),

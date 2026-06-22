@@ -4,9 +4,13 @@
  */
 
 /** Nome público da plataforma */
-export const MARCA_NOME = "Instituto NEUMA";
+export const MARCA_NOME = "Instituto NEUMA Tiago Rocha";
 
-export const MARCA_NOME_COMPLETO = "Instituto NEUMA — Tiago Rocha";
+export const MARCA_NOME_COMPLETO = MARCA_NOME;
+
+export const MARCA_NOME_INSTITUTO = "Instituto";
+
+export const MARCA_NOME_FUNDADOR = "Tiago Rocha";
 
 export const MARCA_SIGLA = "NEUMA";
 
@@ -53,7 +57,7 @@ export const MARCA_PILAR = "Compreensão · Consciência · Transformação";
 export const MARCA_DESCRICAO = MARCA_TERRITORIO;
 
 export const MARCA_META_DESCRIPTION =
-  "Instituto NEUMA — o que aconteceu comigo? Estudo do sofrimento e da transformação humana com múltiplas lentes: esperança responsável, ciência e prática aplicável.";
+  "Instituto NEUMA Tiago Rocha — o que aconteceu comigo? Estudo do sofrimento e da transformação humana com múltiplas lentes: esperança responsável, ciência e prática aplicável.";
 
 export const MARCA_BLOG_INTRO =
   "Cada artigo percorre quatro passos: o que aconteceu, como afeta mente e corpo, como tradições compreenderam, e o que fazer hoje — com equilíbrio entre sofrimento compreendido e possibilidade de florescer.";

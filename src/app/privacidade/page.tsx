@@ -45,10 +45,6 @@ export default function PrivacidadePage() {
           no cache do navegador), logs técnicos (IP, navegador, horário) para segurança.
         </li>
         <li>
-          <strong>Questionário (opcional):</strong> nome, e-mail, respostas, território de
-          interesse, Telegram (se informado) — somente com consentimento explícito.
-        </li>
-        <li>
           <strong>Doações (opcional):</strong> se você enviar comprovante por e-mail, tratamos apenas
           os dados necessários para registro e contato.
         </li>
@@ -61,7 +57,7 @@ export default function PrivacidadePage() {
 
       <h2>4. Finalidades e bases legais</h2>
       <ul>
-        <li>Personalizar conteúdo e sugerir leituras — consentimento (LGPD art. 7º, I; GDPR art. 6º, 1, a).</li>
+        <li>Personalizar conteúdo na formação reservada — consentimento (LGPD art. 7º, I; GDPR art. 6º, 1, a).</li>
         <li>Contato por e-mail/Telegram — consentimento específico e revogável.</li>
         <li>Segurança, prevenção a fraudes e logs — legítimo interesse / obrigação legal.</li>
         <li>Cookies de visita anônima (Vercel Analytics) — somente se você clicar em &ldquo;Aceitar cookies&rdquo; no aviso inicial.</li>
@@ -85,15 +81,14 @@ export default function PrivacidadePage() {
 
       <h2>6. Retenção</h2>
       <p>
-        Mantemos dados apenas pelo tempo necessário à finalidade ou exigência legal. Dados do
-        questionário podem ser eliminados a pedido. Logs de segurança: período limitado.
+        Mantemos dados apenas pelo tempo necessário à finalidade ou exigência legal. Logs de segurança: período limitado.
       </p>
 
       <h2>7. Subprocessadores</h2>
       <ul>
         <li><strong>Vercel</strong> — hospedagem e entrega do site (EUA/UE).</li>
         <li><strong>Neon</strong> — banco de dados PostgreSQL criptografado em trânsito.</li>
-        <li><strong>Groq</strong> — análise de texto quando você envia o questionário (sem armazenar além do necessário).</li>
+        <li><strong>Groq</strong> — análise de texto na formação reservada (sem armazenar além do necessário).</li>
         <li><strong>Telegram / Resend / Mercado Pago</strong> — somente se você usar esses canais ou recursos.</li>
       </ul>
       <p>Contratos e cláusulas de proteção de dados são exigidos dos provedores quando aplicável.</p>
@@ -107,7 +102,7 @@ export default function PrivacidadePage() {
 
       <h2>9. Crianças</h2>
       <p>
-        O questionário e a formação não se destinam a menores de 18 anos sem consentimento dos
+        A formação reservada não se destina a menores de 18 anos sem consentimento dos
         responsáveis.
       </p>
 

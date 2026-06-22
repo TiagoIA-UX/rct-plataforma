@@ -8,7 +8,6 @@ import { Logo } from "@/components/layout/Logo";
 const links = [
   { href: "/caminho", label: "O Caminho" },
   { href: "/blog", label: "Blog" },
-  { href: "/diagnostico", label: "Questionário" },
   { href: "/contribuir", label: "Contribuir" },
   { href: "/rede", label: "Comunidade" },
 ];

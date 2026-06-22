@@ -72,9 +72,6 @@ export default function CaminhoPage() {
         <Link href="/blog" className="btn-primary">
           Explorar o Blog
         </Link>
-        <Link href="/diagnostico" className="btn-secondary mt-4 inline-flex">
-          Questionário (opcional)
-        </Link>
       </section>
     </div>
   );

@@ -61,6 +61,9 @@ const nextConfig: NextConfig = {
       ],
     },
   ],
+  redirects: async () => [
+    { source: "/diagnostico", destination: "/", permanent: true },
+  ],
 };
 
 export default nextConfig;

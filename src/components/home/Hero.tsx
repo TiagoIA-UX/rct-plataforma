@@ -3,13 +3,17 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { IMAGENS } from "@/lib/imagens";
+import { NeumaSymbol } from "@/components/layout/NeumaSymbol";
 import {
   MARCA_CTA_PRINCIPAL,
   MARCA_FRASE_ESPERANCA,
   MARCA_FRASE_GUIA_LINHAS,
   MARCA_HERO_SUB_LINHA1,
   MARCA_HERO_SUB_LINHA2,
-  MARCA_NOME,
+  MARCA_NOME_FUNDADOR,
+  MARCA_NOME_INSTITUTO,
+  MARCA_PILAR,
+  MARCA_SIGLA,
 } from "@/lib/identidade";
 
 const heroCopy =
@@ -31,14 +35,28 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 w-full max-w-4xl text-center">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="w-full font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-[0.3em] text-[var(--sacred-gold)]"
+          className="flex flex-col items-center gap-4"
         >
-          {MARCA_NOME}
-        </motion.p>
+          <NeumaSymbol variant="full" size={56} />
+          <div className="flex flex-col items-center leading-tight">
+            <span className="font-[family-name:var(--font-inter)] text-sm tracking-wide text-[rgba(248,246,240,0.85)] md:text-base">
+              {MARCA_NOME_INSTITUTO}
+            </span>
+            <span className="font-[family-name:var(--font-inter)] text-2xl font-bold uppercase tracking-[0.18em] text-[var(--pure-white)] md:text-3xl">
+              {MARCA_SIGLA}
+            </span>
+            <span className="mt-1 font-[family-name:var(--font-inter)] text-sm tracking-wide text-[var(--marca-ouro)] md:text-base">
+              {MARCA_NOME_FUNDADOR}
+            </span>
+            <span className="mt-2 font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-[0.2em] text-[rgba(248,246,240,0.5)]">
+              {MARCA_PILAR}
+            </span>
+          </div>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

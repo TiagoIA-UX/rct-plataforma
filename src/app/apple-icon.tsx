@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { MARCA_TEAL, NEUMA_ICON_N } from "@/lib/marca-visual";
 
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
@@ -11,44 +12,15 @@ export default function AppleIcon() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(145deg, #0d1520 0%, #1a2744 100%)",
-          borderRadius: 36,
+          background: "#f8f6f0",
+          borderRadius: 40,
         }}
       >
-        <svg width="100" height="100" viewBox="0 0 40 40">
-          <circle cx="20" cy="20" r="15" fill="#1a2744" stroke="#c8a951" strokeWidth="1.5" />
-          <path
-            d="M10 18 Q20 9 30 18"
-            stroke="#e8c97a"
-            strokeWidth="1.75"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path d="M20 28 L20 16" stroke="#c8a951" strokeWidth="2" strokeLinecap="round" />
-          <circle cx="20" cy="14" r="2.25" fill="#e8c97a" />
-          <circle cx="28" cy="12" r="1.75" fill="#c8a951" />
+        <svg width="108" height="108" viewBox="0 0 32 32">
+          <path d={NEUMA_ICON_N} fill={MARCA_TEAL} />
         </svg>
-        <div
-          style={{
-            marginTop: 10,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            color: "#c8a951",
-            fontSize: 11,
-            fontWeight: 600,
-            letterSpacing: "0.08em",
-            textAlign: "center",
-            lineHeight: 1.2,
-          }}
-        >
-          Todos
-          <br />
-          Sejam Um
-        </div>
       </div>
     ),
     { ...size }

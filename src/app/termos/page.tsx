@@ -31,7 +31,6 @@ export default function TermosPage() {
       <h2>3. Uso permitido</h2>
       <ul>
         <li>Ler e compartilhar links do blog com atribuição</li>
-        <li>Participar do questionário com informações verdadeiras</li>
         <li>Respeitar outros participantes e a equipe</li>
       </ul>
 

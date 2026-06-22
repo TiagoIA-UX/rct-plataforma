@@ -37,7 +37,7 @@ function applyHeaders(response: NextResponse, headers: Record<string, string>) {
 function withCacheHeaders(request: NextRequest): NextResponse {
   const { pathname } = request.nextUrl;
 
-  if (NO_CACHE_PREFIXES.some((p) => pathname.startsWith(p)) || pathname === "/diagnostico") {
+  if (NO_CACHE_PREFIXES.some((p) => pathname.startsWith(p))) {
     return applyHeaders(NextResponse.next(), NO_STORE_HEADERS);
   }
 

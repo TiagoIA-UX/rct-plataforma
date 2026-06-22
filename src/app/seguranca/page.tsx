@@ -86,7 +86,7 @@ export default function SegurancaPage() {
       <h2>5. Disponibilidade e continuidade</h2>
       <p>
         A plataforma depende de provedores de nuvem. Em indisponibilidade prolongada,
-        priorizamos restauração do blog público e proteção dos dados do questionário. Não há SLA
+        priorizamos restauração do blog público e proteção dos dados pessoais. Não há SLA
         contratual para visitantes gratuitos; buscamos boa-fé e melhor esforço.
       </p>
 

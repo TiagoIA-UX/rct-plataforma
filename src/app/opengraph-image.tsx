@@ -9,9 +9,9 @@ import {
 import {
   MARCA_OURO_MARCA,
   MARCA_TEAL_CLARO,
-  NEUMA_ONDA_OURO,
-  NEUMA_ONDA_PONTO,
-  NEUMA_ONDA_TEAL,
+  NEUMA_N_PATH,
+  NEUMA_N_PONTO,
+  NEUMA_SYMBOL_VIEWBOX,
 } from "@/lib/marca-visual";
 
 export const alt = `${MARCA_NOME} — O que aconteceu comigo?`;
@@ -35,26 +35,12 @@ export default function OpenGraphImage() {
           padding: 48,
         }}
       >
-        <svg width="120" height="128" viewBox="0 0 64 68">
-          <path
-            d={NEUMA_ONDA_TEAL}
-            fill="none"
-            stroke={MARCA_TEAL_CLARO}
-            strokeWidth="4.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d={NEUMA_ONDA_OURO}
-            fill="none"
-            stroke={MARCA_OURO_MARCA}
-            strokeWidth="4.5"
-            strokeLinecap="round"
-          />
+        <svg width="120" height="120" viewBox={NEUMA_SYMBOL_VIEWBOX}>
+          <path d={NEUMA_N_PATH} fill={MARCA_TEAL_CLARO} />
           <circle
-            cx={NEUMA_ONDA_PONTO.cx}
-            cy={NEUMA_ONDA_PONTO.cy}
-            r={NEUMA_ONDA_PONTO.r}
+            cx={NEUMA_N_PONTO.cx}
+            cy={NEUMA_N_PONTO.cy}
+            r={NEUMA_N_PONTO.r * 3}
             fill={MARCA_OURO_MARCA}
           />
         </svg>

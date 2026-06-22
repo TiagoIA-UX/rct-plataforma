@@ -14,6 +14,13 @@ export const MARCA_NOME_FUNDADOR = "Tiago Rocha";
 
 export const MARCA_SIGLA = "NEUMA";
 
+/**
+ * NEUMA evoca πνεῦμα (pneuma) / ruach: sopro vital, espírito interior e consciência —
+ * eixo do Instituto (neurociência, consciência, transformação).
+ */
+export const MARCA_NEUMA_SIGNIFICADO =
+  "Sopro vital e consciência interior (pneuma / ruach)";
+
 export const MARCA_MISSAO = "Transformação humana é possível.";
 
 /** Gancho emocional — hero H1 */

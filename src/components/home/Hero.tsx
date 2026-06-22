@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ duration: 1.5 }}
           className="flex flex-col items-center gap-4"
         >
-          <NeumaSymbol variant="full" size={56} />
+          <NeumaSymbol size={48} />
           <div className="flex flex-col items-center leading-tight">
             <span className="font-[family-name:var(--font-inter)] text-sm tracking-wide text-[rgba(248,246,240,0.85)] md:text-base">
               {MARCA_NOME_INSTITUTO}

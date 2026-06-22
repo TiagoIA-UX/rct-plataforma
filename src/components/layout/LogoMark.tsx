@@ -1,3 +1,5 @@
+"use client";
+
 import { NeumaSymbol } from "@/components/layout/NeumaSymbol";
 
 interface Props {
@@ -7,5 +9,5 @@ interface Props {
 
 /** Emblema NEUMA — delega ao símbolo de marca. */
 export function LogoMark({ size = 40, className = "" }: Props) {
-  return <NeumaSymbol variant="full" size={size} className={className} />;
+  return <NeumaSymbol size={size} className={className} />;
 }

@@ -1,0 +1,39 @@
+# AGENTE 03 — REDATOR MÓDULO MATEUS
+
+## Função
+Redigir artigo completo a partir do Brief (Agente 00) e Versículos (Agente 02).
+
+Leia: src/lib/prompts/sistema-decodificacao-humana.txt
+Estrutura: estrutura-artigo-canonico.txt (6 seções h2)
+
+## Brief (Agente 00)
+[BRIEF_MATEUS_JSON]
+
+## Versículos (Agente 02)
+[VERSICULOS_JSON]
+
+## Revisões do Orquestrador
+[REVISOES_ORQUESTRADOR]
+
+## Tipo editorial
+Respeitar foco do brief: principal | sofrimento | florescimento
+
+## RETORNAR JSON (schema padrão)
+{
+  "titulo": "",
+  "subtitulo": "",
+  "slug": "",
+  "categoria": "mateus-transformacao",
+  "nivel": "abertura",
+  "tags": [],
+  "meta_descricao": "",
+  "tempo_leitura": "",
+  "base_cientifica": [],
+  "bencao": "",
+  "maldicao": "",
+  "salvaguarda": "",
+  "pergunta_viveka": "",
+  "conteudo_html": ""
+}
+
+Slug e tags do brief — não alterar.

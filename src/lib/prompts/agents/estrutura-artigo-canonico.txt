@@ -1,0 +1,47 @@
+# ESTRUTURA CANÔNICA — Artigo Módulo Mateus (6 seções)
+
+Leia: src/lib/prompts/sistema-decodificacao-humana.txt
+Leia: src/lib/prompts/prompt-mestre-neuma.txt
+
+Tipo de artigo: [TIPO_ARTIGO] — principal | sofrimento | florescimento
+
+## Extensão
+- principal: 2500–5000 palavras
+- sofrimento / florescimento: 1200–2500 palavras
+
+## SEÇÃO 1 — O que aconteceu? (h2)
+Narrativa acessível da passagem de Mateus [CAPITULO].
+Blockquotes com referência (capítulo:versículo).
+
+## SEÇÃO 2 — O que isso revela sobre o ser humano? (h2)
+Explorar dimensões relevantes: dor, conflito, medo, culpa, pertencimento, esperança.
+Se tipo=sofrimento: aprofundar sofrimento humano.
+Se tipo=florescimento: aprofundar propósito, coragem, crescimento, plenitude.
+Se tipo=principal: equilibrar ambos.
+
+## SEÇÃO 3 — Leitura neurocomportamental (h2)
+Mecanismos possíveis: atenção, percepção, crenças, trauma, condicionamento,
+neuroplasticidade, regulação emocional, significado.
+Toda ciência: autor + ano. Sem fonte = [HIPÓTESE] ou [INTERPRETAÇÃO].
+PROIBIDO afirmar paranormal como fato.
+
+## SEÇÃO 4 — Múltiplas lentes (h2)
+Comparar (sem vencedores): tradição cristã, psicologia, neurociência, filosofia, história.
+
+## SEÇÃO 5 — O que posso fazer hoje? (h2)
+Exercícios concretos, reflexões, perguntas práticas.
+Aviso profissional: psicólogo/CAPS/CVV 188 quando couber.
+
+## SEÇÃO 6 — Esperança responsável (h2)
+Encerrar com: "Você não está condenado a permanecer como está."
+Incluir frase-guia:
+"O cérebro muda. A consciência se expande. A vida pode ser transformada."
+
+## JSON final (separado do HTML)
+bencao, maldicao, base_cientifica (mín. 2), salvaguarda, pergunta_viveka
+
+## Checklist
+[ ] 6 seções h2 presentes?
+[ ] Tipo editorial respeitado (sofrimento vs florescimento)?
+[ ] Frase-guia + esperança no encerramento?
+[ ] Hipóteses rotuladas?

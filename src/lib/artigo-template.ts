@@ -1,8 +1,8 @@
 import {
   CLAUSULA_EPIGENETICA,
   validarSalvaguardaEpigenetica,
-  descreveJesusComoYogue,
-} from "@/lib/salvaguardas"; // importa direto para evitar ciclo (rct-blog re-exporta este arquivo)
+  validarPrincipioMestre,
+} from "@/lib/salvaguardas";
 import type { BlocoBencaoMaldicao } from "@/lib/viveka"; // idem
 
 export function montarHtmlBencaoMaldicao(bloco: BlocoBencaoMaldicao): string {
@@ -57,11 +57,9 @@ export function validarArtigoAntesPublicar(
       motivo: "Categoria epigenetica-sagrada exige cláusula anti-superioridade.",
     };
   }
-  if (descreveJesusComoYogue(blob)) {
-    return {
-      ok: false,
-      motivo: "Salvaguarda 0.8: Jesus não pode ser descrito como yogue/Samadhi (linguagem cristã primária).",
-    };
+  const principio = validarPrincipioMestre(blob);
+  if (!principio.ok) {
+    return principio;
   }
   return validarSalvaguardaEpigenetica(blob);
 }

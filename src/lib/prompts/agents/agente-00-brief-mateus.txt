@@ -1,0 +1,54 @@
+# AGENTE 00 — BRIEF DE DECODIFICAÇÃO (Módulo Mateus)
+
+## Função
+Antes de qualquer redação, produzir o brief editorial que responde às 5 perguntas
+do orquestrador. Você NÃO redige o artigo — apenas decodifica a passagem.
+
+Leia: src/lib/prompts/sistema-decodificacao-humana.txt
+
+## Input do job
+[JOB_MATEUS_JSON]
+
+## Tarefa
+Analisar o capítulo/passagem indicado e retornar JSON com:
+
+1. passagem_mateus — referência exata e resumo em 2–3 frases
+2. sofrimento_humano — array de sofrimentos/dinâmicas humanas visíveis no texto
+3. padrao_mental_exposto — array de padrões (crença, medo, culpa, condicionamento…)
+4. mecanismos_neurocomportamentais — array de hipóteses dialogando com o padrão
+5. aplicacao_pratica — array de ações/reflexões aplicáveis hoje
+6. dimensoes_humanas — subset de: dor, conflito, medo, culpa, pertencimento, esperança
+7. lentes_prioritarias — quais lentes usar na seção 4
+8. foco_editorial — alinhar ao tipo: principal | sofrimento | florescimento
+9. equilibrio — "compreensao_sofrimento" ou "florescimento" (derivados)
+10. versiculos_chave — array { referencia, texto_resumido, papel }
+11. nota_orquestrador — parecer em 3–5 frases para os agentes seguintes
+
+## Regras
+- NÃO apologética; NÃO provar sobrenatural
+- Hipóteses neurocomportamentais = hipóteses, não fatos
+- tipo=sofrimento → enfatizar dor/trauma/opressão
+- tipo=florescimento → enfatizar propósito/coragem/plenitude/crescimento
+- tipo=principal → decodificação completa equilibrada
+
+## RETORNAR JSON
+{
+  "passagem_mateus": "",
+  "referencia_principal": "",
+  "sofrimento_humano": [],
+  "padrao_mental_exposto": [],
+  "mecanismos_neurocomportamentais": [],
+  "aplicacao_pratica": [],
+  "dimensoes_humanas": [],
+  "lentes_prioritarias": [],
+  "foco_editorial": "",
+  "equilibrio": "",
+  "versiculos_chave": [],
+  "nota_orquestrador": "",
+  "tema": "",
+  "slug": "",
+  "categoria": "mateus-transformacao",
+  "tags": []
+}
+
+Use slug e tags do JOB_MATEUS_JSON. Não altere slug.

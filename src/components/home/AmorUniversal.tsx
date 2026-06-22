@@ -61,11 +61,11 @@ export function AmorUniversal() {
         </div>
 
         <div className="relative z-10 mt-10 flex flex-wrap gap-4">
-          <Link href="/blog?categoria=misticismo-decodificado" className="btn-secondary">
-            Símbolos explicados
+          <Link href="/blog?categoria=milagres-decodificados" className="btn-secondary">
+            Milagres Decodificados
           </Link>
-          <Link href="/blog/biblia-neurocientifica" className="btn-secondary">
-            Bíblia neurocientífica →
+          <Link href="/blog/mateus-transformacao" className="btn-secondary">
+            Mateus: Mapa da Transformação →
           </Link>
         </div>
       </div>

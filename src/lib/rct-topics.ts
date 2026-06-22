@@ -13,7 +13,7 @@ export const SERIE_JESUS_MESTRE: BlogTopic[] = [
     tema:
       "Jesus aos 12 anos no Templo: oração com atenção plena e o que a neurociência explica sobre esse estado",
     referencia: "Lucas 2:46-47",
-    categoria: "jesus-grande-yogue",
+    categoria: "jesus-transformacao",
   },
 ];
 
@@ -23,14 +23,14 @@ export const SERIE_BIBLIA_NEUROCIENTIFICA: BlogTopic[] = [
     tema:
       "Romanos 2:14 — gentios que praticam o bem sem lei escrita: neurociência moral e justificação pelas ações",
     referencia: "Romanos 2:14-16",
-    categoria: "biblia-neurocientifica",
+    categoria: "biblia-neuroteologica",
   },
   {
     slug: "mateus-21-28-parabola-dois-filhos-acoes-cerebro",
     tema:
       "Parábola dos dois filhos (Mateus 21:28-31): intenção versus ação — o que a ciência do comportamento observa",
     referencia: "Mateus 21:28-31",
-    categoria: "biblia-neurocientifica",
+    categoria: "biblia-neuroteologica",
   },
 ];
 
@@ -64,7 +64,7 @@ export async function pickNextBlogTopic(): Promise<BlogTopic> {
 
   return {
     tema,
-    categoria: "biblia-neurocientifica",
+    categoria: "biblia-neuroteologica",
     slug: slugs.has(slug) ? `${slug}-${Date.now()}` : slug,
   };
 }

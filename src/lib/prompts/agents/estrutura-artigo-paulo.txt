@@ -1,57 +1,52 @@
-# ESTRUTURA OBRIGATÓRIA — Artigo RCT (padrão Paulo)
+# ESTRUTURA NEUMA DE TRANSFORMAÇÃO — Artigo Instituto NEUMA
 
-Todo artigo gerado DEVE seguir esta sequência no conteudo_html:
+Leia: src/lib/prompts/prompt-mestre-neuma.txt
 
-## 1. Dados concretos da fonte primária
-- Lista objetiva (números, fatos, datas quando houver)
-- Blockquote com citação literal + referência (livro capítulo:versículo ou fonte histórica)
+Todo artigo DEVE responder estas 4 perguntas, nesta ordem, no conteudo_html:
 
-## 2. Tema central — indícios e hipóteses (NÃO fechar diagnóstico)
-Para CADA candidato ou camada:
-  a) **Indício na fonte** — o que o texto registra
-  b) **Hipótese científica** — estudo publicado (autor, ano, periódico)
-  c) **Rótulo** — [ESTABELECIDA] ou [HIPÓTESE] inline
+## 1. O que aconteceu comigo?
+(Contexto humano do sofrimento)
 
-## 3. O que a ciência diz sobre o corpo/mente envolvido
-- Mecanismo fisiológico ou psicológico verificável
-- Correlação trauma/estresse/hábito → sintoma (com fonte)
-- Versículo ou relato que antecipa o que a ciência descreve hoje
+- Acolher a pergunta silenciosa: por que estou assim? o que aconteceu comigo?
+- Dados concretos da fonte (blockquote com referência quando houver texto bíblico/histórico)
+- Indícios e hipóteses — NÃO fechar diagnóstico clínico
+- Rotular [ESTABELECIDA], [HIPÓTESE] ou [INTERPRETAÇÃO]
 
-## 4. O que o personagem/tema NÃO foi (descartar teorias fracas)
-- Listar teorias rejeitadas pela evidência
-- Honrar sem reduzir a diagnóstico clínico
+## 2. Como isso afeta mente, corpo e comportamento?
+(Mecanismo)
 
-## 5. Síntese RCT
-- Ciência amplia respeito; não substitui fé/ética
-- Linguagem cristã/católica primária
+- Neurociência, psicologia, psicossomática — autor + ano em cada afirmação científica
+- Correlação estresse/trauma/hábito → sintoma (com fonte)
+- Descartar teorias fracas; NÃO afirmar paranormal como fato
+- NÃO reduzir automaticamente milagres a psicossomática
 
-## 6. Prática — o Caminho da meditação e atenção com comprovação científica
-Eixo da Neuroteologia: apresentar a MEDITAÇÃO e a ATENÇÃO PLENA como caminho central
-de aperfeiçoamento, sempre (a) ancoradas na tradição contemplativa cristã e (b) com
-respaldo científico verificável. NUNCA como auto-realização desligada de Deus.
-Obrigatório:
-  - Respiração lenta unida à oração (5 min) — comprovação: HRV/HeartMath, sistema parassimpático
-  - Oração contemplativa / lectio divina / oração do coração (10 min) — versículo curto
-  - Atenção plena cristã — recolhimento, guarda do coração (citar estudo quando houver)
-  - Movimento leve (caminhada) para consolidar
-  - Yoga e tradições orientais SOMENTE como comparação rotulada ("Para comparação — tradição X");
-    nunca como caminho primário e NUNCA descrever Jesus como yogue/Samadhi
-  - **Aviso profissional** destacado: psicólogo/psiquiatra/CAPS/CVV 188
-  - **Links web legítimos e gratuitos** (HeartMath, NHS, APA, CVV, gov.br)
+## 3. Como diferentes tradições compreenderam isso?
+(História, simbolismo, espiritualidade)
 
-## 7. Bloco final (JSON separado — plataforma monta HTML)
-- bencao: benefício verificável
-- maldicao: risco real se mal aplicado
-- base_cientifica: mínimo 2 fontes com [ESTABELECIDA] ou [HIPÓTESE]
-- salvaguarda: aviso de prática segura
-- pergunta_viveka: pergunta para refletir + indicação prática diária (5 min / 10 min / 3-5x semana)
+- Múltiplas lentes: histórica, simbólica, espiritual, comportamental
+- Jesus como educador de consciência quando aplicável — sem dogma
+- Fariseus/poder como opressão psicológica quando aplicável
+- Comparações entre tradições rotuladas; humildade epistêmica
+
+## 4. O que posso fazer hoje?
+(Aplicação prática)
+
+- Exercício concreto (respiração, atenção, reflexão escrita, movimento)
+- Esperança responsável: transformação possível — sem magia, sem fatalismo
+- Honrar também "Eu ainda posso mudar?" após compreender o que aconteceu
+- **Aviso profissional:** psicólogo/psiquiatra/CAPS/CVV 188
+- Links legítimos e gratuitos quando couber
+
+## Princípios transversais (obrigatórios)
+
+- Pergunta-guia: "Como isto ajuda alguém real a sofrer menos e transformar a vida?"
+- Equilíbrio editorial: não só sofrimento — incluir contraste de propósito, coragem, crescimento ou plenitude quando couber
+- Bloco JSON final (plataforma monta HTML): bencao, maldicao, base_cientifica, salvaguarda, pergunta_viveka
 
 ## Checklist antes de entregar
-[ ] Versículos específicos com capítulo:versículo?
-[ ] Números/fatos objetivos?
-[ ] Autor + ano em cada afirmação científica?
-[ ] Distinção estabelecida vs hipótese?
-[ ] Seção "o que NÃO sustenta"?
-[ ] Prática + links + encaminhamento profissional?
-[ ] Sem superioridade racial/étnica/linhagem?
-[ ] Jesus/tradição cristã como linguagem primária?
+
+[ ] Quatro seções respondidas explicitamente (h2 com as perguntas)?
+[ ] "O que aconteceu comigo?" acolhido antes do mecanismo?
+[ ] Ciência com autor + ano; hipóteses rotuladas?
+[ ] Prática aplicável hoje + aviso profissional?
+[ ] Contraste de florescimento (não só trauma/opressão)?

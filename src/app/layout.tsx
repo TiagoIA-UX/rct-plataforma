@@ -4,7 +4,7 @@ import { ConsentAwareAnalytics } from "@/components/legal/ConsentAwareAnalytics"
 import { CookieConsent } from "@/components/legal/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { MARCA_DESCRICAO, MARCA_NOME, MARCA_SLOGAN_COMPLETO } from "@/lib/identidade";
+import { MARCA_META_DESCRIPTION, MARCA_NOME, MARCA_PILAR } from "@/lib/identidade";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -36,18 +36,19 @@ export const metadata: Metadata = {
     default: MARCA_NOME,
     template: `%s | ${MARCA_NOME}`,
   },
-  description: MARCA_DESCRICAO,
+  description: MARCA_META_DESCRIPTION,
   keywords: [
     MARCA_NOME,
-    "João 17:21",
-    "fé e ciência",
-    "meditação cristã",
-    "amor universal",
+    "Instituto NEUMA",
     "neuroteologia",
+    "João 17:21",
+    "epigenética",
+    "psicossomática",
+    "meditação cristã",
   ],
   openGraph: {
     title: MARCA_NOME,
-    description: MARCA_SLOGAN_COMPLETO,
+    description: MARCA_META_DESCRIPTION,
     type: "website",
     locale: "pt_BR",
   },

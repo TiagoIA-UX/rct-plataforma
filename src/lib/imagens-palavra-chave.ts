@@ -2,6 +2,8 @@
  * Imagens por palavra-chave do título — cada post usa a palavra temática do título.
  */
 
+import { MARCA_NOME } from "@/lib/identidade";
+
 export type ImagemArtigo = {
   url: string;
   alt: string;
@@ -239,7 +241,7 @@ export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
 const IMAGEM_PADRAO: ImagemArtigo = {
   palavra_chave: "geral",
   url: "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?w=1200&q=80",
-  alt: "Luz suave — Todos Sejam Um",
+  alt: `Luz suave — ${MARCA_NOME}`,
   credit: "Unsplash — Giammarco Boscaro",
 };
 
@@ -276,5 +278,5 @@ export function resolverImagemPorPalavraChave(
   const chave = extrairPalavraChaveImagem(titulo, opts?.slug);
   const img = IMAGENS_POR_PALAVRA_CHAVE[chave] ?? IMAGENS_POR_PALAVRA_CHAVE[normalizarTexto(chave)];
   if (img) return { ...img, alt: `${img.alt}` };
-  return { ...IMAGEM_PADRAO, alt: `Todos Sejam Um — ${titulo.slice(0, 80)}` };
+  return { ...IMAGEM_PADRAO, alt: `${MARCA_NOME} — ${titulo.slice(0, 80)}` };
 }

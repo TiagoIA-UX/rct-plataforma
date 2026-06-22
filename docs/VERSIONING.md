@@ -15,7 +15,7 @@ Este projeto segue [Semantic Versioning 2.0.0](https://semver.org/lang/pt-BR/).
 Enquanto `MAJOR = 0`, a API e o schema podem evoluir com mais liberdade.
 Trate `MINOR` como features e `PATCH` como correções.
 
-**Versão atual:** `0.3.0` — Gênesis + transplante do motor + seed e cron recalibrado do blog.
+**Versão atual:** `0.6.0` — Instituto NEUMA + Sistema de Decodificação Humana (Módulo Mateus).
 
 Arquivos de versão sincronizados: `package.json`, `VERSION`, `CHANGELOG.md`.
 

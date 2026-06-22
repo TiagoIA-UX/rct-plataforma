@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/layout/LogoMark";
-import { MARCA_NOME, MARCA_SLOGAN_REFERENCIA } from "@/lib/identidade";
+import { MARCA_NOME, MARCA_PILAR } from "@/lib/identidade";
 
 interface Props {
   variant?: "header" | "footer";
@@ -25,7 +25,7 @@ export function Logo({ variant = "header" }: Props) {
           {MARCA_NOME}
         </span>
         <span className="mt-1 font-[family-name:var(--font-jetbrains)] text-[9px] uppercase tracking-[0.14em] text-[var(--sacred-gold)] opacity-90">
-          {MARCA_SLOGAN_REFERENCIA}
+          {MARCA_PILAR}
         </span>
       </span>
     </Link>

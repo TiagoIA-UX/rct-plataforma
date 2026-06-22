@@ -1,6 +1,6 @@
 {
   "name": "rct-plataforma",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "RCT — Ressonância Científica Tecnológica.",
   "private": true,
   "author": "Tiago Aureliano da Rocha",
@@ -40,7 +40,7 @@
     "seed:posts-do-dia": "node --experimental-strip-types scripts/seed-posts-do-dia.mjs",
     "audit:marca": "node --experimental-strip-types scripts/auditoria-marca.mjs",
     "migrate:categorias": "node --experimental-strip-types scripts/migrate-categorias.mjs",
-    "generate:biblia-neuro": "node scripts/generate-biblia-neurocientifica.mjs",
+    "generate:mateus": "node scripts/generate-mateus-modulo.mjs",
     "export:artigos": "node scripts/export-artigos-estaticos.mjs",
     "test:newsletter": "node --experimental-strip-types scripts/test-newsletter.mjs",
     "postinstall": "prisma generate",

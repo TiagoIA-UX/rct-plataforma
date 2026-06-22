@@ -9,7 +9,7 @@ import { CategoriaEmConstrucao } from "@/components/blog/CategoriaEmConstrucao";
 import { NewsletterBlog } from "@/components/blog/NewsletterBlog";
 import { ImagemConteudo } from "@/components/shared/ImagemConteudo";
 import { IMAGENS } from "@/lib/imagens";
-import { MARCA_DESCRICAO } from "@/lib/identidade";
+import { MODULO_MATEUS_TITULO, SERIE_EVANGELHOS } from "@/lib/decodificacao-humana";
 
 /** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
 export const revalidate = 3600;
@@ -48,8 +48,9 @@ export default async function BlogPage({ searchParams }: Props) {
           Blog
         </h1>
         <p className="mt-4 text-[rgba(248,246,240,0.75)]">
-          {MARCA_DESCRICAO} Sempre com distinção clara entre ciência
-          estabelecida e hipótese em estudo.
+          {MODULO_MATEUS_TITULO} — {SERIE_EVANGELHOS}. Cada capítulo: decodificação principal,
+          sofrimento e florescimento. Sempre com distinção clara entre ciência estabelecida e
+          hipótese em estudo.
         </p>
 
         {/* Filtro de categorias */}
@@ -63,7 +64,7 @@ export default async function BlogPage({ searchParams }: Props) {
           {categoriasFiltro.map((slug) => {
             const href =
               slug === CATEGORIA_EM_CONSTRUCAO
-                ? "/blog/biblia-neurocientifica"
+                ? "/blog/mateus-transformacao"
                 : `/blog?categoria=${slug}`;
             const ativo = categoria === slug || (slug === CATEGORIA_EM_CONSTRUCAO && emConstrucao);
             return (

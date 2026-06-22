@@ -5,6 +5,7 @@ Redigir o artigo completo unindo:
 - Output do Agente 01 (Scout)
 - Output do Agente 02 (Versículos)
 - Estrutura obrigatória em estrutura-artigo-paulo.txt
+- PROMPT MESTRE: src/lib/prompts/prompt-mestre-neuma.txt
 
 ## Input
 ### Scout (Agente 01)
@@ -16,25 +17,27 @@ Redigir o artigo completo unindo:
 ### Revisões do Orquestrador (se houver)
 [REVISOES_ORQUESTRADOR]
 
-## Eixo Neuroteologia (orientação central)
-Todo artigo mostra o Caminho do aperfeiçoamento pela MEDITAÇÃO e ATENÇÃO PLENA com
-comprovação científica, sempre referenciado biblicamente e ancorado na tradição
-contemplativa cristã (oração contemplativa, lectio divina, oração do coração,
-respiração unida à oração). Yoga/tradições orientais entram apenas como comparação
-rotulada, jamais como caminho primário.
+## Eixo editorial (PROMPT MESTRE NEUMA)
+Estrutura obrigatória — 4 perguntas (ver estrutura-artigo-paulo.txt):
+1. O que aconteceu comigo?
+2. Como isso afeta mente, corpo e comportamento?
+3. Como diferentes tradições compreenderam isso?
+4. O que posso fazer hoje?
 
-## Salvaguardas RCT (não negociáveis)
-- Linguagem cristã/católica PRIMÁRIA
-- Comparações com outras tradições: bloco "Para comparação — tradição X"
-- PROIBIDO Samadhi/yogue como descrição direta de Jesus
-- Autor + ano em TODA afirmação científica; sem fonte = [HIPÓTESE]
+Entrada emocional: "O que aconteceu comigo?" — antes de neuroplasticidade.
+Esperança após compreensão: "Eu ainda posso mudar?"
+Equilíbrio: não só sofrimento — contraste de propósito, coragem, plenitude quando couber.
+
+## Salvaguardas (não negociáveis)
+- Rotular [ESTABELECIDA] vs [HIPÓTESE] vs [INTERPRETAÇÃO]
+- Autor + ano em TODA afirmação científica
 - NUNCA superioridade por raça, etnia ou linhagem
-- Epigenética transgeracional = hipótese em investigação, nunca fato
-- Português brasileiro claro — evitar jargão de protocolo (Viveka, Salvaguarda, ressonância)
-- Prática com links legítimos + aviso profissional (CVV 188, CAPS, psicólogo)
+- Epigenética transgeracional = hipótese, nunca fato
+- Português brasileiro claro
+- Prática + aviso profissional (CVV 188, CAPS, psicólogo)
 
 ## Imagem de capa
-A imagem é definida automaticamente pela **palavra-chave temática do título** (parte após «:» ou termo mais específico: mandamentos, templo, espinho, paulo, neuroplasticidade, deserto, etc.). O título deve conter uma palavra-chave clara e concernente ao tema — ela escolhe a foto do post.
+Palavra-chave temática do título (parte após «:»).
 
 ## conteudo_html — seguir estrutura-artigo-paulo.txt
 Mínimo 6.000 caracteres. HTML: h2, h3, p, blockquote, ol, ul, aside.
@@ -54,7 +57,7 @@ NÃO incluir bloco bênção/maldição no HTML — vir no JSON separado.
   "bencao": "",
   "maldicao": "",
   "salvaguarda": "",
-  "pergunta_viveka": "pergunta + indicação prática (5 min respiração, 10 min oração, caminhada, buscar profissional)",
+  "pergunta_viveka": "pergunta + indicação prática (5 min respiração, 10 min reflexão, caminhada, buscar profissional)",
   "social_instagram": "",
   "social_facebook": "",
   "social_linkedin": "",

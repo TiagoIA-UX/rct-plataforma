@@ -1,9 +1,10 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { executarPipelineArtigo } from "@/lib/blog-pipeline";
+import { pickNextMateusJob } from "@/lib/mateus-fila";
+import { executarPipelineMateus } from "@/lib/mateus-pipeline";
 import { CACHE_TAGS } from "@/lib/cache";
 import { notificarInscritosNovoArtigo } from "@/lib/newsletter-mail";
 import { prisma } from "@/lib/prisma";
-import { pickNextBlogTopic } from "@/lib/rct-topics";
 
 export interface ArtigoGerado {
   titulo: string;
@@ -34,13 +35,18 @@ const MIN_CONTEUDO_CHARS = 2500;
  * Garante que o artigo é completo e real — sem placeholders nem fallback operacional.
  * Retorna a lista de campos ausentes; vazia = pronto para publicação.
  */
-export function camposIncompletosArtigo(artigo: ArtigoGerado): string[] {
+export function camposIncompletosArtigo(
+  artigo: ArtigoGerado,
+  tipoMateus?: "principal" | "sofrimento" | "florescimento"
+): string[] {
   const faltando: string[] = [];
+  const minChars =
+    tipoMateus === "principal" ? 8000 : tipoMateus ? 4000 : MIN_CONTEUDO_CHARS;
   if (!artigo.titulo?.trim()) faltando.push("titulo");
   if (!artigo.slug?.trim()) faltando.push("slug");
   if (!artigo.categoria?.trim()) faltando.push("categoria");
-  if ((artigo.conteudo_html?.trim().length ?? 0) < MIN_CONTEUDO_CHARS)
-    faltando.push(`conteudo_html (mínimo ${MIN_CONTEUDO_CHARS} caracteres)`);
+  if ((artigo.conteudo_html?.trim().length ?? 0) < minChars)
+    faltando.push(`conteudo_html (mínimo ~${minChars} caracteres)`);
   if (!artigo.bencao?.trim()) faltando.push("bencao");
   if (!artigo.maldicao?.trim()) faltando.push("maldicao");
   if (!artigo.salvaguarda?.trim()) faltando.push("salvaguarda");
@@ -67,8 +73,25 @@ export async function gerarArtigoDivino(
     return null;
   }
 
-  const topic = overrideTema ? undefined : await pickNextBlogTopic();
-  const resultado = await executarPipelineArtigo({ temaOverride: overrideTema, topic });
+  // Prioridade: Sistema de Decodificação Humana — Módulo Mateus
+  if (!overrideTema) {
+    try {
+      const job = await pickNextMateusJob();
+      if (job) {
+        console.log("[blog-agent] Fila Mateus:", job.slug);
+        const resultadoMateus = await executarPipelineMateus(job);
+        if (resultadoMateus) {
+          const faltando = camposIncompletosArtigo(resultadoMateus.artigo, job.tipo);
+          if (!faltando.length) return resultadoMateus.artigo;
+          console.error("[blog-agent] Artigo Mateus incompleto:", faltando.join(", "));
+        }
+      }
+    } catch (err) {
+      console.warn("[blog-agent] Fila Mateus indisponível (DB?):", err);
+    }
+  }
+
+  const resultado = await executarPipelineArtigo({ temaOverride: overrideTema });
 
   if (!resultado) {
     console.error("[blog-agent] Pipeline multi-agente falhou — nada será gerado (sem fallback).");

@@ -180,7 +180,7 @@ export default function FormacaoPage() {
         )}
 
         <div className="mt-10">
-          <Link href="/blog?categoria=jesus-grande-yogue" className="btn-secondary">
+          <Link href="/blog?categoria=jesus-transformacao" className="btn-secondary">
             Começar pelo Blog →
           </Link>
         </div>

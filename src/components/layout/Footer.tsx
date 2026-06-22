@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/layout/Logo";
 import { NewsletterForm } from "@/components/shared/NewsletterForm";
-import { MARCA_DESCRICAO, MARCA_NOME, MARCA_PILAR, MARCA_SLOGAN_COMPLETO } from "@/lib/identidade";
+import { MARCA_DESCRICAO, MARCA_NOME_COMPLETO, MARCA_NOTA_PLATAFORMA, MARCA_PILAR, MARCA_SLOGAN_COMPLETO } from "@/lib/identidade";
 
 export function Footer() {
   return (
@@ -54,11 +54,10 @@ export function Footer() {
           </div>
         </div>
         <p className="mt-10 max-w-3xl mx-auto text-center text-xs leading-relaxed text-[rgba(248,246,240,0.45)]">
-          {MARCA_NOME} — um espaço aberto para quem busca unir fé, ciência e oração no dia a dia.
-          Sem coleta de dados de comportamento, sem critérios ocultos de acesso.
+          {MARCA_NOTA_PLATAFORMA}
         </p>
         <p className="mt-6 border-t border-gold pt-6 text-center text-xs text-[rgba(248,246,240,0.4)]">
-          © {new Date().getFullYear()} {MARCA_NOME} — Transparência, consentimento e respeito ao visitante.
+          © {new Date().getFullYear()} {MARCA_NOME_COMPLETO}
         </p>
       </div>
     </footer>

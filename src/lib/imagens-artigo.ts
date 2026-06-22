@@ -2,6 +2,7 @@
  * Imagens de capa — palavra-chave do título define a foto.
  */
 
+import { MARCA_NOME } from "@/lib/identidade";
 import {
   resolverImagemPorPalavraChave,
   extrairPalavraChaveImagem,
@@ -17,7 +18,7 @@ export type ImagemCategoria = {
 
 const IMAGEM_PADRAO: ImagemCategoria = {
   url: "https://images.unsplash.com/photo-1507963901243-ebfaecd5f2f4?w=1200&q=80",
-  alt: "Luz e consciência — Todos Sejam Um",
+  alt: `Luz e consciência — ${MARCA_NOME}`,
   credit: "Unsplash — Giammarco Boscaro",
 };
 
@@ -48,7 +49,7 @@ export function resolverImagemArtigo(
     return {
       url: imageUrl,
       alt: "Imagem do artigo",
-      credit: imageCredit ?? "Todos Sejam Um",
+      credit: imageCredit ?? MARCA_NOME,
     };
   }
 

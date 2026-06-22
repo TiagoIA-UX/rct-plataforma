@@ -3,6 +3,22 @@
 Todas as mudanças notáveis seguem [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.6.0] - 2026-06-22
+
+### Instituto NEUMA — rebrand e Módulo Mateus
+
+#### Adicionado
+- **Sistema de Decodificação Humana — Módulo Mateus:** 28 capítulos × 3 tipos (`principal`, `sofrimento`, `florescimento`) com fila editorial (`mateus-fila.ts`) e pipeline dedicado (`mateus-pipeline.ts`).
+- Prompts: `agente-00-brief-mateus`, `agente-03-redator-mateus`, `estrutura-artigo-canonico` (6 seções), `sistema-decodificacao-humana`, `prompt-mestre-neuma`.
+- Categorias `mateus-transformacao` e `evangelhos-transformacao`; página `/blog/mateus-transformacao` e redirect de rotas `biblia-neuro*`.
+- npm `generate:mateus` (`scripts/generate-mateus-modulo.mjs`); `gerarArtigoDivino()` prioriza a fila Mateus.
+
+#### Alterado
+- Identidade pública **Instituto NEUMA** — hero, footer, logo, SEO, Open Graph e copy editorial (`identidade.ts`, componentes home/layout).
+- **Princípio da Esperança Responsável** no hero: texto centralizado, iniciais maiúsculas (`capitalize`) e frase-guia em três linhas.
+- Salvaguardas e prompts alinhados ao PROMPT MESTRE (investigação de transformação humana, não apologética).
+- Renomeação de categorias legadas (`milagres-decodificados`, `jesus-transformacao`, etc.) e páginas do blog.
+
 ## [0.4.2] - 2026-06-14
 
 ### Salvaguarda 0.8 — Protocolo de Aceitação Geral (Eixo Neuroteologia)
@@ -120,6 +136,7 @@ Primeira release da RCT após transformação completa do repositório legado.
 - Upstash Redis (cache de scores)
 - Módulos de treinamento Fase I–III integrados à UI
 
+[0.6.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.6.0
 [0.4.2]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.2
 [0.4.1]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.1
 [0.4.0]: https://github.com/TiagoIA-UX/rct-plataforma/releases/tag/v0.4.0

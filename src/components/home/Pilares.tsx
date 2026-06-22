@@ -48,10 +48,10 @@ export function Pilares() {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)]">
-          Ciência do comportamento na prática
+          A ciência por trás da transformação
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-[rgba(248,246,240,0.7)]">
-          Três temas que a ciência já documenta e que sustentam uma fé vivida no dia a dia.
+          Neurociência, psicologia e comportamento — três eixos que sustentam mudança real no dia a dia.
         </p>
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {pilares.map((pilar) => (

@@ -45,3 +45,4 @@ bencao, maldicao, base_cientifica (mín. 2), salvaguarda, pergunta_viveka
 [ ] Tipo editorial respeitado (sofrimento vs florescimento)?
 [ ] Frase-guia + esperança no encerramento?
 [ ] Hipóteses rotuladas?
+[ ] Sem Google tag (gtag) no conteudo_html — analytics só no layout raiz?

@@ -4,6 +4,7 @@ import {
   validarPrincipioMestre,
   usaProtocoloLegadoTitulo,
 } from "@/lib/salvaguardas";
+import { conteudoContemGoogleTag } from "@/lib/analytics";
 import type { BlocoBencaoMaldicao } from "@/lib/viveka"; // idem
 
 export function montarHtmlBencaoMaldicao(bloco: BlocoBencaoMaldicao): string {
@@ -60,6 +61,13 @@ export function validarArtigoAntesPublicar(
     };
   }
   const blob = `${titulo}\n${conteudoHtml}`;
+  if (conteudoContemGoogleTag(blob)) {
+    return {
+      ok: false,
+      motivo:
+        "Google tag (gtag) não deve estar no corpo do artigo — analytics via layout raiz (src/app/layout.tsx).",
+    };
+  }
   if (categoria === "epigenetica-sagrada" && !blob.includes("nunca superioridade")) {
     return {
       ok: false,

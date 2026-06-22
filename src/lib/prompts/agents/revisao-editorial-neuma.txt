@@ -41,10 +41,12 @@ Leia também:
 
 7. Encerrar com aplicação prática — não só teoria.
 
-8. Frase-guia obrigatória no encerramento:
+8. **Nunca** incluir Google tag (gtag.js, googletagmanager.com) no `conteudo_html` — analytics é do layout raiz (`src/components/analytics/GoogleTag.tsx`).
+
+9. Frase-guia obrigatória no encerramento:
    "O cérebro muda. A consciência se expande. A vida pode ser transformada."
 
-9. Esperança responsável:
+10. Esperança responsável:
    "Você não está condenado a permanecer como está."
 
 ## TÍTULO

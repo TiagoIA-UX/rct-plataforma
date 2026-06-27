@@ -12,7 +12,7 @@ export const env = {
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.NEXT_PUBLIC_APP_URL ||
-    "http://localhost:3000",
+    "https://institutoneuma-tiagorocha-team-zairyx.vercel.app",
   cronSecret: process.env.CRON_SECRET || "",
   adminPassword: process.env.ADMIN_PASSWORD || "",
   timezone: process.env.GOOGLE_CALENDAR_TIMEZONE || "America/Sao_Paulo",

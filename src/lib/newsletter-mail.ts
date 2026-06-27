@@ -27,7 +27,7 @@ export function siteUrlBase(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.NEXT_PUBLIC_APP_URL ||
-    "https://todos-sejam-um.vercel.app"
+    "https://institutoneuma-tiagorocha-team-zairyx.vercel.app"
   ).replace(/\/$/, "");
 }
 

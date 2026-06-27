@@ -16,6 +16,8 @@ export const REFS = {
     "Holt-Lunstad, J. et al. (2010). PLoS Medicine — vínculos sociais e saúde (meta-análise).",
   sono:
     "Walker, M. (2017). Why We Sleep — repouso e recuperação cerebral.",
+  meditacao:
+    "Lazar, S. et al. (2005). NeuroReport — experiência de meditação associada a maior espessura cortical em áreas de atenção.",
 } as const;
 
 export function citacao(ref: keyof typeof REFS): string {

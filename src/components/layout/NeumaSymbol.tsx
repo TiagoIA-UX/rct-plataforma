@@ -5,6 +5,7 @@ import {
   MARCA_TEAL_CLARO,
   NEUMA_N_PATH,
   NEUMA_N_PONTO,
+  NEUMA_N_STROKE,
   NEUMA_SYMBOL_VIEWBOX,
   neumaDotRadius,
 } from "@/lib/marca-visual";
@@ -27,7 +28,14 @@ export function NeumaSymbol({ size = 32, className = "" }: Props) {
       className={className}
       aria-hidden="true"
     >
-      <path d={NEUMA_N_PATH} fill={MARCA_TEAL_CLARO} />
+      <path
+        d={NEUMA_N_PATH}
+        fill="none"
+        stroke={MARCA_TEAL_CLARO}
+        strokeWidth={NEUMA_N_STROKE}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
       <circle
         cx={NEUMA_N_PONTO.cx}
         cy={NEUMA_N_PONTO.cy}

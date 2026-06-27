@@ -11,6 +11,7 @@ import {
   MARCA_TEAL_CLARO,
   NEUMA_N_PATH,
   NEUMA_N_PONTO,
+  NEUMA_N_STROKE,
   NEUMA_SYMBOL_VIEWBOX,
 } from "@/lib/marca-visual";
 
@@ -36,7 +37,14 @@ export default function OpenGraphImage() {
         }}
       >
         <svg width="120" height="120" viewBox={NEUMA_SYMBOL_VIEWBOX}>
-          <path d={NEUMA_N_PATH} fill={MARCA_TEAL_CLARO} />
+          <path
+            d={NEUMA_N_PATH}
+            fill="none"
+            stroke={MARCA_TEAL_CLARO}
+            strokeWidth={NEUMA_N_STROKE}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
           <circle
             cx={NEUMA_N_PONTO.cx}
             cy={NEUMA_N_PONTO.cy}

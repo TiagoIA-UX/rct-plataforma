@@ -29,6 +29,17 @@ function getBot(): TelegramBot | null {
   return new TelegramBot(token, { polling: false });
 }
 
+/**
+ * Redige PII (LGPD) antes de enviar o texto livre do usuário a um LLM externo (Groq).
+ * Remove e-mails, telefones e CPF para que dados pessoais identificáveis não trafeguem a terceiros.
+ */
+export function redigirPII(texto: string): string {
+  return texto
+    .replace(/[\w.+-]+@[\w-]+\.[\w.-]+/g, "[e-mail omitido]")
+    .replace(/\b\d{3}\.?\d{3}\.?\d{3}-?\d{2}\b/g, "[CPF omitido]")
+    .replace(/(?:\+?55\s?)?(?:\(?\d{2}\)?\s?)?\d{4,5}[-\s]?\d{4}\b/g, "[telefone omitido]");
+}
+
 /** Convite protocolo imutável — Etapa 5.2; disparo somente score >= 60 */
 export async function enviarConviteTelegram({ username }: ConviteParams): Promise<boolean> {
   const bot = getBot();
@@ -99,7 +110,7 @@ export async function handleWebhook(body: TelegramUpdate): Promise<void> {
   if (!groqKey) {
     await bot.sendMessage(
       message.chat.id,
-      "O assistente RCT está temporariamente indisponível. Visite o blog em /blog ou O Caminho em /caminho."
+      "O assistente do Instituto NEUMA está temporariamente indisponível. Visite o blog em /blog ou O Caminho em /caminho."
     );
     return;
   }
@@ -113,13 +124,15 @@ export async function handleWebhook(body: TelegramUpdate): Promise<void> {
       messages: [
         {
           role: "system",
-          content: `Você é o assistente da RCT — Ressonância Científica Tecnológica.
+          content: `Você é o assistente do Instituto NEUMA — estudo científico do sofrimento e da transformação humana.
 Responda com precisão científica e tom sóbrio. Nunca use linguagem mística vaga.
 Priorize neurociência comportamental com referências publicadas. Tom respeitoso.
+Não solicite, repita nem armazene dados pessoais (nome, e-mail, telefone, CPF, endereço).
+Se o usuário compartilhar dados sensíveis, oriente gentilmente a não enviar informações pessoais por aqui.
 Seja conciso: máximo 3 parágrafos. Convide para explorar o blog (/blog) ou O Caminho (/caminho).
 Site: ${siteUrl}`,
         },
-        { role: "user", content: message.text },
+        { role: "user", content: redigirPII(message.text) },
       ],
       max_tokens: 600,
     });

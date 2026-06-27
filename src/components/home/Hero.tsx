@@ -1,20 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { IMAGENS } from "@/lib/imagens";
-import { NeumaSymbol } from "@/components/layout/NeumaSymbol";
-import {
-  MARCA_CTA_PRINCIPAL,
-  MARCA_FRASE_ESPERANCA,
-  MARCA_FRASE_GUIA_LINHAS,
-  MARCA_HERO_SUB_LINHA1,
-  MARCA_HERO_SUB_LINHA2,
-  MARCA_NOME_FUNDADOR,
-  MARCA_NOME_INSTITUTO,
-  MARCA_PILAR,
-  MARCA_SIGLA,
-} from "@/lib/identidade";
+import { MARCA_HERO_ACOLHIMENTO } from "@/lib/identidade";
 
 const heroCopy =
   "w-full text-center capitalize font-[family-name:var(--font-cormorant)]";
@@ -35,28 +23,14 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 w-full max-w-4xl text-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className="flex flex-col items-center gap-4"
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+          className={`${heroCopy} text-lg text-[var(--sacred-gold)] md:text-xl`}
         >
-          <NeumaSymbol size={48} />
-          <div className="flex flex-col items-center leading-tight">
-            <span className="font-[family-name:var(--font-inter)] text-sm tracking-wide text-[rgba(248,246,240,0.85)] md:text-base">
-              {MARCA_NOME_INSTITUTO}
-            </span>
-            <span className="font-[family-name:var(--font-inter)] text-2xl font-bold uppercase tracking-[0.18em] text-[var(--pure-white)] md:text-3xl">
-              {MARCA_SIGLA}
-            </span>
-            <span className="mt-1 font-[family-name:var(--font-inter)] text-sm tracking-wide text-[var(--marca-ouro)] md:text-base">
-              {MARCA_NOME_FUNDADOR}
-            </span>
-            <span className="mt-2 font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-[0.2em] text-[rgba(248,246,240,0.5)]">
-              {MARCA_PILAR}
-            </span>
-          </div>
-        </motion.div>
+          {MARCA_HERO_ACOLHIMENTO}
+        </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -64,46 +38,33 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.3 }}
           className={`${heroCopy} mt-8 text-3xl leading-snug text-[var(--pure-white)] md:text-5xl md:leading-tight`}
         >
-          {MARCA_FRASE_ESPERANCA}
+          &ldquo;As Provações Purificam Nosso Ser Fazendo-nos Brilhar pela Sabedoria.&rdquo;
         </motion.h1>
 
-        <motion.div
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.45 }}
-          className={`${heroCopy} mt-8 space-y-4 text-lg text-[rgba(248,246,240,0.85)] md:text-xl`}
+          transition={{ duration: 1.2, delay: 0.4 }}
+          className="mt-4 font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-widest text-[rgba(248,246,240,0.6)]"
         >
-          <p>{MARCA_HERO_SUB_LINHA1}</p>
-          <p>{MARCA_HERO_SUB_LINHA2}</p>
-        </motion.div>
+          Tiago Rocha · inspirado em{" "}
+          <cite className="not-italic text-[var(--sacred-gold)]">1 Pedro 1:7</cite>
+        </motion.p>
 
-        <motion.div
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.55 }}
-          className={`${heroCopy} mt-10 space-y-1 text-base italic text-[var(--sacred-gold)] md:text-lg`}
+          transition={{ duration: 1.2, delay: 0.5 }}
+          className="mx-auto mt-2 max-w-2xl font-[family-name:var(--font-jetbrains)] text-[10px] uppercase tracking-widest text-[rgba(248,246,240,0.4)]"
         >
-          {MARCA_FRASE_GUIA_LINHAS.map((linha) => (
-            <p key={linha}>{linha}</p>
-          ))}
-        </motion.div>
+          Paralelo científico ·{" "}
+          <span className="text-[var(--sacred-gold)]">Crescimento Pós-Traumático</span> —{" "}
+          <cite className="not-italic">Tedeschi &amp; Calhoun, 2004</cite>
+        </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.9 }}
-          className="mt-12 flex flex-wrap justify-center gap-4"
-        >
-          <Link href="/blog" className="btn-primary capitalize">
-            {MARCA_CTA_PRINCIPAL}
-          </Link>
-          <Link href="/caminho" className="btn-secondary capitalize">
-            O Caminho
-          </Link>
-        </motion.div>
-
-        <p className="mt-10 font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(248,246,240,0.35)]">
-          {IMAGENS.hero.alt} — {IMAGENS.hero.credito}
+        <p className="mt-12 font-[family-name:var(--font-jetbrains)] text-[10px]">
+          <span className="text-[var(--sacred-gold)]">{IMAGENS.hero.alt}</span>
+          <span className="text-[rgba(248,246,240,0.35)]"> — {IMAGENS.hero.credito}</span>
         </p>
       </div>
     </section>

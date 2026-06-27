@@ -18,7 +18,7 @@ const pilares = [
     numero: "02",
     titulo: "Emoção e serenidade",
     descricao:
-      "O controle das emoções (Gross; LeDoux) descreve como a mente regula afeto e impulso — linguagem da ciência do comportamento que dialoga com a paz prometida no Evangelho.",
+      "O controle das emoções (Gross; LeDoux) descreve como a mente regula afeto e impulso — linguagem da ciência do comportamento que dialoga com o ideal de paz descrito no Evangelho.",
     ref: citacao("regulacao"),
     icon: (
       <svg viewBox="0 0 48 48" className="h-12 w-12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -41,6 +41,20 @@ const pilares = [
       </svg>
     ),
   },
+  {
+    numero: "04",
+    titulo: "Prática contemplativa",
+    descricao:
+      "Yoga, meditação e oração contemplativa associam-se a mudanças cerebrais mensuráveis (Lazar et al.) — atenção e serenidade que despertam a presença interior. Caminho prático para viver a fé no corpo, não só na ideia.",
+    ref: citacao("meditacao"),
+    icon: (
+      <svg viewBox="0 0 48 48" className="h-12 w-12" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="24" cy="13" r="5" />
+        <path d="M24 18c-6 3-10 9-10 16h20c0-7-4-13-10-16z" />
+        <path d="M14 34c-4 0-7-2-8-5M34 34c4 0 7-2 8-5" />
+      </svg>
+    ),
+  },
 ];
 
 export function Pilares() {
@@ -48,12 +62,13 @@ export function Pilares() {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center font-[family-name:var(--font-cormorant)] text-4xl text-[var(--sacred-gold)]">
-          A ciência por trás da transformação
+          Ciência e prática da transformação
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-[rgba(248,246,240,0.7)]">
-          Neurociência, psicologia e comportamento — três eixos que sustentam mudança real no dia a dia.
+          Neuroteologia, psicologia, vínculo e prática contemplativa — eixos que unem ciência e fé: yoga, meditação e oração para serenar a mente e despertar a presença interior — leitura simbólica do Cristo que habita em nós{" "}
+          <cite className="not-italic text-[var(--sacred-gold)]">[João 17:21]</cite>: o sagrado buscado dentro, não fora; interpretação, não dogma.
         </p>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {pilares.map((pilar) => (
             <article key={pilar.numero} className="card-sacred rounded-sm p-8">
               <div className="text-[var(--sacred-gold)]">{pilar.icon}</div>

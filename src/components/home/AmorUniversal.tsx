@@ -1,25 +1,22 @@
 import Link from "next/link";
-import { PalavraEtimologia } from "@/components/shared/PalavraEtimologia";
 import { IMAGENS } from "@/lib/imagens";
-import { MARCA_AMOR_UNIVERSAL } from "@/lib/identidade";
 
 export function AmorUniversal() {
   return (
     <section className="px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-[0.25em] text-[var(--sacred-gold)]">
-          Amor vivido em ações
+          Temperança, ciência e fé
         </p>
         <h2 className="mt-4 font-[family-name:var(--font-cormorant)] text-4xl text-[var(--pure-white)] md:text-5xl">
-          Amor universal — próximo, natureza e animais
+          Daniel e os companheiros: sabedoria onde ciência e fé se encontram
         </h2>
-        <p className="mt-6 text-lg text-[rgba(248,246,240,0.8)]">{MARCA_AMOR_UNIVERSAL}</p>
 
         <div className="mt-8 overflow-hidden rounded-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={IMAGENS.amorUniversal.src}
-            alt="Paisagem serena — cuidado da criação"
+                alt={IMAGENS.amorUniversal.alt}
             className="aspect-[21/9] w-full object-cover"
             loading="lazy"
             decoding="async"
@@ -29,34 +26,38 @@ export function AmorUniversal() {
         <div className="mt-8 space-y-5 text-[rgba(248,246,240,0.85)]">
           <blockquote className="border-l-2 border-[var(--sacred-gold)] pl-5">
             <p className="font-[family-name:var(--font-cormorant)] text-lg italic">
-              &ldquo;Quando os gentios, que não têm a lei, praticam naturalmente o que ela ordena,
-              tornam-se lei para si mesmos.&rdquo;
+              &ldquo;Em toda a matéria de sabedoria e de entendimento sobre que o rei lhes
+              perguntou, os achou dez vezes melhores do que todos os magos e encantadores que
+              havia em todo o seu reino.&rdquo;
             </p>
             <cite className="mt-2 block text-xs text-[rgba(248,246,240,0.5)] not-italic">
-              — Romanos 2:14 (São Paulo)
+              — Daniel 1:20
             </cite>
           </blockquote>
 
           <p>
-            <PalavraEtimologia id="sao-francisco">São Francisco de Assis</PalavraEtimologia>{" "}
-            ensinou com o corpo e com a vida: irmãos sol e lua, irmãos pássaros, irmã Mãe Terra.
-            O Papa Francisco, na encíclica <em>Laudato si&apos;</em>, retoma esse chamado ao cuidado
-            da casa comum — justiça social e ambiental como um só dever.
+            No livro de Daniel, ele e seus companheiros recusam os manjares e o vinho do rei da
+            Babilônia e pedem para comer apenas legumes e beber água por dez dias (Daniel 1:8-16).
+            Ao fim, aparecem mais saudáveis — e, em sabedoria e entendimento, o rei os encontra
+            &ldquo;dez vezes melhores&rdquo; que todos os magos e encantadores de todo o seu reino
+            (Daniel 1:17-20). O próprio texto atribui essa sabedoria a Deus; a temperança e o
+            respeito à vida caminham junto — comer só vegetais é também cuidado com os animais e
+            com o próprio corpo.
           </p>
 
           <p>
-            Hoje, pessoas de diferentes origens agem pelo mesmo princípio — mesmo sem carregar o
-            nome cristão. <PalavraEtimologia id="greta">Greta Thunberg</PalavraEtimologia> tornou-se
-            símbolo público de ação climática: não por título religioso, mas por obra concreta a favor
-            da criação. Paulo e Isaías apontam o mesmo:
-            muitos não têm a lei escrita, mas a praticam — e serão justificados pela ação, não pelo
-            rótulo (Romanos 2:13-15; cf. Isaías 56).
-          </p>
-
-          <p className="text-[var(--sacred-gold)]">
-            Todos podemos ser <PalavraEtimologia id="santo">santos</PalavraEtimologia> no sentido
-            bíblico — consagrados a Deus pela prática — se seguirmos os ensinamentos de Jesus e os
-            colocarmos em obra, como tantos fazem mesmo sem se declarar cristãos.
+            Como paralelo científico — não como prova do relato — a pesquisa moderna estudou esse
+            padrão alimentar. Um ensaio sobre o chamado &ldquo;Daniel Fast&rdquo; (21 dias à base de
+            vegetais) observou melhora em marcadores cardiometabólicos.{" "}
+            <span className="text-xs text-[rgba(248,246,240,0.5)]">
+              [Bloomer et al., 2010 — Lipids in Health and Disease] [ESTABELECIDA]
+            </span>{" "}
+            Estudos sobre jejum e restrição alimentar associam esses estados a maior BDNF e
+            neuroplasticidade — base biológica plausível para foco e clareza mental, ainda em
+            investigação quanto à cognição humana.{" "}
+            <span className="text-xs text-[rgba(248,246,240,0.5)]">
+              [Mattson — Nature Reviews Neuroscience, 2018] [EM INVESTIGAÇÃO]
+            </span>
           </p>
         </div>
 

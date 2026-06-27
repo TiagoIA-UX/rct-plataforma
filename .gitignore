@@ -93,3 +93,5 @@ RESUMO_*.md
 !**/*.example
 .vercel
 .env*.local
+# --- segredos (token GitHub / env) ---
+.env.*

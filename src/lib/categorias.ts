@@ -6,6 +6,10 @@
 /** Ordem de exibição no filtro do blog */
 export const ORDEM_CATEGORIAS = [
   "jesus-transformacao",
+  "saude-bem-estar",
+  "tecnologia-sociedade",
+  "meio-ambiente-recursos",
+  "geopolitica-economia",
   "milagres-decodificados",
   "prompts-do-mestre",
   "epigenetica-sagrada",
@@ -18,11 +22,15 @@ export const ORDEM_CATEGORIAS = [
 ] as const;
 
 export const CATEGORIA_LABELS: Record<string, string> = {
-  "jesus-transformacao": "Jesus: Educador de Consciência",
+  "jesus-transformacao": "Jesus: Coaching do Autodesenvolvimento e Bem-Estar",
+  "saude-bem-estar": "Saúde e Bem-Estar: Corpo, Mente e Plenitude",
+  "tecnologia-sociedade": "Tecnologia e Sociedade: Mente e Vínculos na Era Digital",
+  "meio-ambiente-recursos": "Meio Ambiente e Recursos: Cuidado da Casa Comum",
+  "geopolitica-economia": "Geopolítica e Economia: Poder, Nações e Justiça",
   "prompts-do-mestre": "Prompts do Grande Mestre",
   "epigenetica-sagrada": "Epigenética Sagrada",
   "virus-do-dna": "Vírus do DNA",
-  "milagres-decodificados": "Milagres Decodificados",
+  "milagres-decodificados": "Mistérios à Luz da Ciência",
   "psicossomatica-sagrada": "Psicossomática Sagrada",
   "ahimsa-aplicada": "Ahimsa na Prática",
   "linhagem-do-conhecimento": "Linhagem do Conhecimento",

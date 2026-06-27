@@ -24,35 +24,33 @@ export function Logo({ variant = "header" }: Props) {
       <LogoMark size={isHeader ? 40 : 36} />
       <span className="flex min-w-0 flex-col leading-tight">
         <span
-          className={`font-[family-name:var(--font-inter)] font-medium tracking-wide text-[rgba(248,246,240,0.82)] ${
+          className={`font-[family-name:var(--font-inter)] font-medium tracking-wide text-[var(--pure-white)] ${
             isHeader ? "text-[10px] sm:text-[11px]" : "text-[10px]"
           }`}
         >
           {MARCA_NOME_INSTITUTO}
         </span>
         <span
-          className={`font-[family-name:var(--font-inter)] font-bold uppercase tracking-[0.14em] text-[var(--pure-white)] ${
+          className={`font-[family-name:var(--font-inter)] font-bold uppercase tracking-[0.14em] text-[var(--sacred-gold)] ${
             isHeader ? "text-base sm:text-lg md:text-xl" : "text-base"
           }`}
         >
           {MARCA_SIGLA}
         </span>
         <span
-          className={`font-[family-name:var(--font-inter)] font-medium tracking-wide text-[var(--marca-ouro)] ${
+          className={`font-[family-name:var(--font-inter)] font-medium tracking-wide text-[var(--pure-white)] ${
             isHeader ? "text-[9px] sm:text-[10px]" : "text-[9px]"
           }`}
         >
           {MARCA_NOME_FUNDADOR}
         </span>
-        {isHeader ? (
-          <span className="mt-0.5 hidden font-[family-name:var(--font-jetbrains)] text-[8px] uppercase tracking-[0.12em] text-[rgba(248,246,240,0.45)] lg:block">
-            {MARCA_PILAR}
-          </span>
-        ) : (
-          <span className="mt-1 font-[family-name:var(--font-jetbrains)] text-[8px] uppercase tracking-[0.12em] text-[rgba(248,246,240,0.5)]">
-            {MARCA_PILAR}
-          </span>
-        )}
+        <span
+          className={`mt-1 font-[family-name:var(--font-jetbrains)] uppercase tracking-[0.12em] text-[rgba(248,246,240,0.5)] ${
+            isHeader ? "hidden text-[8px] lg:block" : "text-[8px]"
+          }`}
+        >
+          {MARCA_PILAR}
+        </span>
       </span>
     </Link>
   );

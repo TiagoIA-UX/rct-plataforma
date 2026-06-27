@@ -26,11 +26,9 @@ export const MARCA_MISSAO = "Transformação humana é possível.";
 /** Gancho emocional — hero H1 */
 export const MARCA_FRASE_ESPERANCA = "Você não está condenado a permanecer como está.";
 
-/** Hero — acolhimento antes do mecanismo */
-export const MARCA_HERO_SUB_LINHA1 = "Talvez você não esteja quebrado.";
-
-export const MARCA_HERO_SUB_LINHA2 =
-  "Talvez exista uma história por trás do seu sofrimento que ainda não foi compreendida.";
+/** Hero — acolhimento antes do mecanismo (exibido acima do H1) */
+export const MARCA_HERO_ACOLHIMENTO =
+  "Existe uma história por trás do seu sofrimento que ainda não foi compreendida.";
 
 export const MARCA_FRASE_GUIA =
   "O cérebro muda. A consciência se expande. A vida pode ser transformada.";

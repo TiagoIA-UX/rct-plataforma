@@ -9,10 +9,10 @@ export function JesusOMestre() {
     <section className="px-6 py-24 gradient-life">
       <div className="mx-auto max-w-4xl">
         <p className="font-[family-name:var(--font-jetbrains)] text-xs uppercase tracking-[0.25em] text-[var(--sacred-gold)]">
-          Transformação humana
+          Autodesenvolvimento e bem-estar
         </p>
         <h2 className="mt-4 font-[family-name:var(--font-cormorant)] text-4xl text-[var(--pure-white)] md:text-5xl">
-          Jesus: educador de consciência e reformador comportamental
+          Jesus: Coaching do Autodesenvolvimento e Bem-Estar
         </h2>
 
         <blockquote className="mt-8 border-l-2 border-[var(--sacred-gold)] pl-5">
@@ -24,8 +24,8 @@ export function JesusOMestre() {
         <div className="mt-8 overflow-hidden rounded-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={IMAGENS.milagres.src}
-            alt="Luz sobre as montanhas — presença e consciência"
+            src={IMAGENS.jesusPastor.src}
+            alt={IMAGENS.jesusPastor.alt}
             className="aspect-[21/9] w-full object-cover"
             loading="lazy"
             decoding="async"
@@ -34,10 +34,12 @@ export function JesusOMestre() {
 
         <div className="mt-8 space-y-5 text-[rgba(248,246,240,0.85)]">
           <p>
-            O {MARCA_NOME} não é religião, seita nem apologética. Investiga o que os relatos
-            evangélicos registram sobre mudança de consciência, coerência entre pensamento e ação,
-            e desafio a sistemas que geram culpa crônica e medo — incluindo fariseus e escribas
-            como metáforas de opressão psicológica e condicionamento coletivo.
+            O {MARCA_NOME} lê os relatos evangélicos como um mapa de autodesenvolvimento e
+            bem-estar — não como religião, seita ou apologética. Nessa leitura, Jesus aparece
+            como educador de consciência e mentor de mudança de comportamento: alguém que acolhe,
+            encoraja e aponta um caminho de plenitude, confrontando sistemas que geram culpa
+            crônica e medo (fariseus e escribas como metáforas de opressão psicológica e
+            condicionamento coletivo).
           </p>
           <p>
             Aos 12 anos no Templo (Lucas 2:46-47), Jesus aparece em estado de atenção plena e
@@ -64,7 +66,7 @@ export function JesusOMestre() {
 
         <AvisoLeituraComplementar className="mt-8" />
         <Link href="/blog?categoria=jesus-transformacao" className="btn-primary mt-10 inline-block">
-          Jesus: Educador de Consciência →
+          Jesus: Coaching do Autodesenvolvimento e Bem-Estar →
         </Link>
       </div>
     </section>

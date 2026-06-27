@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
+import { GoogleTag } from "@/components/analytics/GoogleTag";
 import { ConsentAwareAnalytics } from "@/components/legal/ConsentAwareAnalytics";
 import { CookieConsent } from "@/components/legal/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CookieConsent />
+        <GoogleTag />
         <ConsentAwareAnalytics />
       </body>
     </html>

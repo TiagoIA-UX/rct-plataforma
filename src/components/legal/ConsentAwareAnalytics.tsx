@@ -2,9 +2,12 @@
 
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
-import { GoogleTag } from "@/components/analytics/GoogleTag";
 import { hasAnalyticsConsent } from "@/components/legal/CookieConsent";
 
+/**
+ * Vercel Analytics — só após consentimento. (A tag do Google fica em GoogleTag,
+ * sempre carregada com Consent Mode v2, negado por padrão.)
+ */
 export function ConsentAwareAnalytics() {
   const [ativo, setAtivo] = useState(false);
 
@@ -16,10 +19,5 @@ export function ConsentAwareAnalytics() {
   }, []);
 
   if (!ativo) return null;
-  return (
-    <>
-      <GoogleTag />
-      <Analytics />
-    </>
-  );
+  return <Analytics />;
 }

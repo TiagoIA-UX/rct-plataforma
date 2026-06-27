@@ -13,6 +13,15 @@ export type ImagemArtigo = {
 
 /** Ordem: termos mais específicos primeiro */
 const PALAVRAS_PRIORIDADE = [
+  "saude",
+  "saúde",
+  "tecnologia",
+  "meio-ambiente",
+  "meio ambiente",
+  "geopolitica",
+  "geopolítica",
+  "economia",
+  "santidade",
   "mandamentos",
   "mandamento",
   "espinho",
@@ -50,6 +59,13 @@ export const SLUG_PALAVRA_CHAVE: Record<string, string> = {
   "paulo-espinho-na-carne-ciencia-e-biblia": "paulo",
   "10-mandamentos-oriente-medio-ciencia-epigenetica": "mandamentos",
   "jesus-aos-12-anos-no-temple": "templo",
+  "saude-bem-estar-coracao-alegre-bom-remedio": "saude",
+  "tecnologia-sociedade-licito-mas-nem-tudo-convem": "tecnologia",
+  "meio-ambiente-recursos-lavrar-e-guardar": "meio-ambiente",
+  "geopolitica-economia-justica-exalta-nacoes": "geopolitica",
+  "sao-santo-titulos-apostolos-joao-17": "santidade",
+  "decodificando-os-anjos-de-jesus": "anjos",
+  "anjos-de-luz-neuroplasticidade-epigenetica": "anjos",
 };
 
 const CREDITO_IA = "Ilustração gerada por IA — Instituto NEUMA";
@@ -60,9 +76,44 @@ const JOY_MENTE = "/images/joy-mente.png";
 const JOY_COMUNIDADE = "/images/joy-comunidade.png";
 const JOY_FAMILIA = "/images/joy-familia.png";
 const JOY_HABITOS = "/images/joy-habitos.png";
+const JOY_TECNOLOGIA = "/images/joy-tecnologia.png";
+const JOY_NATUREZA = "/images/joy-natureza.png";
+const JOY_JUSTICA = "/images/joy-justica.png";
+const JOY_SANTIDADE = "/images/joy-santidade.png";
+const JOY_ANJOS = "/images/joy-anjos.png";
 const JESUS_PASTOR = "/images/jesus-pastor.png";
 
 export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
+  saude: {
+    palavra_chave: "saude",
+    url: JOY_HABITOS,
+    alt: "Rotina saudável ao sol da manhã — saúde e bem-estar",
+    credit: CREDITO_IA,
+  },
+  tecnologia: {
+    palavra_chave: "tecnologia",
+    url: JOY_TECNOLOGIA,
+    alt: "Uso consciente da tecnologia — presença e equilíbrio",
+    credit: CREDITO_IA,
+  },
+  "meio-ambiente": {
+    palavra_chave: "meio-ambiente",
+    url: JOY_NATUREZA,
+    alt: "Mãos cuidando de uma muda — cuidado da terra e dos recursos",
+    credit: CREDITO_IA,
+  },
+  geopolitica: {
+    palavra_chave: "geopolitica",
+    url: JOY_JUSTICA,
+    alt: "Balança da justiça à luz dourada — poder, nações e justiça",
+    credit: CREDITO_IA,
+  },
+  santidade: {
+    palavra_chave: "santidade",
+    url: JOY_SANTIDADE,
+    alt: "Pessoa de braços abertos ao amanhecer — chamado à santidade e paz interior",
+    credit: CREDITO_IA,
+  },
   mandamentos: {
     palavra_chave: "mandamentos",
     url: JOY_DESERTO,
@@ -137,8 +188,8 @@ export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
   },
   anjos: {
     palavra_chave: "anjos",
-    url: JOY_ESPERANCA,
-    alt: "Luz dourada no horizonte — presença e cuidado",
+    url: JOY_ANJOS,
+    alt: "Raios de luz ao amanhecer — mensageiros de luz e esperança",
     credit: CREDITO_IA,
   },
   milagre: {

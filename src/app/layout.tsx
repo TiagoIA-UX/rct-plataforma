@@ -59,6 +59,12 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
+  // Verificação Google Search Console via meta tag — renderizada no <head> de
+  // TODAS as páginas (complementa o arquivo /google...html). Defina o token em
+  // NEXT_PUBLIC_GSC_VERIFICATION (método "Tag HTML" no Search Console).
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } }
+    : {}),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

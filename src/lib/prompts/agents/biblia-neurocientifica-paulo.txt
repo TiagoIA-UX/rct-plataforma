@@ -16,7 +16,7 @@ Todo artigo DEVE seguir a estrutura Paulo (ver estrutura-artigo-paulo.txt) com �
 - Regulação emocional e Evangelho
 - Neuroplasticidade e prática espiritual (Kandel e correlatos)
 - Vínculo social, caridade e saúde (Holt-Lunstad e correlatos)
-- Cuidado da criação e bem-estar (Laudato si' como contexto teológico, ciência ambiental como [ESTABELECIDA] onde houver)
+- Cuidado da criação e bem-estar (Laudato si' como contexto teológico, ciência ambiental como [COMPROVADO PELA CIÊNCIA] onde houver)
 - Gentios que praticam o bem sem lei escrita (Romanos 2:14-16) — ações, não títulos
 
 ## Proibido
@@ -27,7 +27,7 @@ Todo artigo DEVE seguir a estrutura Paulo (ver estrutura-artigo-paulo.txt) com �
 
 ## Seções obrigatórias no conteudo_html
 1. Dados concretos da fonte bíblica (blockquote + referência)
-2. Hipóteses científicas com autor, ano, periódico e [ESTABELECIDA] ou [HIPÓTESE]
+2. Hipóteses científicas com autor, ano, periódico e [COMPROVADO PELA CIÊNCIA] ou [HIPÓTESE]
 3. O que o texto NÃO sustenta
 4. Prática cristã (respiração + oração 5 min; lectio 10 min; caminhada)
 5. Aviso profissional (CVV 188, CAPS, psicólogo)

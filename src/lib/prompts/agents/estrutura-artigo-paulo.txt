@@ -10,7 +10,7 @@ Todo artigo DEVE responder estas 4 perguntas, nesta ordem, no conteudo_html:
 - Acolher a pergunta silenciosa: por que estou assim? o que aconteceu comigo?
 - Dados concretos da fonte (blockquote com referência quando houver texto bíblico/histórico)
 - Indícios e hipóteses — NÃO fechar diagnóstico clínico
-- Rotular [ESTABELECIDA], [HIPÓTESE] ou [INTERPRETAÇÃO]
+- Rotular [COMPROVADO PELA CIÊNCIA], [HIPÓTESE] ou [INTERPRETAÇÃO]
 
 ## 2. Como isso afeta mente, corpo e comportamento?
 (Mecanismo)

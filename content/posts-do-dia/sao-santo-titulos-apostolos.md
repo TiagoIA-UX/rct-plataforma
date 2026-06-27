@@ -49,7 +49,7 @@ O gesto da Igreja ao canonizar ou titular não é adoração a um humano no luga
 
 A ciência **não** prova nem refuta a santidade no sentido teológico. Isso pertence à fé e à tradição.
 
-O que a ciência do comportamento **pode** iluminar, com honestidade [ESTABELECIDA]:
+O que a ciência do comportamento **pode** iluminar, com honestidade [COMPROVADO PELA CIÊNCIA]:
 
 - **Memória e narrativa:** Kandel (2006) — como relatos de vida exemplar moldam comunidades ao longo do tempo.
 - **Vínculo e imitação:** Bandura e estudos de modelagem social — pessoas aprendem valores por figuras de referência (não substitui graça; descreve mecanismo humano).
@@ -95,8 +95,8 @@ Usar «santo» como rótulo vazio de superioridade moral, ou atacar todo uso do 
 ## 🔬 Base citada neste artigo
 
 - Texto bíblico: Romanos 1:7; 1 Coríntios 1:2; Efésios 2:19; João 17:21; Marcos 3:14 [tradição textual estabelecida]
-- Kandel, E. (2006) — memória e neuroplasticidade [ESTABELECIDA]
-- Gross, J.J. (1998) — regulação emocional [ESTABELECIDA]
+- Kandel, E. (2006) — memória e neuroplasticidade [COMPROVADO PELA CIÊNCIA]
+- Gross, J.J. (1998) — regulação emocional [COMPROVADO PELA CIÊNCIA]
 - Etimologia: grego *hagios*, latim *sanctus* — leitura complementar via Wikipédia (CC BY-SA)
 
 ## 🛡️ Aviso importante

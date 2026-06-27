@@ -8,7 +8,7 @@ Todo conteúdo da RCT mostra **o Caminho do aperfeiçoamento pela meditação e 
 com comprovação científica**, sempre:
 
 1. **Referenciado biblicamente** — versículo concreto (livro capítulo:versículo).
-2. **Referenciado cientificamente** — autor/ano, rótulo `[ESTABELECIDA]` ou `[HIPÓTESE]`.
+2. **Referenciado cientificamente** — autor/ano, rótulo `[COMPROVADO PELA CIÊNCIA]` ou `[HIPÓTESE]`.
 3. **Ancorado na tradição contemplativa cristã** — oração contemplativa, lectio divina,
    oração do coração, respiração unida à oração, guarda do coração.
 

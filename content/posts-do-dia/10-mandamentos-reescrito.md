@@ -42,7 +42,7 @@ A tabela abaixo resume a leitura. Em seguida, cada mandamento é tratado individ
 
 **Leitura possível:** na prática cotidiana, "outros deuses" pode ser lido como prioridades concorrentes que disputam a atenção e o tempo de uma pessoa — trabalho, status, aprovação social, medo. Ter um eixo claro de valores é diferente de viver em função de vários critérios contraditórios ao mesmo tempo.
 
-**Conexão científica [ESTABELECIDA]:** pesquisas em função executiva associam hierarquias de valores claras a menor conflito cognitivo e menor ativação crônica do eixo do estresse (hipotálamo-hipófise-adrenal, HPA). Decidir constantemente entre prioridades conflitantes tem custo fisiológico mensurável.
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** pesquisas em função executiva associam hierarquias de valores claras a menor conflito cognitivo e menor ativação crônica do eixo do estresse (hipotálamo-hipófise-adrenal, HPA). Decidir constantemente entre prioridades conflitantes tem custo fisiológico mensurável.
 
 Esta é uma leitura complementar — o mandamento, no contexto original, trata de monoteísmo religioso. A conexão com função executiva é uma camada adicional de sentido, não uma substituição do significado teológico.
 
@@ -50,7 +50,7 @@ Esta é uma leitura complementar — o mandamento, no contexto original, trata d
 
 **Etimologia:** "vão" vem do latim *vanus* — vazio, sem substância. O mandamento distingue usar a linguagem sagrada com presença e intenção, versus usá-la de forma mecânica e esvaziada.
 
-**Conexão científica [ESTABELECIDA]:** há pesquisa publicada sobre os efeitos de práticas de repetição religiosa com carga emocional. Um estudo de 2020 sobre "repetitive religious chanting" usando neuroimagem funcional encontrou que a repetição de orações com carga emocional positiva está associada a maior atividade em redes cerebrais ligadas à formação de memória, e a uma redução da atividade da rede de modo padrão — a rede associada à ruminação e à ansiedade (revisão em *Nature Reviews Neuroscience*, 2015). Estudos sobre o terço católico relatam benefícios para insônia, estresse e percepção de dor após cerca de três meses de prática regular.
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** há pesquisa publicada sobre os efeitos de práticas de repetição religiosa com carga emocional. Um estudo de 2020 sobre "repetitive religious chanting" usando neuroimagem funcional encontrou que a repetição de orações com carga emocional positiva está associada a maior atividade em redes cerebrais ligadas à formação de memória, e a uma redução da atividade da rede de modo padrão — a rede associada à ruminação e à ansiedade (revisão em *Nature Reviews Neuroscience*, 2015). Estudos sobre o terço católico relatam benefícios para insônia, estresse e percepção de dor após cerca de três meses de prática regular.
 
 **Síntese:** essa pesquisa não diz que "Deus existe porque a oração faz bem ao cérebro". Diz que práticas de repetição ritual com envolvimento emocional genuíno — o terço, mantras, outras formas de oração repetida — têm efeitos mensuráveis sobre estresse e memória. A leitura "tomar o nome em vão" como "repetir sem presença" é uma interpretação, não uma tradução literal — mas é consistente com a distinção que a pesquisa encontra entre repetição mecânica e repetição com carga emocional.
 
@@ -58,7 +58,7 @@ Esta é uma leitura complementar — o mandamento, no contexto original, trata d
 
 **Etimologia:** *Shabbat* (שַׁבָּת) vem da raiz "cessar, parar".
 
-**Conexão científica [ESTABELECIDA]:** o ritmo circadiano humano é regulado por um conjunto de genes conhecidos como genes do relógio biológico — CLOCK, PER1, PER2, PER3, entre outros. A disrupção crônica do ritmo de sono e descanso altera a expressão desses genes e está associada a maior risco metabólico, problemas de sono e alterações imunológicas. A pesquisa em cronobiologia é consolidada.
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** o ritmo circadiano humano é regulado por um conjunto de genes conhecidos como genes do relógio biológico — CLOCK, PER1, PER2, PER3, entre outros. A disrupção crônica do ritmo de sono e descanso altera a expressão desses genes e está associada a maior risco metabólico, problemas de sono e alterações imunológicas. A pesquisa em cronobiologia é consolidada.
 
 **Síntese:** a existência de um dia de pausa regular tem respaldo em cronobiologia como prática de manutenção do organismo. Isso não prova a origem divina do mandamento — mas mostra que a prática prescrita tem uma base biológica que só foi descrita cientificamente milênios depois.
 
@@ -66,7 +66,7 @@ Esta é uma leitura complementar — o mandamento, no contexto original, trata d
 
 **Etimologia:** o verbo hebraico *kabbed* (כַּבֵּד) vem de uma raiz que significa "ter peso" — honrar é reconhecer o peso, a herança que se recebeu.
 
-**Conexão científica [ESTABELECIDA]:** vínculos de apego seguro na infância estão associados, em estudos de psicologia do desenvolvimento, a melhor regulação do estresse na vida adulta. Há pesquisa em epigenética (incluindo estudos sobre o gene do receptor de glicocorticoide, NR3C1) explorando como o ambiente familiar precoce pode influenciar a regulação do estresse — esta linha de pesquisa é ativa, mas a relação causal direta em humanos ainda é objeto de investigação. [HIPÓTESE — quando aplicada à transmissão entre gerações em humanos, a evidência é menos conclusiva do que em modelos animais]
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** vínculos de apego seguro na infância estão associados, em estudos de psicologia do desenvolvimento, a melhor regulação do estresse na vida adulta. Há pesquisa em epigenética (incluindo estudos sobre o gene do receptor de glicocorticoide, NR3C1) explorando como o ambiente familiar precoce pode influenciar a regulação do estresse — esta linha de pesquisa é ativa, mas a relação causal direta em humanos ainda é objeto de investigação. [HIPÓTESE — quando aplicada à transmissão entre gerações em humanos, a evidência é menos conclusiva do que em modelos animais]
 
 ### Mandamento 05 — "Não matar"
 
@@ -78,19 +78,19 @@ Este mandamento não tem uma "tradução" neurocientífica direta, e não deveri
 
 **Etimologia:** *lo tin'af* (לֹא תִנְאָף) refere-se à quebra do vínculo conjugal exclusivo.
 
-**Conexão científica [ESTABELECIDA]:** o sistema de apego humano envolve neuroquímicos como ocitocina e vasopressina, associados à formação de vínculos duradouros. Esta é uma área de pesquisa bem estabelecida em neurociência do comportamento social.
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** o sistema de apego humano envolve neuroquímicos como ocitocina e vasopressina, associados à formação de vínculos duradouros. Esta é uma área de pesquisa bem estabelecida em neurociência do comportamento social.
 
 ### Mandamento 07 — "Não roubar"
 
 **Etimologia:** *lo tignov* (לֹא תִגְנֹב) — tomar algo de forma sub-reptícia.
 
-**Conexão científica [ESTABELECIDA]:** estudos em saúde pública associam viver em comunidades de baixa confiança social e alta criminalidade a maiores níveis de estresse crônico entre os moradores. A confiança social é um fator de bem-estar coletivo bem documentado.
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** estudos em saúde pública associam viver em comunidades de baixa confiança social e alta criminalidade a maiores níveis de estresse crônico entre os moradores. A confiança social é um fator de bem-estar coletivo bem documentado.
 
 ### Mandamento 08 — "Não levantar falso testemunho"
 
 **Etimologia:** "testemunho" vem do latim *testimonium* — aquilo que permanece como evidência.
 
-**Conexão científica [ESTABELECIDA]:** estudos de neuroimagem funcional mostram que mentir, em comparação com dizer a verdade, está associado a maior ativação do córtex pré-frontal — consistente com o esforço cognitivo adicional de suprimir a informação verdadeira e construir uma alternativa falsa. Mentir repetidamente, em contextos de alto risco, também está associado a maior ativação da amígdala.
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** estudos de neuroimagem funcional mostram que mentir, em comparação com dizer a verdade, está associado a maior ativação do córtex pré-frontal — consistente com o esforço cognitivo adicional de suprimir a informação verdadeira e construir uma alternativa falsa. Mentir repetidamente, em contextos de alto risco, também está associado a maior ativação da amígdala.
 
 ### Mandamentos 09 e 10 — "Não cobiçar"
 
@@ -98,7 +98,7 @@ Este mandamento não tem uma "tradução" neurocientífica direta, e não deveri
 
 Estes são os únicos dois mandamentos que regulam um estado interno, não uma ação.
 
-**Conexão científica [ESTABELECIDA]:** estudos de neuroimagem associam a comparação social desfavorável e a inveja à ativação do córtex cingulado anterior — a mesma região associada ao processamento da dor física e ao componente afetivo da dor. Pesquisas sobre estresse crônico também associam comparação social persistente a marcadores inflamatórios elevados, embora a relação específica com o encurtamento de telômeros seja um campo de pesquisa ainda em desenvolvimento e não deva ser tratada como conclusão definitiva. [parte ESTABELECIDA — ativação do córtex cingulado; parte HIPÓTESE — encurtamento de telômeros como consequência direta]
+**Conexão científica [COMPROVADO PELA CIÊNCIA]:** estudos de neuroimagem associam a comparação social desfavorável e a inveja à ativação do córtex cingulado anterior — a mesma região associada ao processamento da dor física e ao componente afetivo da dor. Pesquisas sobre estresse crônico também associam comparação social persistente a marcadores inflamatórios elevados, embora a relação específica com o encurtamento de telômeros seja um campo de pesquisa ainda em desenvolvimento e não deva ser tratada como conclusão definitiva. [parte COMPROVADA PELA CIÊNCIA — ativação do córtex cingulado; parte HIPÓTESE — encurtamento de telômeros como consequência direta]
 
 ## Jesus e a síntese em dois mandamentos
 
@@ -122,12 +122,12 @@ O risco é transformar cada mandamento em uma "explicação científica completa
 
 ## 🔬 Base científica citada neste artigo
 
-- Estudo sobre repetição religiosa e neuroimagem funcional, 2020 — efeitos da oração repetitiva com carga emocional [ESTABELECIDA]
-- *Nature Reviews Neuroscience*, 2015 — rede de modo padrão e práticas contemplativas [ESTABELECIDA]
-- Pesquisa em cronobiologia — genes CLOCK, PER1-3 e ritmo circadiano [ESTABELECIDA]
-- Pesquisa em apego e regulação do estresse na infância [ESTABELECIDA]; extensão epigenética transgeracional em humanos [HIPÓTESE]
-- Neuroimagem funcional e custo cognitivo da mentira [ESTABELECIDA]
-- Córtex cingulado anterior, comparação social e dor [ESTABELECIDA]; encurtamento de telômeros por comparação social crônica [HIPÓTESE]
+- Estudo sobre repetição religiosa e neuroimagem funcional, 2020 — efeitos da oração repetitiva com carga emocional [COMPROVADO PELA CIÊNCIA]
+- *Nature Reviews Neuroscience*, 2015 — rede de modo padrão e práticas contemplativas [COMPROVADO PELA CIÊNCIA]
+- Pesquisa em cronobiologia — genes CLOCK, PER1-3 e ritmo circadiano [COMPROVADO PELA CIÊNCIA]
+- Pesquisa em apego e regulação do estresse na infância [COMPROVADO PELA CIÊNCIA]; extensão epigenética transgeracional em humanos [HIPÓTESE]
+- Neuroimagem funcional e custo cognitivo da mentira [COMPROVADO PELA CIÊNCIA]
+- Córtex cingulado anterior, comparação social e dor [COMPROVADO PELA CIÊNCIA]; encurtamento de telômeros por comparação social crônica [HIPÓTESE]
 
 ## 🛡️ Aviso importante
 

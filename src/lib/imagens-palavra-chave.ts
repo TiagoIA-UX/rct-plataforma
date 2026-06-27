@@ -22,6 +22,8 @@ const PALAVRAS_PRIORIDADE = [
   "geopolítica",
   "economia",
   "santidade",
+  "autocontrole",
+  "pertencimento",
   "mandamentos",
   "mandamento",
   "espinho",
@@ -58,14 +60,15 @@ const PALAVRAS_PRIORIDADE = [
 export const SLUG_PALAVRA_CHAVE: Record<string, string> = {
   "paulo-espinho-na-carne-ciencia-e-biblia": "paulo",
   "10-mandamentos-oriente-medio-ciencia-epigenetica": "mandamentos",
-  "jesus-aos-12-anos-no-temple": "templo",
   "saude-bem-estar-coracao-alegre-bom-remedio": "saude",
   "tecnologia-sociedade-licito-mas-nem-tudo-convem": "tecnologia",
   "meio-ambiente-recursos-lavrar-e-guardar": "meio-ambiente",
   "geopolitica-economia-justica-exalta-nacoes": "geopolitica",
   "sao-santo-titulos-apostolos-joao-17": "santidade",
   "decodificando-os-anjos-de-jesus": "anjos",
-  "anjos-de-luz-neuroplasticidade-epigenetica": "anjos",
+  "anjos-de-luz-neuroplasticidade-epigenetica": "jesus",
+  "jesus-aos-12-anos-no-temple": "pertencimento",
+  "tentado-em-tudo-sem-pecado-autocontrole": "autocontrole",
 };
 
 const CREDITO_IA = "Ilustração gerada por IA — Instituto NEUMA";
@@ -81,6 +84,7 @@ const JOY_NATUREZA = "/images/joy-natureza.png";
 const JOY_JUSTICA = "/images/joy-justica.png";
 const JOY_SANTIDADE = "/images/joy-santidade.png";
 const JOY_ANJOS = "/images/joy-anjos.png";
+const JOY_DANIEL = "/images/joy-daniel.png";
 const JESUS_PASTOR = "/images/jesus-pastor.png";
 
 export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
@@ -154,6 +158,18 @@ export const IMAGENS_POR_PALAVRA_CHAVE: Record<string, ImagemArtigo> = {
     palavra_chave: "templo",
     url: JOY_ESCRITURAS,
     alt: "Livro aberto à luz suave — sabedoria e aprendizado",
+    credit: CREDITO_IA,
+  },
+  pertencimento: {
+    palavra_chave: "pertencimento",
+    url: JOY_FAMILIA,
+    alt: "Família reunida ao amanhecer — atenção e pertencimento",
+    credit: CREDITO_IA,
+  },
+  autocontrole: {
+    palavra_chave: "autocontrole",
+    url: JOY_DANIEL,
+    alt: "Refeição simples e vitalidade — temperança e autocontrole",
     credit: CREDITO_IA,
   },
   jesus: {

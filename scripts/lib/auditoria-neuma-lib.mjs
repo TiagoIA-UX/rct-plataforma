@@ -107,12 +107,12 @@ export function auditarArtigo(artigo) {
   }
 
   const citacoesCientificas = (html.match(/\([12]\d{3}\)/g) ?? []).length;
-  const rotulosEpistemicos = (html.match(/\[(ESTABELECIDA|HIPÓTESE|INTERPRETAÇÃO)\]/g) ?? []).length;
+  const rotulosEpistemicos = (html.match(/\[(COMPROVADO PELA CIÊNCIA|ESTABELECIDA|HIPÓTESE|INTERPRETAÇÃO)\]/g) ?? []).length;
   if (citacoesCientificas > 0 && rotulosEpistemicos === 0) {
     achados.push({
       severidade: "media",
       tipo: "rotulos_epistemicos_ausentes",
-      detalhe: "Citações sem distinção [ESTABELECIDA]/[HIPÓTESE]/[INTERPRETAÇÃO]",
+      detalhe: "Citações sem distinção [COMPROVADO PELA CIÊNCIA]/[HIPÓTESE]/[INTERPRETAÇÃO]",
     });
   }
 

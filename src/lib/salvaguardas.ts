@@ -41,7 +41,7 @@ export const ESTRUTURA_NEUMA_TRANSFORMACAO = [
   {
     id: "mecanismo",
     pergunta: "Como isso afeta mente, corpo e comportamento?",
-    descricao: "Mecanismo — ciência e psicologia com rótulos [ESTABELECIDA] ou [HIPÓTESE]",
+    descricao: "Mecanismo — ciência e psicologia com rótulos [COMPROVADO PELA CIÊNCIA] ou [HIPÓTESE]",
   },
   {
     id: "traditions",

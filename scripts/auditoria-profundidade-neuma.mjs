@@ -76,7 +76,7 @@ function analiseQualitativa(slug, original, reescrito, delta, score) {
     if (extrairMetricas(original).h3 >= 4 && extrairMetricas(reescrito).h3 === 0) {
       perdido.push("Subseções de desenvolvimento (córtex pré-frontal, neuroplasticidade por idade)");
       perdido.push("Blockquotes de Lucas 2:46-52 com contexto");
-      restaurar.push("Reintegrar dados de desenvolvimento cognivo aos 12 anos [ESTABELECIDA]");
+      restaurar.push("Reintegrar dados de desenvolvimento cognivo aos 12 anos [COMPROVADO PELA CIÊNCIA]");
     }
     ganho.push("Título sem linguagem legada (yogue/samadhi)");
     ganho.push("6 seções padronizadas");

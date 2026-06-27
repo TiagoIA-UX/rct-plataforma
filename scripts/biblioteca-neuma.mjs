@@ -300,7 +300,7 @@ async function reescreverArtigo(groq, db, feedbackCritico = null) {
 Frase-guia: "${FRASE_GUIA}"
 Esperança: "${FRASE_ESPERANCA}"
 Proibido: yogue, samadhi, dharana, dhyana
-Hipóteses: [HIPÓTESE] ou [INTERPRETAÇÃO]; ciência: [ESTABELECIDA]
+Hipóteses: [HIPÓTESE] ou [INTERPRETAÇÃO]; ciência: [COMPROVADO PELA CIÊNCIA]
 ${feedbackBlock}`;
 
   const artigo = await chamarAgente(groq, {
@@ -328,7 +328,7 @@ Retorne JSON:
   "conteudo_html": "<h2>O que aconteceu?</h2>...",
   "bencao": "",
   "maldicao": "",
-  "base_cientifica": ["autor (ano) [ESTABELECIDA]", "..."],
+  "base_cientifica": ["autor (ano) [COMPROVADO PELA CIÊNCIA]", "..."],
   "salvaguarda": "",
   "pergunta_viveka": ""
 }`,

@@ -50,7 +50,7 @@ export function AmorUniversal() {
             padrão alimentar. Um ensaio sobre o chamado &ldquo;Daniel Fast&rdquo; (21 dias à base de
             vegetais) observou melhora em marcadores cardiometabólicos.{" "}
             <span className="text-xs text-[rgba(248,246,240,0.5)]">
-              [Bloomer et al., 2010 — Lipids in Health and Disease] [ESTABELECIDA]
+              [Bloomer et al., 2010 — Lipids in Health and Disease] [COMPROVADO PELA CIÊNCIA]
             </span>{" "}
             Estudos sobre jejum e restrição alimentar associam esses estados a maior BDNF e
             neuroplasticidade — base biológica plausível para foco e clareza mental, ainda em

@@ -48,7 +48,7 @@ export function JesusOMestre() {
             e regulação emocional — como hipótese interpretativa, não como prova de poder
             sobrenatural.{" "}
             <span className="text-xs text-[rgba(248,246,240,0.5)]">
-              [Newberg &amp; Waldman, 2009; Lazar et al., 2005] [ESTABELECIDA]
+              [Newberg &amp; Waldman, 2009; Lazar et al., 2005] [COMPROVADO PELA CIÊNCIA]
             </span>
           </p>
           <p>

@@ -29,7 +29,7 @@ Esperança após compreensão: "Eu ainda posso mudar?"
 Equilíbrio: não só sofrimento — contraste de propósito, coragem, plenitude quando couber.
 
 ## Salvaguardas (não negociáveis)
-- Rotular [ESTABELECIDA] vs [HIPÓTESE] vs [INTERPRETAÇÃO]
+- Rotular [COMPROVADO PELA CIÊNCIA] vs [HIPÓTESE] vs [INTERPRETAÇÃO]
 - Autor + ano em TODA afirmação científica
 - NUNCA superioridade por raça, etnia ou linhagem
 - Epigenética transgeracional = hipótese, nunca fato
@@ -53,7 +53,7 @@ NÃO incluir bloco bênção/maldição no HTML — vir no JSON separado.
   "tags": [],
   "meta_descricao": "",
   "tempo_leitura": "",
-  "base_cientifica": ["Autor — periódico, ano [ESTABELECIDA|HIPÓTESE]", "..."],
+  "base_cientifica": ["Autor — periódico, ano [COMPROVADO PELA CIÊNCIA|HIPÓTESE]", "..."],
   "bencao": "",
   "maldicao": "",
   "salvaguarda": "",

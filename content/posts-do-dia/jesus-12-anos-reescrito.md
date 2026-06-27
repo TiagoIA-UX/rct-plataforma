@@ -17,11 +17,11 @@ Dados objetivos do texto: idade de 12 anos, permanência de três dias no Templo
 
 ## O que a ciência do desenvolvimento diz sobre essa idade
 
-### 1. O cérebro aos 12 anos — uma janela de mudança [ESTABELECIDA]
+### 1. O cérebro aos 12 anos — uma janela de mudança [COMPROVADO PELA CIÊNCIA]
 
 Por volta dos 12 anos, o córtex pré-frontal — região associada a planejamento, raciocínio abstrato e autorregulação — entra em um período de maturação acelerada. Pesquisa em neuroplasticidade (Kandel, 2006) mostra que hábitos de atenção e estudo formados nesse período podem deixar marcas duradouras nos circuitos cerebrais. Isso não explica quem Jesus era — mas mostra que a idade mencionada no relato coincide com um período de desenvolvimento cerebral particularmente sensível à aprendizagem, o que é consistente com (não prova de) a descrição de um jovem excepcionalmente engajado em estudo e diálogo.
 
-### 2. Atenção sustentada [ESTABELECIDA]
+### 2. Atenção sustentada [COMPROVADO PELA CIÊNCIA]
 
 O relato descreve alguém "sentado entre os doutores, ouvindo e perguntando" — uma descrição de atenção sustentada, não de dispersão. Pesquisas sobre práticas de atenção (incluindo Lazar et al., *NeuroReport*, 2005, e revisões em Newberg & Waldman, 2009) associam períodos prolongados de atenção concentrada a padrões de atividade cerebral diferentes dos observados em estados de distração ou ansiedade.
 
@@ -41,7 +41,7 @@ Lucas descreve um adolescente extraordinariamente presente e engajado — a leit
 
 Inspire por 5 segundos, expire por 5 segundos, durante 5 minutos. Pode ser combinado com um versículo curto, como o Salmo 46:10 — "Aquietai-vos, e sabei que eu sou Deus."
 
-Pesquisas sobre variabilidade da frequência cardíaca (revisadas pelo HeartMath Institute) associam esse tipo de respiração pausada a maior ativação do sistema nervoso parassimpático e redução de ansiedade. [ESTABELECIDA]
+Pesquisas sobre variabilidade da frequência cardíaca (revisadas pelo HeartMath Institute) associam esse tipo de respiração pausada a maior ativação do sistema nervoso parassimpático e redução de ansiedade. [COMPROVADO PELA CIÊNCIA]
 
 - HeartMath Institute: https://www.heartmath.org/
 - NHS — exercícios de respiração para estresse: https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/breathing-exercises-for-stress/
@@ -66,10 +66,10 @@ O risco é transformar o relato em um "caso de superdotação por linhagem gené
 
 ## 🔬 Base científica citada neste artigo
 
-- Kandel, E. (2006) — neuroplasticidade sináptica [ESTABELECIDA]
-- Lazar et al., *NeuroReport* (2005) — atenção e atividade cerebral [ESTABELECIDA]
-- Newberg & Waldman, *How God Changes Your Brain* (2009) [ESTABELECIDA]
-- McCraty et al. / HeartMath Institute — variabilidade da frequência cardíaca [ESTABELECIDA]
+- Kandel, E. (2006) — neuroplasticidade sináptica [COMPROVADO PELA CIÊNCIA]
+- Lazar et al., *NeuroReport* (2005) — atenção e atividade cerebral [COMPROVADO PELA CIÊNCIA]
+- Newberg & Waldman, *How God Changes Your Brain* (2009) [COMPROVADO PELA CIÊNCIA]
+- McCraty et al. / HeartMath Institute — variabilidade da frequência cardíaca [COMPROVADO PELA CIÊNCIA]
 - Herança epigenética transgeracional aplicada a linhagens humanas [HIPÓTESE]
 
 ## 🛡️ Aviso importante

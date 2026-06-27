@@ -14,6 +14,7 @@ import {
 } from "@/lib/rct-blog.server";
 import { schemaArtigoJsonLd } from "@/lib/schema-artigo";
 import { metadataArtigo } from "@/lib/seo-artigo";
+import { linkarTermosTecnicos } from "@/lib/glossario";
 
 /** ISR — ver CACHE_TTL.blog em src/lib/cache.ts */
 export const revalidate = 3600;
@@ -132,7 +133,7 @@ export default async function ArtigoPage({ params }: Props) {
 
         <div
           className="prose-rct mt-12"
-          dangerouslySetInnerHTML={{ __html: artigo.conteudo_html }}
+          dangerouslySetInnerHTML={{ __html: linkarTermosTecnicos(artigo.conteudo_html) }}
         />
 
         <BlocoBencaoMaldicaoFallback

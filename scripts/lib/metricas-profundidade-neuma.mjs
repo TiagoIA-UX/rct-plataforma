@@ -20,7 +20,7 @@ export function extrairMetricas(html) {
     listas: (h.match(/<[ou]l/gi) ?? []).length,
     tabelas: (h.match(/<table/gi) ?? []).length,
     citacoes_ano: (h.match(/\([12]\d{3}\)/g) ?? []).length,
-    rotulo_estabelecida: (h.match(/\[ESTABELECIDA\]/g) ?? []).length,
+    rotulo_estabelecida: (h.match(/\[(?:ESTABELECIDA|COMPROVADO PELA CIÊNCIA)\]/g) ?? []).length,
     rotulo_hipotese: (h.match(/\[HIPÓTESE\]|\[INTERPRETAÇÃO\]/g) ?? []).length,
     autores_citados: (h.match(/\b(Kandel|Lazar|Van der Kolk|LeDoux|Gross|Tedeschi|Göbel|McCraty|Newberg)\b/gi) ?? [])
       .length,

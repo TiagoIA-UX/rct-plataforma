@@ -311,3 +311,20 @@ a.btn-secondary:hover {
   color: #e8c97a;
   background: rgba(200, 169, 81, 0.12);
 }
+
+/* Termos técnicos com link de dicionário — discreto, distinto dos links normais */
+.prose-rct a.termo-glossario {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(200, 169, 81, 0.55);
+  text-underline-offset: 3px;
+  cursor: help;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.prose-rct a.termo-glossario:hover {
+  color: var(--sacred-gold);
+  text-decoration-color: var(--sacred-gold);
+}

@@ -19,7 +19,7 @@ Para um adolescente que está descobrindo, na própria pele, o que é ter impuls
 
 ## O que a neurociência diz sobre a tentação
 
-### Duas redes cerebrais em disputa [ESTABELECIDA]
+### Duas redes cerebrais em disputa [COMPROVADO PELA CIÊNCIA]
 
 A pesquisa em neurociência do comportamento descreve, de forma simplificada, duas grandes redes envolvidas no autocontrole:
 
@@ -28,13 +28,13 @@ A pesquisa em neurociência do comportamento descreve, de forma simplificada, du
 
 O autocontrole, nessa descrição, é o resultado de uma espécie de negociação em tempo real entre essas duas redes. Quando o córtex pré-frontal consegue regular a resposta do sistema mais automático, a pessoa consegue pausar antes de agir.
 
-### Por que isso é mais difícil na adolescência [ESTABELECIDA]
+### Por que isso é mais difícil na adolescência [COMPROVADO PELA CIÊNCIA]
 
 Há um detalhe importante para quem é adolescente: as duas redes não se desenvolvem no mesmo ritmo. O sistema mais ligado à busca por recompensa amadurece relativamente cedo, no início da puberdade. O córtex pré-frontal — a parte que freia, pondera e planeja — continua se desenvolvendo bem depois, ao longo da adolescência e até o início da vida adulta.
 
 Isso significa que, biologicamente, é *esperado* que a tentação pareça mais forte e o autocontrole pareça mais difícil nessa fase da vida — não porque a pessoa seja moralmente fraca ou "pior" que um adulto, mas porque o sistema de freio ainda está em construção. Isso não é desculpa para qualquer ação — é contexto para não tratar a dificuldade como sinal de fracasso de caráter.
 
-### O experimento do marshmallow e o que ele realmente mostra [ESTABELECIDA]
+### O experimento do marshmallow e o que ele realmente mostra [COMPROVADO PELA CIÊNCIA]
 
 O psicólogo Walter Mischel ficou conhecido por um experimento em que crianças pequenas escolhiam entre comer um doce imediatamente ou esperar um tempo para receber dois. Pesquisas de acompanhamento de longo prazo associaram a capacidade de esperar, na infância, a melhores resultados acadêmicos e sociais mais tarde.
 
@@ -82,10 +82,10 @@ O risco é usar a neurociência como desculpa para qualquer comportamento ("é s
 
 ## 🔬 Base científica citada neste artigo
 
-- Modelo de duas redes (sistema de recompensa vs. córtex pré-frontal) em autorregulação [ESTABELECIDA]
-- Maturação assimétrica entre sistema límbico e córtex pré-frontal na adolescência [ESTABELECIDA]
-- Mischel, estudos sobre adiamento de gratificação e estratégias atencionais (a partir de 1972) [ESTABELECIDA]
-- Estratégias de reenquadramento cognitivo e atenção plena em regulação emocional [ESTABELECIDA]
+- Modelo de duas redes (sistema de recompensa vs. córtex pré-frontal) em autorregulação [COMPROVADO PELA CIÊNCIA]
+- Maturação assimétrica entre sistema límbico e córtex pré-frontal na adolescência [COMPROVADO PELA CIÊNCIA]
+- Mischel, estudos sobre adiamento de gratificação e estratégias atencionais (a partir de 1972) [COMPROVADO PELA CIÊNCIA]
+- Estratégias de reenquadramento cognitivo e atenção plena em regulação emocional [COMPROVADO PELA CIÊNCIA]
 
 ## 🛡️ Aviso importante
 

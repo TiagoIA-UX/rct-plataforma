@@ -38,12 +38,7 @@ export function GoogleTag() {
 
   return (
     <>
-      <Script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-tag-gtag" strategy="afterInteractive">
+      <Script id="google-tag-consent" strategy="beforeInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -54,6 +49,17 @@ export function GoogleTag() {
             ad_personalization: 'denied',
             wait_for_update: 500
           });
+        `}
+      </Script>
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+        strategy="beforeInteractive"
+      />
+      <Script id="google-tag-gtag" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${id}');
         `}
